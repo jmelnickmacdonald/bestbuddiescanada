@@ -26,15 +26,46 @@ section{padding:100px 0}.section-head{display:grid;grid-template-columns:.8fr 1.
 footer{padding:28px 0 46px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:900px){.hero-grid,.section-head,.support-grid,.leadership-grid,.cta-box{grid-template-columns:1fr}.value-grid{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr}.metric{border-right:none;border-bottom:1px solid var(--line)}.navlinks{display:none}.hero{padding-top:60px}}
 @media(max-width:620px){.wrap{width:min(100% - 26px,1160px)}.value-grid,.cards-two,.support-list{grid-template-columns:1fr}section{padding:72px 0}.hero-card{min-height:340px}.cta-box{padding:34px}h1{font-size:3.3rem}}
+
+.brand{display:flex;align-items:center}
+.brand img{width:148px;height:auto;display:block}
+.hero-grid{grid-template-columns:1.05fr .95fr;align-items:center}
+.hero-photo-wrap{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center}
+.hero-photo{width:100%;height:500px;object-fit:cover;object-position:center;border-radius:32px;box-shadow:var(--shadow);display:block}
+.program{padding:0;overflow:hidden}
+.program-photo{width:100%;height:300px;object-fit:cover;display:block;background:#fff}
+.program-copy{padding:32px 34px 36px}
+.leadership-visual{position:relative;border-radius:30px;overflow:hidden;background:var(--purple-soft);min-height:520px}
+.leadership-visual>img{width:100%;height:100%;min-height:520px;object-fit:cover;display:block}
+.leadership-quote{position:absolute;left:24px;right:24px;bottom:24px;background:rgba(61,25,95,.92);color:#fff;padding:22px 24px;border-radius:20px;font-family:Poppins,sans-serif;font-size:1.15rem;line-height:1.35}
+.leadership-quote span{display:block;margin-top:10px;font-family:"DM Sans",sans-serif;font-size:.82rem;opacity:.85}
+footer{background:var(--purple-dark);color:#fff;border-top:none}
+.foot{align-items:center}
+.footer-logo{width:115px;height:auto;object-fit:contain}
+@media(max-width:900px){
+  .hero-photo-wrap{min-height:0}
+  .hero-photo{height:auto;max-height:520px}
+  .program-photo{height:260px}
+  .leadership-visual,.leadership-visual>img{min-height:420px}
+}
+@media(max-width:620px){
+  .brand img{width:120px}
+  .hero-photo{border-radius:22px}
+  .program-photo{height:220px}
+  .leadership-visual,.leadership-visual>img{min-height:360px}
+}
+
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav><div class="brand">Best Buddies Canada</div><div class="navlinks"><a href="#why">Why it matters</a><a href="#programs">In schools</a><a href="#what-schools-do">What schools do</a><a href="#support">Support</a><a href="#leadership">Leadership</a></div></nav></div></header>
+<header><div class="wrap"><nav><a class="brand" href="#top" aria-label="Best Buddies Canada"><img src="assets/bb-logo.png" alt="Best Buddies Canada"></a><div class="navlinks"><a href="#why">Why it matters</a><a href="#programs">In schools</a><a href="#what-schools-do">What schools do</a><a href="#support">Support</a><a href="#leadership">Leadership</a></div></nav></div></header>
 
 <main>
-<section class="hero"><div class="wrap hero-grid">
-<div><div class="eyebrow">Friendship • belonging • leadership</div><h1>Inclusion grows through connection.</h1><p class="lead">Best Buddies Canada creates opportunities for friendship, leadership, and inclusion in schools and communities across the country.</p><div class="btns"><a class="btn primary" href="https://bestbuddies.ca/" target="_blank" rel="noreferrer">Explore Best Buddies Canada ↗</a><a class="btn secondary" href="#programs">See what it can look like</a></div></div>
-<aside class="hero-card"><div class="small" style="color:#eadff1">A voice from a Best Buddies chapter</div><blockquote>“This program is so awesome. I love being and having a friend!”</blockquote><div class="quote-source">Veronica • Best Buddies participant</div></aside>
+<section class="hero" id="top"><div class="wrap hero-grid">
+<div><div class="eyebrow">Friendship, belonging, and leadership</div><h1>Inclusion grows through connection.</h1><p class="lead">Best Buddies Canada creates opportunities for friendship, leadership, and inclusion in schools and communities across the country.</p><div class="btns"><a class="btn primary" href="https://bestbuddies.ca/" target="_blank" rel="noreferrer">Explore Best Buddies Canada ↗</a><a class="btn secondary" href="#programs">See what it can look like</a></div></div>
+<div class="hero-photo-wrap">
+  <img class="hero-photo" src="assets/hero.png" alt="Two Best Buddies participants smiling together">
+</div>
 </div></section>
 
 <div class="metric-strip"><div class="wrap metrics">
@@ -44,20 +75,57 @@ footer{padding:28px 0 46px;border-top:1px solid var(--line);color:var(--muted);f
 </div></div>
 
 <section id="why"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">Why Best Buddies matters</div><h2>Every student deserves to feel known, included, and part of their school community.</h2></div><div><p class="lead">Best Buddies brings together students with and without intellectual and developmental disabilities through friendship clubs, one-to-one friendships, group activities, and student leadership.</p><p>A student can be present in every part of the school day and still feel apart from the social life happening around them. Best Buddies creates more opportunities for students to spend time together, discover what they have in common, and build friendships that extend beyond a scheduled club meeting.</p><p>It gives schools a practical way to make inclusion part of everyday school life — through shared experiences, leadership, and time together.</p></div></div>
+<div class="section-head">
+  <div>
+    <div class="eyebrow">Why Best Buddies matters</div>
+    <h2>Every student deserves to feel known, included, and part of their school community.</h2>
+  </div>
+  <div>
+    <p class="lead">Best Buddies brings together students with and without intellectual and developmental disabilities through friendship clubs, one-to-one friendships, group activities, and student leadership.</p>
+    <p>Students spend time together, build friendships, and get to know one another beyond the roles they may usually have at school. For students with intellectual and developmental disabilities, that can mean more opportunities for friendship and social connection. For their peers, it can open the door to new relationships, new perspectives, and leadership.</p>
+    <p>Over time, those relationships can become part of the wider school culture, shaping how students include one another in classrooms, hallways, activities, and events.</p>
+  </div>
+</div>
+
 <div class="value-grid">
-<div class="value-card"><h3>Belonging</h3><p>More opportunities for students to feel known, welcomed, and part of the social life of the school.</p></div>
-<div class="value-card"><h3>Friendship</h3><p>Time together, shared interests, laughter, activities, and relationships that grow beyond a scheduled meeting.</p></div>
-<div class="value-card"><h3>Leadership</h3><p>Students can take on real responsibility, help shape chapter activities, welcome others, and build an inclusive school culture.</p></div>
-<div class="value-card"><h3>School culture</h3><p>Inclusion becomes something students experience and practise in everyday school life, not only something they hear about.</p></div>
-</div></div></section>
+  <div class="value-card"><h3>Belonging</h3><p>More opportunities for students to feel known, welcomed, and part of the social life of the school.</p></div>
+  <div class="value-card"><h3>Friendship</h3><p>Time together, shared interests, laughter, activities, and relationships that can continue beyond a chapter meeting.</p></div>
+  <div class="value-card"><h3>Leadership</h3><p>Students can help plan, welcome others, take responsibility, and contribute to the culture of their school.</p></div>
+  <div class="value-card"><h3>School culture</h3><p>Inclusion becomes part of everyday school life through the way students know, include, and support one another.</p></div>
+</div>
+</div></section>
 
 <section class="purple-band" id="programs"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">Built to fit your school</div><h2>A flexible program that can fit your school.</h2></div><p class="lead">Best Buddies does not have to look exactly the same everywhere. The program can adapt to age, school culture, student interests, and what is realistic for the people leading it.</p></div>
-<div class="cards-two">
-<article class="program"><span class="tag">Elementary + Middle School</span><h3>A friendship club built around time together.</h3><p>Students come together through games, activities, lunch, conversation, and shared experiences. At the middle-school level, chapters begin to foster friendships between students with and without IDD.</p><ul><li>Group-focused and social</li><li>Led by school staff with Best Buddies support</li><li>Easy-to-use program and activity resources</li><li>Flexible enough to reflect the school community</li></ul></article>
-<article class="program"><span class="tag">High School</span><h3>Friendship and leadership grow together.</h3><p>High-school chapters can include one-to-one Buddy and Peer Buddy friendships, whole-group activities, and a student executive working alongside a staff advisor.</p><ul><li>Meaningful peer relationships</li><li>Student-led chapter activities and events</li><li>Opportunities to build confidence and leadership</li><li>Training, guidance, and ongoing support</li></ul></article>
-</div></div></section>
+<div class="section-head">
+  <div>
+    <div class="eyebrow">Built to fit your school</div>
+    <h2>A flexible program that can grow with your school.</h2>
+  </div>
+  <p class="lead">Best Buddies does not have to look exactly the same everywhere. Chapters can reflect the age of the students, the school schedule, student interests, and the people involved.</p>
+</div>
+
+<div class="cards-two program-cards">
+  <article class="program">
+    <img class="program-photo" src="assets/elementary.png" alt="Two elementary-aged Best Buddies students smiling together">
+    <div class="program-copy">
+      <span class="tag">Elementary + Middle School</span>
+      <h3>A friendship club built around time together.</h3>
+      <p>Students come together through games, activities, lunch, conversation, and shared experiences. At the middle-school level, chapters can begin to foster friendships between students with and without intellectual and developmental disabilities.</p>
+      <ul><li>Group-focused and social</li><li>Led by school staff with Best Buddies support</li><li>Program and activity resources provided</li><li>Flexible enough to reflect the school community</li></ul>
+    </div>
+  </article>
+
+  <article class="program">
+    <img class="program-photo" src="assets/high-school.png" alt="Two high-school Best Buddies participants wearing matching shirts">
+    <div class="program-copy">
+      <span class="tag">High School</span>
+      <h3>Friendship and leadership grow together.</h3>
+      <p>High-school chapters can include one-to-one Buddy and Peer Buddy friendships, whole-group activities, and a student executive working alongside a staff advisor.</p>
+      <ul><li>One-to-one and group friendships</li><li>Student-led chapter activities and events</li><li>Opportunities to build confidence and leadership</li><li>Training, guidance, and ongoing support</li></ul>
+    </div>
+  </article>
+</div>
+</div></section>
 
 
 <section id="what-schools-do">
@@ -93,16 +161,19 @@ footer{padding:28px 0 46px;border-top:1px solid var(--line);color:var(--muted);f
 </section>
 
 <section id="leadership" class="leadership"><div class="wrap leadership-grid">
-<div class="orbit" aria-hidden="true"><div class="circle c1">Lead in your chapter</div><div class="circle c2">Share ideas</div><div class="circle c3">Connect beyond your school</div></div>
+<div class="leadership-visual">
+  <img src="assets/high-school.png" alt="Best Buddies students together at school">
+  <div class="leadership-quote">“It teaches the leaders about compassion and accountability.”<span>— Tina Limarzi, Teacher and Best Buddies Staff Advisor</span></div>
+</div>
 <div><div class="eyebrow">Student leadership</div><h2>High-school students can take on real leadership.</h2><p class="lead">At the high-school level, Best Buddies creates space for students to take an active role in shaping a more inclusive school community.</p><p>Student leaders can organize activities, welcome new members, bring people together, and help make inclusion something students actively participate in.</p><p>Best Buddies provides training, guidance, and support to help students grow into those roles with confidence.</p><p>We’re also looking at new ways to strengthen the student leadership experience this school year — creating more opportunities for students to connect beyond their own chapter, exchange ideas, learn from one another, and feel part of a wider Best Buddies community.</p></div>
 </div></section>
 
 <section id="support"><div class="wrap support-grid">
-<div class="support-main"><div class="eyebrow">Support that is actually useful</div><h2>Schools are supported from the start.</h2><p class="lead">A good program still has to be workable inside a very full school year.</p><p>Best Buddies provides practical tools and ongoing support so educators and student leaders can spend less time figuring out the mechanics and more time bringing students together.</p><div class="support-list"><div class="pill">Program + activity guides</div><div class="pill">Leadership resources</div><div class="pill">Training + guidance</div><div class="pill">Communication resources</div><div class="pill">Planning tools</div><div class="pill">Ongoing staff support</div></div><div class="btns"><a class="btn secondary" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noreferrer">Explore current resources ↗</a></div></div>
+<div class="support-main"><div class="eyebrow">Support for educators</div><h2>You have support along the way.</h2><p class="lead">A strong chapter still has to fit within a very full school year.</p><p>Best Buddies provides resources, ideas, training, and ongoing support so teacher advisors have somewhere to turn when they need help planning a meeting, choosing an activity, supporting student leaders, or deciding what comes next.</p><div class="support-list"><div class="pill">Program + activity guides</div><div class="pill">Leadership resources</div><div class="pill">Training + guidance</div><div class="pill">Communication resources</div><div class="pill">Planning tools</div><div class="pill">Ongoing staff support</div></div><div class="btns"><a class="btn secondary" href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noreferrer">Explore current resources ↗</a></div></div>
 <aside class="coming"><span class="badge">COMING THIS FALL</span><h3 style="font-size:2rem">One place for teacher support.</h3><p>We’re building a centralized Teacher Hub designed to make chapter support easier to navigate — bringing practical guidance, activity planning, timely resources, and chapter tools together in one place.</p><p class="small">Built with educators in mind. Designed to make a great program easier to run.</p></aside>
 </div></section>
 
-<section class="pullquote"><div class="wrap"><blockquote>“It teaches the leaders about compassion and accountability.”</blockquote><cite>Tina Limarzi • Teacher and Best Buddies Staff Advisor</cite></div></section>
+
 
 <section><div class="wrap"><div class="section-head"><div><div class="eyebrow">Beyond the chapter</div><h2>Inclusion becomes stronger when students help create it.</h2></div><div><p class="lead">Best Buddies gives schools a way to turn a commitment to inclusion into something students experience in everyday school life.</p><p>Over time, the impact can move beyond chapter meetings. Students know one another in the hallway. They include one another in activities. They become more comfortable with difference. Student leaders carry what they learn about friendship, communication, and inclusion into the rest of school life.</p><p><strong>What starts in a chapter can carry into the rest of school life.</strong></p></div></div></div></section>
 
@@ -121,6 +192,6 @@ footer{padding:28px 0 46px;border-top:1px solid var(--line);color:var(--muted);f
 </div></section>
 </main>
 
-<footer><div class="wrap foot"><span>Best Buddies Canada • Because everyone deserves a friend.</span><span>Introductory page linking to official Best Buddies Canada resources.</span></div></footer>
+<footer><div class="wrap foot"><img class="footer-logo" src="assets/bb-reversed-logo.png" alt="Best Buddies Canada"><div><span>Because everyone deserves a friend.</span><br><span>Introductory page linking to official Best Buddies Canada resources.</span></div></div></footer>
 </body>
 </html>
