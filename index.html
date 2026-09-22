@@ -535,6 +535,148 @@ footer{background:#fff;color:var(--text);border-top:4px solid var(--yellow);padd
   .contact-card{grid-template-columns:1fr}.contact-logo{width:74px}
 }
 
+
+
+/* =========================================================
+   FINAL FLOW REFINEMENT
+   Fewer boxes, stronger PDF-like editorial rhythm.
+   ========================================================= */
+
+/* Keep section introductions aligned to the full content grid. */
+.program-intro.container{
+  width:min(calc(100% - 56px),var(--max));
+  max-width:var(--max);
+  margin-left:auto;
+  margin-right:auto;
+}
+.program-intro h2{max-width:860px}
+.program-intro p{max-width:900px}
+
+/* Why-it-matters trio: editorial columns instead of three cards. */
+.value-row{gap:0;margin-top:38px;border-top:1px solid var(--line)}
+.value{
+  background:transparent!important;
+  border-radius:0!important;
+  padding:26px 34px 4px 0;
+  position:relative;
+}
+.value + .value{padding-left:34px;border-left:1px solid var(--line)}
+.value h3{position:relative;padding-top:12px}
+.value h3:before{
+  content:"";position:absolute;left:0;top:0;width:42px;height:5px;border-radius:4px;background:var(--yellow)
+}
+.value:nth-child(2) h3:before{background:var(--purple)}
+.value:nth-child(3) h3:before{background:var(--teal)}
+
+/* Program area: photos + copy, not giant boxed cards. */
+.programs{background:#faf9fc}
+.program-grid{gap:44px}
+.program{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+.program img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/7.6;
+  object-fit:cover;
+  border:0!important;
+  border-radius:26px;
+}
+.program.elementary img{
+  object-position:center 42%;
+  transform:scale(1.045);
+  clip-path:inset(2.1% round 26px);
+}
+.program.high img{object-position:center 43%}
+.program-copy{padding:24px 4px 8px}
+.program-type{margin-bottom:9px}
+.program h3{max-width:680px}
+.program-note{
+  border-top:1px solid var(--line)!important;
+  margin-top:16px!important;
+  padding-top:14px!important;
+}
+
+/* Tags read like an editorial descriptor line rather than more pills. */
+.program-tags{gap:0;margin-top:16px;align-items:center}
+.program-tags span,
+.program.elementary .program-tags span,
+.program.high .program-tags span{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  padding:0!important;
+  color:var(--purple)!important;
+  font-size:.75rem!important;
+  font-weight:700;
+  white-space:nowrap;
+}
+.program-tags span:not(:last-child)::after{
+  content:"•";
+  display:inline-block;
+  color:#aaa2b1;
+  margin:0 9px;
+  font-weight:500;
+}
+
+/* Cost line + setup steps stay open and editorial. */
+.cost-note{margin-top:34px}
+.steps{margin-top:26px}
+.steps-grid{grid-template-columns:repeat(3,1fr)}
+.steps-foot{display:inline-block;width:auto;margin-top:18px}
+
+/* Quick answers: no button-like link chips. */
+.answer-links{gap:16px}
+.answer-links a{
+  background:transparent!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  text-decoration:underline;
+  text-decoration-color:rgba(90,63,152,.3);
+  text-underline-offset:4px;
+}
+
+/* Teacher Hub is the only true feature card below the programs. */
+.hub-card{border-radius:26px 26px 52px 26px!important}
+
+/* CTA is a single purposeful colour block; everything around it stays open. */
+.cta-band .container{border-radius:20px}
+
+/* Contact area: no nested card treatment. */
+.contact-card{border-left:1px solid rgba(90,63,152,.22)!important}
+.contact-actions a{background:transparent;border:1px solid rgba(90,63,152,.22)}
+
+/* Tablet */
+@media(max-width:1000px){
+  .program-intro.container{width:min(calc(100% - 44px),var(--max))}
+  .program-grid{gap:30px}
+  .program img{aspect-ratio:16/8.3}
+  .program.elementary img{transform:scale(1.03);clip-path:inset(1.5% round 24px)}
+  .value{padding-right:22px}.value + .value{padding-left:22px}
+}
+
+/* Mobile */
+@media(max-width:760px){
+  .program-intro.container{width:min(calc(100% - 32px),var(--max))}
+  .program-intro h2,.program-intro p{max-width:none}
+  .value-row{grid-template-columns:1fr;border-top:0;gap:0}
+  .value,.value + .value{padding:20px 0;border-left:0;border-top:1px solid var(--line)}
+  .value:last-child{border-bottom:1px solid var(--line)}
+  .program-grid{gap:42px}
+  .program img{aspect-ratio:4/3;border-radius:22px}
+  .program.elementary img{object-position:center 40%;transform:scale(1.025);clip-path:inset(1.2% round 22px)}
+  .program-copy{padding:20px 0 0}
+  .program-tags{row-gap:7px}
+  .program-tags span:not(:last-child)::after{margin:0 7px}
+  .steps-grid{grid-template-columns:1fr}
+  .contact-card{border-left:0!important}
+}
+
 </style>
 </head>
 <body>
