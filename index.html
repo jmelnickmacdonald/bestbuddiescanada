@@ -262,6 +262,65 @@ footer{background:#4a347f;padding:18px 0;border-top:4px solid var(--yellow)}
   .cta-band .btn{width:100%}
 }
 
+
+/* Editorial simplification — fewer cards, stronger flow */
+.answers-wrap{display:grid;grid-template-columns:.72fr 1.28fr;gap:56px;align-items:start}
+.answers-head{padding:0;background:transparent;border-radius:0}
+.answers-head p{max-width:470px}
+.answer-links{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.answer-links a{background:transparent;color:var(--purple);border:1px solid rgba(90,63,152,.18);padding:8px 12px}
+.answers-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 34px;background:transparent;border:0;border-radius:0;box-shadow:none}
+.answer-card{padding:0 0 22px;margin:0 0 22px;background:transparent!important;border:0!important;border-bottom:1px solid rgba(90,63,152,.15)!important;border-radius:0!important;box-shadow:none!important}
+.answer-card:nth-last-child(-n+2){margin-bottom:0}
+.answer-card h3{margin:0 0 7px;color:var(--ink)}
+.answer-card p{margin:0;color:var(--text)}
+
+.support{background:#fbfafc}
+.support-grid{grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
+.support-card{background:transparent;border-radius:0;box-shadow:none;padding:6px 0}
+.support-card .label:after{background:var(--yellow)}
+.hub-card{box-shadow:none;border:1px solid rgba(90,63,152,.06);padding:32px 34px}
+
+.contact{background:#e8f5f2;padding:54px 0}
+.contact-grid{background:transparent;border:0;border-radius:0;padding:0;grid-template-columns:1.22fr .78fr;gap:52px}
+.contact-copy:after{display:none}
+.contact-card{background:transparent;border:0;border-radius:0;box-shadow:none;padding:0 0 0 34px;border-left:1px solid rgba(90,63,152,.18);grid-template-columns:84px 1fr;gap:18px}
+.contact-logo{width:84px}
+
+/* Keep only the true content cards: two program cards + Teacher Hub */
+.steps{box-shadow:none;border:0;background:#fff;border-top:1px solid rgba(90,63,152,.1);border-bottom:1px solid rgba(90,63,152,.1);border-radius:0}
+.cost-note{box-shadow:none;border-radius:0;background:transparent;border-left:4px solid var(--yellow);padding-left:18px}
+
+@media(max-width:1100px){
+  .answers-wrap{grid-template-columns:.82fr 1.18fr;gap:36px}
+  .support-grid{gap:34px}
+  .contact-grid{gap:34px}
+}
+@media(max-width:960px){
+  .answers-wrap{grid-template-columns:1fr;gap:30px}
+  .answers-head p{max-width:700px}
+  .answers-grid{grid-template-columns:1fr 1fr;gap:0 26px}
+  .support-grid{grid-template-columns:1fr;gap:30px}
+  .support-card{padding:0}
+  .hub-card{max-width:760px}
+  .contact-grid{grid-template-columns:1fr;gap:28px}
+  .contact-card{padding:26px 0 0;border-left:0;border-top:1px solid rgba(90,63,152,.18);max-width:none}
+}
+@media(max-width:700px){
+  .answers-grid{grid-template-columns:1fr}
+  .answer-card:nth-last-child(-n+2){margin-bottom:22px}
+  .answer-card:last-child{margin-bottom:0}
+  .answer-links{gap:7px}
+  .answer-links a{font-size:.84rem}
+  .hub-card{padding:26px 24px;border-radius:24px 44px 24px 24px}
+  .contact{padding:42px 0}
+  .contact-card{grid-template-columns:68px 1fr;padding-top:22px}
+  .contact-logo{width:68px}
+}
+@media(max-width:470px){
+  .contact-card{grid-template-columns:1fr}.contact-logo{width:74px}
+}
+
 </style>
 </head>
 <body>
