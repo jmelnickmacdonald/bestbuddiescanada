@@ -66,7 +66,7 @@ header{background:var(--purple);border-top:7px solid var(--yellow)}
 .program-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .program{background:#fff;border-radius:30px 30px 76px 30px;overflow:hidden;box-shadow:var(--shadow);border-bottom:8px solid var(--teal)}
 .program.high{border-bottom-color:var(--orange);border-radius:30px 76px 30px 30px}
-.program img{width:100%;height:300px;object-fit:cover}
+.program img{width:100%;height:300px;object-fit:cover}.program.elementary img{object-fit:contain;background:#fff}.program-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.program-tags span{display:inline-flex;padding:7px 10px;border-radius:8px;background:var(--lav);color:var(--text);font-size:.78rem;font-weight:600;line-height:1.15}
 .program-copy{padding:22px 25px 26px}
 .program-type{display:block;color:var(--purple);font-size:.71rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
 .program h3{font-family:var(--display);font-size:1.8rem;line-height:1;color:var(--ink);margin:0 0 10px}
@@ -84,7 +84,7 @@ header{background:var(--purple);border-top:7px solid var(--yellow)}
 .step p{margin:0;font-size:.9rem}
 .steps-foot{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-weight:700;color:var(--purple)}
 .answers{background:#fff}
-.answers-head{max-width:760px;margin-bottom:24px}
+.answers-head{max-width:none;margin-bottom:24px}.answers-head h2{max-width:760px}
 .answers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .answer-card{background:var(--lav);padding:22px;border-radius:22px;min-height:170px}
 .answer-card:nth-child(2){background:var(--yellow-soft)}
@@ -109,7 +109,7 @@ header{background:var(--purple);border-top:7px solid var(--yellow)}
 .cta-band h2{font-family:var(--display);font-size:2rem;line-height:1;margin:0 0 8px;color:#fff}
 .cta-band p{margin:0;max-width:850px}
 .cta-band .btn{background:#fff;color:var(--purple);white-space:nowrap}
-.contact{background:#f2f7f6;color:var(--text);padding:54px 0}
+.learn-more{padding:28px 0 10px;background:#fff;text-align:center}.learn-more p{margin:0;font-size:1.05rem}.learn-more a{font-weight:800;text-decoration:none}.contact{background:#f2f7f6;color:var(--text);padding:54px 0}
 .contact-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:38px;align-items:center}
 .contact h2{font-family:var(--display);font-size:clamp(2.25rem,3vw,3.4rem);line-height:.94;letter-spacing:-.04em;margin:12px 0 20px;color:var(--ink)}
 .contact p{margin:0 0 15px;max-width:790px}
@@ -136,7 +136,7 @@ footer{background:#3f2b70;color:#eae5f4;padding:22px 0;font-size:.82rem}
 }
 @media(max-width:620px){
   body{font-size:16px}.container{width:min(calc(100% - 30px),var(--max))}.header-inner{min-height:78px}.brand img{height:56px}
-  .hero h1{font-size:3.35rem}.hero-grid{min-height:auto}.hero-copy{padding-top:46px}.program img{height:240px}.answers-grid{grid-template-columns:1fr}
+  .hero h1{font-size:3.35rem}.hero-grid{min-height:auto}.hero-copy{padding-top:46px}.program img{height:240px}.program.elementary img{object-fit:contain}.answers-grid{grid-template-columns:1fr}
   .contact-card{grid-template-columns:84px 1fr;padding:22px}.contact-logo{width:84px}
 }
 </style>
@@ -202,12 +202,13 @@ footer{background:#3f2b70;color:#eae5f4;padding:22px 0;font-size:.82rem}
       <p>Best Buddies does not have to look exactly the same everywhere. Chapters can reflect the age of the students, the school schedule, student interests, and the people involved.</p>
     </div>
     <div class="container program-grid">
-      <article class="program">
+      <article class="program elementary">
         <img src="assets/elementary-hero.png" alt="Two elementary-aged Best Buddies participants">
         <div class="program-copy">
           <span class="program-type">Elementary &amp; Middle School</span>
           <h3>Friendship starts with time together.</h3>
           <p>Students come together through games, activities, lunch, conversation, and shared experiences. Chapters are group-focused, social, and supported by school staff and Best Buddies Canada.</p>
+          <div class="program-tags" aria-label="Elementary and middle school chapter features"><span>Friendship</span><span>Time together</span><span>Group activities</span><span>Shared interests</span><span>Belonging</span></div>
         </div>
       </article>
       <article class="program high">
@@ -217,6 +218,7 @@ footer{background:#3f2b70;color:#eae5f4;padding:22px 0;font-size:.82rem}
           <h3>Friendship and leadership grow together.</h3>
           <p>High-school chapters can include one-to-one Buddy and Peer Buddy friendships, group activities, and a student executive working alongside a staff advisor.</p>
           <p class="program-note">Best Buddies provides training and ongoing support while students help lead the chapter.</p>
+          <div class="program-tags" aria-label="High school chapter features"><span>One-to-one friendship</span><span>Leadership</span><span>Student executive</span><span>Staff supported</span><span>Group activities</span></div>
         </div>
       </article>
     </div>
@@ -280,6 +282,8 @@ footer{background:#3f2b70;color:#eae5f4;padding:22px 0;font-size:.82rem}
       <a class="btn" href="mailto:julianna@bestbuddies.ca?subject=Best%20Buddies%20school%20program">Start a conversation</a>
     </div>
   </section>
+
+  <section class="learn-more" aria-label="Learn more"><div class="container"><p><strong>Want to learn more?</strong> Visit <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">bestbuddies.ca</a> for program information, stories, and resources.</p></div></section>
 
   <section class="contact" id="contact">
     <div class="container contact-grid">
