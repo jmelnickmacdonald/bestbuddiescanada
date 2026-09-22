@@ -9,69 +9,306 @@
 :root{
   --purple:#5A3F98;--violet:#9396CA;--yellow:#FFD420;--teal:#8FD1C4;--orange:#F37735;
   --ink:#1d1823;--text:#433d49;--muted:#6c6571;--wash:#f7f6f9;--lav:#ece9f7;--line:#ded9e5;
+  --yellow-soft:#fff5bd;--teal-soft:#e0f4ef;
   --display:"League Spartan","Arial Black",sans-serif;--body:"Montserrat","Helvetica Neue",Arial,sans-serif;
   --shadow:0 18px 44px rgba(48,31,77,.12);--max:1380px;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--body);color:var(--text);font-size:17px;line-height:1.58;background:#fff;-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{color:var(--purple)}
-.container{width:min(calc(100% - 56px),var(--max));margin:auto}.skip{position:absolute;left:-9999px}.skip:focus{left:20px;top:14px;z-index:9999;background:var(--yellow);color:var(--ink);padding:10px 16px;border-radius:999px}
-header{background:var(--purple);border-top:7px solid var(--yellow)}.header-inner{min-height:92px;display:flex;justify-content:space-between;align-items:center;gap:28px}.brand img{height:68px;width:auto}.nav{display:flex;gap:6px;align-items:center}.nav a{color:#fff;text-decoration:none;font-weight:700;font-size:.88rem;padding:10px 14px;border-radius:999px}.nav a:hover{background:rgba(255,255,255,.12)}
-.hero{background:linear-gradient(135deg,#fff 0%,#fff 51%,#f4effa 100%);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:52px;align-items:center;min-height:580px}.hero-copy{padding:64px 0 66px;max-width:690px}.kicker,.label{display:block;width:fit-content;color:var(--purple);font-weight:800;font-size:.74rem;letter-spacing:.07em;text-transform:uppercase}.kicker:after,.label:after{content:"";display:block;width:44px;height:6px;border-radius:99px;background:var(--yellow);margin-top:8px}.hero h1{font-family:var(--display);font-size:clamp(3.65rem,5vw,5.35rem);line-height:.92;letter-spacing:-.045em;color:var(--ink);margin:18px 0 24px;font-weight:900}.hero h1 span{color:var(--purple)}.hero-lede{font-size:1.13rem;font-weight:700;color:var(--ink);max-width:650px}.hero-copy p{margin:0 0 14px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:999px;font-weight:800;text-decoration:none}.btn.primary{background:var(--purple);color:#fff;box-shadow:0 10px 24px rgba(90,63,152,.18)}.btn.secondary{background:#fff;border:2px solid var(--line)}
-.hero-art{display:flex;align-items:flex-end;justify-content:center;min-height:500px;padding-top:78px}.hero-art img{width:min(100%,650px);object-fit:contain;object-position:center bottom;transform:translateY(28px)}
-.quick{background:var(--lav);padding:20px 0}.quick-grid{display:grid;grid-template-columns:repeat(3,1fr)}.quick-item{padding:6px 26px;border-right:1px solid rgba(90,63,152,.16)}.quick-item:last-child{border-right:0}.quick-item strong{display:block;color:var(--purple);font-family:var(--display);font-size:1.32rem;line-height:1}.quick-item span{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
-.section{padding:76px 0}.section-head{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}.section h2{font-family:var(--display);font-size:clamp(2.45rem,3.7vw,3.9rem);line-height:.95;letter-spacing:-.04em;color:var(--ink);margin:12px 0 0}.prose{max-width:760px}.prose p{margin:0 0 16px}.prose p:first-child{font-weight:600;color:var(--ink);font-size:1.08rem}.value-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}.value{padding:25px 26px;border-radius:26px 26px 62px 26px}.value:nth-child(1){background:#e0f4ef}.value:nth-child(2){background:#fff5bd}.value:nth-child(3){background:#ececf8}.value h3{font-family:var(--display);font-size:1.75rem;color:var(--ink);margin:0 0 8px}.value p{margin:0;font-size:.94rem}
-.programs{background:var(--wash)}.program-intro{max-width:800px;margin-bottom:34px}.program-intro p{margin:15px 0 0;color:var(--muted)}.program-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.program{background:#fff;border-radius:30px 30px 76px 30px;overflow:hidden;box-shadow:var(--shadow);border-bottom:8px solid var(--teal)}.program.high{border-bottom-color:var(--orange);border-radius:30px 76px 30px 30px}.program img{width:100%;height:330px;object-fit:cover}.program-copy{padding:25px 28px 30px}.program-type{display:block;color:var(--purple);font-size:.71rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.program h3{font-family:var(--display);font-size:2rem;line-height:1;color:var(--ink);margin:0 0 10px}.program p{margin:0 0 12px}.program-note{padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}.how-strip{margin-top:28px;padding:24px 28px;border-radius:26px;background:#fff;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}.how-strip strong{font-family:var(--display);font-size:1.45rem;color:var(--purple)}.how-strip p{margin:0}
-.support{background:#fff}.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}.support-card,.hub-card{padding:34px 36px;border-radius:30px}.support-card{background:var(--yellow-soft,#fff5bd)}.hub-card{background:#e0f4ef;border-radius:30px 78px 30px 30px}.support-card h2,.hub-card h3{font-family:var(--display);color:var(--ink);margin:12px 0 16px;line-height:.96}.support-card h2{font-size:clamp(2.35rem,3vw,3.4rem)}.hub-card h3{font-size:2.2rem}.support-card p,.hub-card p{margin:0 0 15px}.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.pills span{padding:9px 12px;border-radius:999px;background:#fff;color:var(--purple);font-size:.79rem;font-weight:700}.coming{display:inline-flex;padding:7px 11px;border-radius:999px;background:var(--yellow);color:var(--ink);font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
-.contact{background:var(--purple);color:#fff;padding:64px 0}.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:38px;align-items:center}.contact h2{font-family:var(--display);font-size:clamp(2.5rem,3.6vw,4rem);line-height:.94;letter-spacing:-.04em;margin:12px 0 20px;color:#fff}.contact p{margin:0 0 15px;max-width:790px}.contact .label{color:#fff}.contact-card{background:#fff;color:var(--text);border-radius:28px 28px 76px 28px;padding:28px;display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center}.contact-logo{width:110px}.contact-name{font-family:var(--display);font-size:1.6rem;line-height:1;color:var(--ink);margin-bottom:5px}.contact-title{font-weight:700;color:var(--purple);margin-bottom:12px}.contact-lines{font-size:.88rem;line-height:1.55;color:var(--muted)}.contact-lines a{font-weight:700;text-decoration:none}.contact-actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}.contact-actions a{display:inline-flex;padding:9px 12px;border-radius:999px;background:var(--lav);color:var(--purple);font-weight:700;text-decoration:none;font-size:.8rem}
-footer{background:#3f2b70;color:#eae5f4;padding:22px 0;font-size:.82rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:960px){.nav{display:none}.hero-grid,.section-head,.support-grid,.contact-grid{grid-template-columns:1fr}.hero-copy{padding-bottom:18px}.hero-art{padding-top:0;min-height:auto}.hero-art img{transform:none;max-height:480px}.quick-grid{grid-template-columns:1fr}.quick-item{border-right:0;border-bottom:1px solid rgba(90,63,152,.16);padding:14px 0}.value-row,.program-grid{grid-template-columns:1fr}.section{padding:62px 0}.contact-card{max-width:600px}.program img{height:300px}}
-@media(max-width:620px){body{font-size:16px}.container{width:min(calc(100% - 30px),var(--max))}.header-inner{min-height:78px}.brand img{height:56px}.hero h1{font-size:3.35rem}.hero-grid{min-height:auto}.hero-copy{padding-top:46px}.program img{height:240px}.how-strip{grid-template-columns:1fr}.contact-card{grid-template-columns:84px 1fr;padding:22px}.contact-logo{width:84px}}
-
-/* v14 layout refinements */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--text);font-size:17px;line-height:1.58;background:#fff;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--purple)}
+.container{width:min(calc(100% - 56px),var(--max));margin:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:20px;top:14px;z-index:9999;background:var(--yellow);color:var(--ink);padding:10px 16px;border-radius:999px}
+header{background:var(--purple);border-top:7px solid var(--yellow)}
+.header-inner{min-height:92px;display:flex;justify-content:space-between;align-items:center;gap:28px}
+.brand img{height:68px;width:auto}
+.nav{display:flex;gap:6px;align-items:center}
+.nav a{color:#fff;text-decoration:none;font-weight:700;font-size:.88rem;padding:10px 14px;border-radius:999px}
+.nav a:hover{background:rgba(255,255,255,.12)}
+.hero{background:linear-gradient(135deg,#fff 0%,#fff 51%,#f4effa 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:52px;align-items:center;min-height:580px}
+.hero-copy{padding:64px 0 66px;max-width:690px}
+.kicker,.label{display:block;width:fit-content;color:var(--purple);font-weight:800;font-size:.74rem;letter-spacing:.07em;text-transform:uppercase}
+.kicker:after,.label:after{content:"";display:block;width:44px;height:6px;border-radius:99px;background:var(--yellow);margin-top:8px}
+.hero h1{font-family:var(--display);font-size:clamp(3.65rem,5vw,5.35rem);line-height:.92;letter-spacing:-.045em;color:var(--ink);margin:18px 0 24px;font-weight:900}
+.hero h1 span{color:var(--purple)}
+.hero-lede{font-size:1.13rem;font-weight:700;color:var(--ink);max-width:650px}
+.hero-copy p{margin:0 0 14px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:999px;font-weight:800;text-decoration:none}
+.btn.primary{background:var(--purple);color:#fff;box-shadow:0 10px 24px rgba(90,63,152,.18)}
+.btn.secondary{background:#fff;border:2px solid var(--line)}
+.hero-art{display:flex;align-items:center;justify-content:center;min-height:500px;padding-top:34px}
+.hero-art img{width:min(100%,690px);object-fit:contain;object-position:center bottom;transform:translateY(18px)}
+.quick{background:var(--lav);padding:20px 0}
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.quick-item{padding:6px 26px;border-right:1px solid rgba(90,63,152,.16)}
+.quick-item:last-child{border-right:0}
+.quick-item strong{display:block;color:var(--purple);font-family:var(--display);font-size:1.32rem;line-height:1}
+.quick-item span{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
 .section{padding:58px 0}
-.section-head{grid-template-columns:.72fr 1.28fr;gap:54px}
-.section h2{font-size:clamp(2.15rem,3vw,3.15rem);line-height:.98;max-width:560px}
+.section-head{display:grid;grid-template-columns:.72fr 1.28fr;gap:54px;align-items:start}
+.section h2{font-family:var(--display);font-size:clamp(2.15rem,3vw,3.15rem);line-height:.98;letter-spacing:-.04em;color:var(--ink);margin:12px 0 0;max-width:560px}
 .prose{max-width:720px}
-.value-row{gap:14px;margin-top:28px}
+.prose p{margin:0 0 16px}
+.prose p:first-child{font-weight:600;color:var(--ink);font-size:1.08rem}
+.value-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
 .value{padding:20px 22px;border-radius:22px}
-.value h3{font-size:1.5rem;margin-bottom:6px}
-.value p{font-size:.9rem;line-height:1.5}
+.value:nth-child(1){background:#e0f4ef}.value:nth-child(2){background:#fff5bd}.value:nth-child(3){background:#ececf8}
+.value h3{font-family:var(--display);font-size:1.5rem;color:var(--ink);margin:0 0 6px}
+.value p{margin:0;font-size:.9rem;line-height:1.5}
+.programs{background:var(--wash)}
 .program-intro{max-width:760px;margin-bottom:26px}
 .program-intro h2{font-family:var(--display);font-size:clamp(2.25rem,3.2vw,3.25rem);line-height:.98;letter-spacing:-.035em;color:var(--ink);margin:12px 0 0}
-.program-intro p{margin-top:12px}
-.program-grid{gap:20px}
-.program img{height:300px}
+.program-intro p{margin:12px 0 0;color:var(--muted)}
+.program-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.program{background:#fff;border-radius:30px 30px 76px 30px;overflow:hidden;box-shadow:var(--shadow);border-bottom:8px solid var(--teal)}
+.program.high{border-bottom-color:var(--orange);border-radius:30px 76px 30px 30px}
+.program img{width:100%;height:300px;object-fit:cover}
 .program-copy{padding:22px 25px 26px}
-.program h3{font-size:1.8rem}
-.how-strip{margin-top:22px;padding:20px 24px}
-.how-strip strong{font-size:1.28rem}
-.support-card,.hub-card{padding:30px 32px}
-.contact{padding:54px 0}
-.contact-grid{grid-template-columns:1.12fr .88fr}
-.contact h2{font-size:clamp(2.25rem,3vw,3.4rem)}
-.contact-card{padding:24px;grid-template-columns:96px 1fr}
+.program-type{display:block;color:var(--purple);font-size:.71rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.program h3{font-family:var(--display);font-size:1.8rem;line-height:1;color:var(--ink);margin:0 0 10px}
+.program p{margin:0 0 12px}
+.program-note{padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+.cost-note{margin-top:24px;padding:14px 18px;border-radius:16px;background:#fff;border-left:6px solid var(--yellow);font-size:.94rem}
+.cost-note strong{color:var(--ink)}
+.steps{margin-top:22px;padding:22px 24px;border-radius:24px;background:#fff}
+.steps-head{font-family:var(--display);font-size:1.35rem;color:var(--purple);margin-bottom:16px}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{padding-right:16px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0;padding-right:0}
+.step-num{display:inline-flex;width:30px;height:30px;border-radius:50%;align-items:center;justify-content:center;background:var(--orange);color:#fff;font-weight:800;margin-bottom:8px}
+.step strong{display:block;color:var(--ink);margin-bottom:4px}
+.step p{margin:0;font-size:.9rem}
+.steps-foot{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-weight:700;color:var(--purple)}
+.answers{background:#fff}
+.answers-head{max-width:760px;margin-bottom:24px}
+.answers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.answer-card{background:var(--lav);padding:22px;border-radius:22px;min-height:170px}
+.answer-card:nth-child(2){background:var(--yellow-soft)}
+.answer-card:nth-child(3){background:var(--teal-soft)}
+.answer-card:nth-child(4){background:#f4eef9}
+.answer-card h3{font-family:var(--display);font-size:1.35rem;line-height:1.05;color:var(--ink);margin:0 0 9px}
+.answer-card p{margin:0;font-size:.91rem}
+.answer-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.answer-links a{font-weight:800;text-decoration:none;padding:10px 14px;border-radius:999px;background:#fff;border:2px solid var(--line)}
+.support{background:#fff}
+.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.support-card,.hub-card{padding:30px 32px;border-radius:30px}
+.support-card{background:var(--yellow-soft)}
+.hub-card{background:#e0f4ef;border-radius:30px 78px 30px 30px}
+.support-card h2,.hub-card h3{font-family:var(--display);color:var(--ink);margin:12px 0 16px;line-height:.96}
+.support-card h2{font-size:clamp(2.35rem,3vw,3.4rem)}
+.hub-card h3{font-size:2.2rem}
+.support-card p,.hub-card p{margin:0 0 15px}
+.coming{display:inline-flex;padding:7px 11px;border-radius:999px;background:var(--yellow);color:var(--ink);font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.cta-band{background:var(--purple);color:#fff;padding:30px 0}
+.cta-band .container{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.cta-band h2{font-family:var(--display);font-size:2rem;line-height:1;margin:0 0 8px;color:#fff}
+.cta-band p{margin:0;max-width:850px}
+.cta-band .btn{background:#fff;color:var(--purple);white-space:nowrap}
+.contact{background:#f2f7f6;color:var(--text);padding:54px 0}
+.contact-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:38px;align-items:center}
+.contact h2{font-family:var(--display);font-size:clamp(2.25rem,3vw,3.4rem);line-height:.94;letter-spacing:-.04em;margin:12px 0 20px;color:var(--ink)}
+.contact p{margin:0 0 15px;max-width:790px}
+.contact .label{color:var(--purple)}
+.contact-card{background:#fff;color:var(--text);border-radius:28px 28px 76px 28px;padding:24px;display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center;box-shadow:0 14px 36px rgba(48,31,77,.08)}
 .contact-logo{width:96px}
-.hero-art{padding-top:34px;align-items:center}
-.hero-art img{width:min(100%,690px);transform:translateY(18px)}
+.contact-name{font-family:var(--display);font-size:1.6rem;line-height:1;color:var(--ink);margin-bottom:5px}
+.contact-title{font-weight:700;color:var(--purple);margin-bottom:12px}
+.contact-lines{font-size:.88rem;line-height:1.55;color:var(--muted)}
+.contact-lines a{font-weight:700;text-decoration:none}
+.contact-actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.contact-actions a{display:inline-flex;padding:9px 12px;border-radius:999px;background:var(--lav);color:var(--purple);font-weight:700;text-decoration:none;font-size:.8rem}
+footer{background:#3f2b70;color:#eae5f4;padding:22px 0;font-size:.82rem}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{color:#fff;text-decoration:none;font-weight:700}
+@media(max-width:1100px){.answers-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:960px){
-  .section{padding:50px 0}
-  .section-head{gap:30px}
-  .hero-art{padding-top:0}
-  .hero-art img{transform:none}
+  .nav{display:none}.hero-grid,.section-head,.support-grid,.contact-grid,.cta-band .container{grid-template-columns:1fr}
+  .hero-copy{padding-bottom:18px}.hero-art{padding-top:0;min-height:auto}.hero-art img{transform:none;max-height:480px}
+  .quick-grid{grid-template-columns:1fr}.quick-item{border-right:0;border-bottom:1px solid rgba(90,63,152,.16);padding:14px 0}
+  .value-row,.program-grid,.steps-grid{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line);padding:0 0 14px;margin-bottom:14px}.step:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .section{padding:50px 0}.section-head{gap:30px}.contact-card{max-width:600px}
 }
-
+@media(max-width:620px){
+  body{font-size:16px}.container{width:min(calc(100% - 30px),var(--max))}.header-inner{min-height:78px}.brand img{height:56px}
+  .hero h1{font-size:3.35rem}.hero-grid{min-height:auto}.hero-copy{padding-top:46px}.program img{height:240px}.answers-grid{grid-template-columns:1fr}
+  .contact-card{grid-template-columns:84px 1fr;padding:22px}.contact-logo{width:84px}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
-<header><div class="container header-inner"><a class="brand" href="#top"><img src="assets/bb-logo.png" alt="Best Buddies Canada"></a><nav class="nav" aria-label="Page navigation"><a href="#why">Why it matters</a><a href="#programs">In schools</a><a href="#support">Support</a><a href="#contact">Contact</a></nav></div></header>
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="#top"><img src="assets/bb-logo.png" alt="Best Buddies Canada"></a>
+    <nav class="nav" aria-label="Page navigation">
+      <a href="#why">Why it matters</a>
+      <a href="#programs">In schools</a>
+      <a href="#answers">Quick answers</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 <main id="main">
-<section class="hero" id="top"><div class="container hero-grid"><div class="hero-copy"><span class="kicker">Friendship, belonging, and leadership</span><h1>Inclusion grows through <span>connection.</span></h1><p class="hero-lede">Best Buddies Canada creates opportunities for friendship, leadership, and inclusion in schools and communities across the country.</p><p>Through Best Buddies chapters, students spend time together, build friendships, take on leadership roles, and help make inclusion part of everyday school life.</p><div class="actions"><a class="btn primary" href="#programs">See how it works</a><a class="btn secondary" href="https://bestbuddies.ca/" target="_blank" rel="noopener">Visit BestBuddies.ca</a></div></div><div class="hero-art"><img src="assets/teacherhubmain.png" alt="Best Buddies students together at a school event"></div></div></section>
-<section class="quick"><div class="container quick-grid"><div class="quick-item"><strong>Flexible by design</strong><span>Chapters can reflect the people and rhythm of each school.</span></div><div class="quick-item"><strong>Supported throughout</strong><span>Resources, training, ideas, and staff support are available along the way.</span></div><div class="quick-item"><strong>Part of something bigger</strong><span>Schools join a wide Best Buddies community across Canada.</span></div></div></section>
-<section class="section" id="why"><div class="container section-head"><div><span class="label">Why Best Buddies matters</span><h2>Every student deserves to feel known, included, and part of school life.</h2></div><div class="prose"><p>Best Buddies brings together students with and without intellectual and developmental disabilities through friendship clubs, one-to-one friendships, group activities, and student leadership.</p><p>Students spend time together and get to know one another beyond the roles they may usually have at school. For students with intellectual and developmental disabilities, that can mean more opportunities for friendship and social connection. Their peers gain new relationships, new perspectives, and opportunities to lead.</p></div></div><div class="container value-row"><article class="value"><h3>Friendship</h3><p>Regular opportunities to spend time together, discover shared interests, and build relationships.</p></article><article class="value"><h3>Belonging</h3><p>More ways for students to feel welcomed, recognized, and part of school life.</p></article><article class="value"><h3>Leadership</h3><p>Students can help plan, welcome others, take responsibility, and shape the culture around them.</p></article></div></section>
-<section class="section programs" id="programs"><div class="container program-intro"><span class="label">Built to fit your school</span><h2>A flexible program that can take shape around your school.</h2><p>Best Buddies does not have to look exactly the same everywhere. Chapters can reflect the age of the students, the school schedule, student interests, and the people involved.</p></div><div class="container program-grid"><article class="program"><img src="assets/elementary-hero.png" alt="Two elementary-aged Best Buddies participants"><div class="program-copy"><span class="program-type">Elementary &amp; Middle School</span><h3>Friendship starts with time together.</h3><p>Students come together through games, activities, lunch, conversation, and shared experiences. Chapters are group-focused, social, and supported by school staff and Best Buddies Canada.</p></div></article><article class="program high"><img src="assets/high-school-hero.png" alt="Two high-school Best Buddies participants"><div class="program-copy"><span class="program-type">High School</span><h3>Friendship and leadership grow together.</h3><p>High-school chapters can include one-to-one Buddy and Peer Buddy friendships, group activities, and a student executive working alongside a staff advisor.</p><p class="program-note">Best Buddies provides training and guidance, and we are continuing to build more ways for student leaders to connect, exchange ideas, and learn from one another.</p></div></article></div><div class="container how-strip"><strong>What does a school need to do?</strong><p>Identify a staff advisor, bring interested students together, and create regular opportunities to meet. Best Buddies provides the structure, resources, ideas, and support to help the chapter take shape.</p></div></section>
-<section class="section support" id="support"><div class="container support-grid"><div class="support-card"><span class="label">Support for educators</span><h2>You have support along the way.</h2><p>We know school days are already full. Teacher advisors have access to practical resources, activity ideas, training, planning tools, and ongoing support when they need help deciding what comes next.</p><div class="pills"><span>Program guides</span><span>Activity ideas</span><span>Training</span><span>Planning tools</span><span>Communication resources</span><span>Staff support</span></div></div><div class="hub-card"><span class="coming">Coming this fall</span><h3>A more connected home for teacher support.</h3><p>We are building a centralized Teacher Hub that will bring practical chapter guidance, activity planning, timely resources, and chapter tools together in one place.</p><p><strong>Built with educators in mind, so a strong chapter is easier to run.</strong></p></div></div></section>
-<section class="contact" id="contact"><div class="container contact-grid"><div><span class="label">Your Best Buddies contact</span><h2>I’m only a call or email away.</h2><p>I’m based in the Annapolis Valley, Nova Scotia, and support Best Buddies chapters across Eastern Canada. Before joining Best Buddies, I spent more than a decade in education, with a background in learning support, special education, and inclusive program development. I also hold a Master of Professional Education in Equity, Diversity and Social Justice.</p><p>That experience shapes how I approach this work. I want Best Buddies to be flexible, well supported, and realistic for schools. I’m looking forward to getting out on the road this school year to visit chapters, meet educators and student leaders, and learn from what is working in different communities. Whether you are exploring Best Buddies for the first time, looking to grow an existing chapter, or simply have questions, I’m only a call or email away.</p></div><aside class="contact-card"><img class="contact-logo" src="assets/bb-logo.png" alt="Best Buddies Canada"><div><div class="contact-name">Julianna Melnick-MacDonald</div><div class="contact-title">East Coast Program Advisor</div><div class="contact-lines">Best Buddies Canada<br>#2000 – 2 Sheppard Ave. E.<br>North York, Ontario M2N 5Y7<br>416-531-0003 ext. 5300</div><div class="contact-actions"><a href="mailto:julianna@bestbuddies.ca">Email me</a><a href="https://bestbuddies.ca/" target="_blank" rel="noopener">BestBuddies.ca</a></div></div></aside></div></section>
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="kicker">Friendship, belonging, and leadership</span>
+        <h1>Inclusion grows through <span>connection.</span></h1>
+        <p class="hero-lede">Best Buddies Canada creates opportunities for friendship, leadership, and inclusion in schools and communities across the country.</p>
+        <p>Through Best Buddies chapters, students spend time together, build friendships, take on leadership roles, and help make inclusion part of everyday school life.</p>
+        <div class="actions">
+          <a class="btn primary" href="#programs">See how it works</a>
+          <a class="btn secondary" href="https://bestbuddies.ca/" target="_blank" rel="noopener">Visit BestBuddies.ca</a>
+        </div>
+      </div>
+      <div class="hero-art"><img src="assets/teacherhubmain.png" alt="Best Buddies students together at a school event"></div>
+    </div>
+  </section>
+
+  <section class="quick">
+    <div class="container quick-grid">
+      <div class="quick-item"><strong>Flexible by design</strong><span>Chapters can reflect the people and rhythm of each school.</span></div>
+      <div class="quick-item"><strong>Supported throughout</strong><span>Resources, training, ideas, and staff support are available along the way.</span></div>
+      <div class="quick-item"><strong>Part of something bigger</strong><span>Schools join a wide Best Buddies community across Canada.</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="container section-head">
+      <div><span class="label">Why Best Buddies matters</span><h2>Every student deserves to feel known, included, and part of school life.</h2></div>
+      <div class="prose">
+        <p>Best Buddies brings together students with and without intellectual and developmental disabilities through friendship clubs, one-to-one friendships, group activities, and student leadership.</p>
+        <p>Students spend time together and get to know one another beyond the roles they may usually have at school. For students with intellectual and developmental disabilities, that can mean more opportunities for friendship and social connection. Students build new relationships, gain new perspectives, and have opportunities to lead.</p>
+      </div>
+    </div>
+    <div class="container value-row">
+      <article class="value"><h3>Friendship</h3><p>Regular opportunities to spend time together, discover shared interests, and build relationships.</p></article>
+      <article class="value"><h3>Belonging</h3><p>More ways for students to feel welcomed, recognized, and part of school life.</p></article>
+      <article class="value"><h3>Leadership</h3><p>Students can help plan, welcome others, take responsibility, and shape the culture around them.</p></article>
+    </div>
+  </section>
+
+  <section class="section programs" id="programs">
+    <div class="container program-intro">
+      <span class="label">Built to fit your school</span>
+      <h2>A flexible program that can take shape around your school.</h2>
+      <p>Best Buddies does not have to look exactly the same everywhere. Chapters can reflect the age of the students, the school schedule, student interests, and the people involved.</p>
+    </div>
+    <div class="container program-grid">
+      <article class="program">
+        <img src="assets/elementary-hero.png" alt="Two elementary-aged Best Buddies participants">
+        <div class="program-copy">
+          <span class="program-type">Elementary &amp; Middle School</span>
+          <h3>Friendship starts with time together.</h3>
+          <p>Students come together through games, activities, lunch, conversation, and shared experiences. Chapters are group-focused, social, and supported by school staff and Best Buddies Canada.</p>
+        </div>
+      </article>
+      <article class="program high">
+        <img src="assets/high-school-hero.png" alt="Two high-school Best Buddies participants">
+        <div class="program-copy">
+          <span class="program-type">High School</span>
+          <h3>Friendship and leadership grow together.</h3>
+          <p>High-school chapters can include one-to-one Buddy and Peer Buddy friendships, group activities, and a student executive working alongside a staff advisor.</p>
+          <p class="program-note">Best Buddies provides training and ongoing support while students help lead the chapter.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="container cost-note">
+      <strong>No cost to schools.</strong> Best Buddies school programs are free for participating schools. Optional fundraising opportunities, including Friendship Walks, are supported by Best Buddies Canada.
+    </div>
+
+    <div class="container steps">
+      <div class="steps-head">What does a school need to do?</div>
+      <div class="steps-grid">
+        <div class="step"><span class="step-num">1</span><strong>Identify a staff advisor.</strong><p>A school staff member serves as the main chapter contact.</p></div>
+        <div class="step"><span class="step-num">2</span><strong>Connect with Best Buddies.</strong><p>We’ll help with the simple start-up process, resources, training, and next steps.</p></div>
+        <div class="step"><span class="step-num">3</span><strong>Bring students together.</strong><p>Create regular opportunities to meet in a way that works for your school.</p></div>
+      </div>
+      <div class="steps-foot">Best Buddies provides the structure, resources, ideas, and support to help the chapter take shape.</div>
+    </div>
+  </section>
+
+  <section class="section answers" id="answers">
+    <div class="container answers-head">
+      <span class="label">Quick answers</span>
+      <h2>A few things schools often ask.</h2>
+    </div>
+    <div class="container answers-grid">
+      <article class="answer-card"><h3>Is there a cost?</h3><p>No. Best Buddies school programs are free for participating schools.</p></article>
+      <article class="answer-card"><h3>Is fundraising required?</h3><p>No. Fundraising is optional. If your chapter chooses to participate, including in a Friendship Walk, Best Buddies provides resources and support.</p></article>
+      <article class="answer-card"><h3>How much time does it take?</h3><p>Chapters are designed to work around the school’s schedule. Meetings can happen at a regular time that makes sense for your students and staff.</p></article>
+      <article class="answer-card"><h3>Will we have support?</h3><p>Yes. Best Buddies provides training, practical resources, activity ideas, planning guidance, and ongoing staff support throughout the year.</p></article>
+    </div>
+    <div class="container answer-links">
+      <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">Explore BestBuddies.ca</a>
+      <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">View helpful resources</a>
+      <a href="mailto:julianna@bestbuddies.ca?subject=Best%20Buddies%20school%20program">Email Julianna</a>
+    </div>
+  </section>
+
+  <section class="section support" id="support">
+    <div class="container support-grid">
+      <div class="support-card">
+        <span class="label">Support for educators</span>
+        <h2>You have support along the way.</h2>
+        <p>We know school days are already full. Best Buddies provides practical tools, training, activity ideas, fundraising and Friendship Walk resources, and guidance throughout the year.</p>
+        <p>We’re also here for the day-to-day questions that come with running a chapter — from planning activities and supporting student leaders to figuring out what works best in your school.</p>
+      </div>
+      <div class="hub-card">
+        <span class="coming">Coming this fall</span>
+        <h3>A more connected home for teacher support.</h3>
+        <p>We’re building a centralized Teacher Hub that will bring practical guidance, activity planning, resources, and chapter tools together in one place.</p>
+        <p><strong>Built with educators in mind, so a strong chapter is easier to run.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div>
+        <h2>Interested in bringing Best Buddies to your school?</h2>
+        <p>Start with a conversation. We can answer questions, learn more about your school community, and help you explore what Best Buddies could look like there.</p>
+      </div>
+      <a class="btn" href="mailto:julianna@bestbuddies.ca?subject=Best%20Buddies%20school%20program">Start a conversation</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <span class="label">Your Best Buddies contact</span>
+        <h2>I’m only a call or email away.</h2>
+        <p>Based in Nova Scotia’s Annapolis Valley, I support Best Buddies chapters across Eastern Canada. Before joining Best Buddies, I spent more than a decade in education, including learning support, special education, and inclusive program development.</p>
+        <p>That school-based perspective shapes how I approach this work. I know how busy schools are, and I’m here to make starting — and sustaining — a chapter as straightforward and well-supported as possible. I’m looking forward to visiting chapters and connecting with educators and student leaders throughout the year.</p>
+      </div>
+      <aside class="contact-card">
+        <img class="contact-logo" src="assets/bb-logo.png" alt="Best Buddies Canada">
+        <div>
+          <div class="contact-name">Julianna Melnick-MacDonald</div>
+          <div class="contact-title">East Coast Program Advisor</div>
+          <div class="contact-lines">Best Buddies Canada<br>#2000 – 2 Sheppard Ave. E.<br>North York, Ontario M2N 5Y7<br>416-531-0003 ext. 5300<br><a href="mailto:julianna@bestbuddies.ca">julianna@bestbuddies.ca</a></div>
+          <div class="contact-actions">
+            <a href="mailto:julianna@bestbuddies.ca">Email me</a>
+            <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">BestBuddies.ca</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
 </main>
-<footer><div class="container footer-inner"><span>Best Buddies Canada</span><span>Because everyone deserves a friend.</span></div></footer>
+<footer>
+  <div class="container footer-inner">
+    <span>Best Buddies Canada | Because everyone deserves a friend.</span>
+    <span class="footer-links"><a href="https://bestbuddies.ca/" target="_blank" rel="noopener">BestBuddies.ca</a><a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">Helpful resources</a></span>
+  </div>
+</footer>
 </body>
 </html>
