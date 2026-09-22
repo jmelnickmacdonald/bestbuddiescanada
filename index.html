@@ -111,7 +111,7 @@ section[id]{scroll-margin-top:112px}
 .cta-band h2{font-family:var(--display);font-size:2rem;line-height:1;margin:0 0 8px;color:#fff}
 .cta-band p{margin:0;max-width:850px}
 .cta-band .btn{background:#fff;color:var(--purple);white-space:nowrap}
-.learn-more{padding:28px 0 10px;background:#fff;text-align:center}.learn-more p{margin:0;font-size:1.05rem}.learn-more a{font-weight:800;text-decoration:none}.contact{background:var(--purple);color:#fff;padding:54px 0}
+.learn-more{padding:24px 0 20px;background:#fff;text-align:center}.learn-more p{margin:0;font-size:1rem;color:var(--muted)}.learn-more strong{color:var(--ink)}.learn-more a{font-weight:800;text-decoration:none;color:var(--purple)}.contact{background:var(--purple);color:#fff;padding:54px 0}
 .contact-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:38px;align-items:center}
 .contact h2{font-family:var(--display);font-size:clamp(2.25rem,3vw,3.4rem);line-height:.94;letter-spacing:-.04em;margin:12px 0 20px;color:#fff}
 .contact p{margin:0 0 15px;max-width:790px;color:#fff}
@@ -159,13 +159,116 @@ footer{background:#3f2b70;color:#eae5f4;padding:22px 0;font-size:.82rem}
   .contact-card{grid-template-columns:1fr;padding:22px}.contact-logo{width:88px}.contact-actions{margin-top:12px}
   .cta-band .container{gap:18px}.cta-band h2{font-size:1.7rem}
 }
+
+/* Final visual polish — keeps the PDF's editorial feel while remaining responsive */
+body{background:#fff}
+header{background:rgba(255,255,255,.96);border-top:6px solid var(--yellow);box-shadow:0 6px 22px rgba(48,31,77,.09);backdrop-filter:blur(12px)}
+.header-inner{min-height:78px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:800;font-size:1.28rem;white-space:nowrap}
+.brand img{height:56px}
+.nav a{color:var(--purple);position:relative}
+.nav a:hover,.nav a:focus-visible{background:var(--lav);transform:none}
+.nav a:after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:3px;border-radius:3px;background:var(--yellow);transform:scaleX(0);transition:transform .18s ease}
+.nav a:hover:after,.nav a:focus-visible:after{transform:scaleX(1)}
+section[id]{scroll-margin-top:104px}
+
+.hero{background:linear-gradient(135deg,#fff 0%,#fff 58%,#f3eff9 100%)}
+.hero-copy{padding-top:70px}
+.hero-art img{filter:drop-shadow(0 16px 28px rgba(48,31,77,.08))}
+.quick{background:#f1eef8;border-top:1px solid rgba(90,63,152,.06);border-bottom:1px solid rgba(90,63,152,.06)}
+.quick-item strong{font-size:1.25rem}
+
+.programs{background:#faf9fc}
+.program-grid{gap:28px}
+.program{border:0;box-shadow:0 14px 38px rgba(48,31,77,.09);border-bottom-width:6px}
+.program:hover{transform:none;box-shadow:0 18px 44px rgba(48,31,77,.12)}
+.program img{aspect-ratio:16/8.2}
+.program-copy{padding:26px 30px 30px}
+.program-type{font-size:.74rem;letter-spacing:.08em}
+.program-tags{margin-top:16px;gap:7px}
+.program-tags span{padding:7px 11px;border:0;background:#f0edf8!important;color:#4b3c68;font-size:.77rem}
+.program-tags span:before{display:none}
+.program.elementary{border-bottom-color:var(--teal);border-radius:28px 28px 70px 28px}
+.program.high{border-bottom-color:var(--orange);border-radius:28px 70px 28px 28px}
+.program.elementary .program-tags span{background:#e7f5f1!important;color:#356f66}
+.program.high .program-tags span{background:#fff0e8!important;color:#8c4d2c}
+.program-note{background:#f5f2fa;border-left:4px solid var(--purple)!important;border-radius:12px;padding:13px 15px!important}
+.cost-note{background:#fff9d9;border-left-color:var(--yellow);box-shadow:0 8px 24px rgba(48,31,77,.05)}
+.steps{box-shadow:0 12px 30px rgba(48,31,77,.06);border:1px solid rgba(90,63,152,.07)}
+
+.answers{background:#fff}
+.answers-wrap{position:relative}
+.answers-head{padding:30px 28px;border-radius:26px;background:#f0edf8}
+.answers-head .label:after{background:var(--teal)}
+.answers-grid{box-shadow:none;border:1px solid rgba(90,63,152,.1);background:#fcfbfe;border-radius:28px}
+.answer-links a{background:var(--purple);color:#fff;border:0}
+
+.support{background:#faf9fc}
+.support-card{background:#fff3b5;border-radius:28px 28px 64px 28px}
+.hub-card{background:#dff3ef;border-radius:28px 64px 28px 28px}
+.support-card,.hub-card{box-shadow:0 10px 28px rgba(48,31,77,.06)}
+
+.cta-band{background:transparent;padding:32px 0 10px}
+.cta-band .container{background:linear-gradient(135deg,#4e3786,#5a3f98);border-radius:28px 28px 64px 28px;padding:28px 32px;box-shadow:0 15px 34px rgba(48,31,77,.12)}
+.cta-band h2{color:#9ee0d3}
+.cta-band .btn{background:#fff;color:var(--purple);box-shadow:none}
+.learn-more{padding:20px 0 34px;background:#fff}
+.learn-more p{font-size:.98rem;color:var(--muted)}
+.learn-more strong{color:var(--ink)}
+
+.contact{background:#fff;color:var(--text);padding:24px 0 58px;position:relative;overflow:hidden}
+.contact-copy{position:relative}
+.contact-copy:after{content:"";display:block;width:38px;height:8px;margin-top:22px;background:radial-gradient(circle,var(--yellow) 0 3px,transparent 3.5px) 0 0/12px 8px repeat-x;opacity:.9}
+.contact-grid{position:relative;z-index:1;background:#e7f5f2;border:1px solid rgba(90,63,152,.06);border-radius:34px 34px 78px 34px;padding:42px 44px;grid-template-columns:1.18fr .82fr;gap:46px;align-items:center}
+.contact .label{color:var(--purple)}
+.contact h2{color:var(--ink);font-size:clamp(2.25rem,3vw,3.25rem)}
+.contact p{color:var(--text);max-width:760px}
+.contact-card{border-radius:26px 26px 62px 26px;padding:26px;background:#fff;box-shadow:0 12px 34px rgba(48,31,77,.07);border:1px solid rgba(90,63,152,.06);grid-template-columns:92px 1fr}
+.contact-logo{width:92px}
+.contact-actions a{background:#f0edf8}
+footer{background:#4a347f;padding:18px 0;border-top:4px solid var(--yellow)}
+
+@media(max-width:960px){
+  header{background:rgba(255,255,255,.98)}
+  .header-inner{display:flex;min-height:72px;padding:0;gap:18px}
+  .brand{padding:0}.brand img{height:46px}.brand span{font-size:1.05rem}
+  .nav{margin-left:auto;width:auto;max-width:70vw;padding:0 0 2px}
+  .nav a{font-size:.78rem;padding:8px 10px}
+  section[id]{scroll-margin-top:92px}
+  .program img{aspect-ratio:16/8.5}
+  .answers-head{padding:24px}
+  .contact-grid{grid-template-columns:1fr;padding:34px 30px;border-radius:30px 30px 64px 30px}
+  .contact-card{max-width:none;width:100%}
+}
+@media(max-width:700px){
+  .header-inner{display:grid;grid-template-columns:1fr;padding:8px 0 7px;gap:4px}
+  .brand{justify-content:flex-start}.brand img{height:42px}.brand span{font-size:1rem}
+  .nav{margin:0;width:100%;max-width:none}
+  .nav a{padding:7px 9px}
+  section[id]{scroll-margin-top:118px}
+  .hero-copy{padding-top:38px}
+  .program img{aspect-ratio:4/3}
+  .program-copy{padding:22px 20px 24px}
+  .answers-head{border-radius:22px}
+  .cta-band .container{padding:24px 22px;border-radius:24px 24px 48px 24px}
+  .contact{padding-top:10px}
+  .contact-grid{padding:28px 22px;border-radius:26px 26px 52px 26px}
+  .contact-card{grid-template-columns:72px 1fr;padding:20px}.contact-logo{width:72px}
+}
+@media(max-width:470px){
+  .brand span{display:none}
+  .header-inner{grid-template-columns:auto 1fr;align-items:center}.nav{grid-column:1/-1}
+  .contact-card{grid-template-columns:1fr}.contact-logo{width:78px}
+  .cta-band .btn{width:100%}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <header>
   <div class="container header-inner">
-    <a class="brand" href="#top"><img src="assets/bb-logo.png" alt="Best Buddies Canada"></a>
+    <a class="brand" href="#top"><img src="assets/bb-logo.png" alt=""><span>Best Buddies Canada</span></a>
     <nav class="nav" aria-label="Page navigation">
       <a href="#why">Why it matters</a>
       <a href="#programs">In schools</a>
@@ -310,7 +413,7 @@ footer{background:#3f2b70;color:#eae5f4;padding:22px 0;font-size:.82rem}
 
   <section class="contact" id="contact">
     <div class="container contact-grid">
-      <div>
+      <div class="contact-copy">
         <span class="label">Your Best Buddies contact</span>
         <h2>I’m only a call or email away.</h2>
         <p>Based in Nova Scotia’s Annapolis Valley, I support Best Buddies chapters across Eastern Canada. Before joining Best Buddies, I spent more than a decade in education, including learning support, special education, and inclusive program development.</p>
