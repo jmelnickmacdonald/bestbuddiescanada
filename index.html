@@ -677,6 +677,12 @@ footer{background:#fff;color:var(--text);border-top:4px solid var(--yellow);padd
   .contact-card{border-left:0!important}
 }
 
+/* Final flow refinements: fewer sections, simpler navigation, resources live with educator support. */
+.support-links{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:22px!important;font-weight:800}
+.support-links a{color:var(--purple);text-decoration-thickness:1.5px;text-underline-offset:4px}
+.support-links span{color:#aaa1b3}
+@media(max-width:620px){.support-links{gap:8px 10px}.support-links span{display:none}.support-links a{width:100%}}
+
 </style>
 </head>
 <body>
@@ -685,10 +691,9 @@ footer{background:#fff;color:var(--text);border-top:4px solid var(--yellow);padd
   <div class="container header-inner">
     <a class="brand" href="#top"><img src="assets/bb-logo.png" alt=""><span>Best Buddies Canada</span></a>
     <nav class="nav" aria-label="Page navigation">
-      <a href="#why">Why it matters</a>
-      <a href="#programs">In schools</a>
-      <a href="#answers">Quick answers</a>
-      <a href="#support">Support</a>
+      <a href="#why">Why Best Buddies</a>
+      <a href="#programs">School programs</a>
+      <a href="#support">Support for educators</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -776,27 +781,6 @@ footer{background:#fff;color:var(--text);border-top:4px solid var(--yellow);padd
     </div>
   </section>
 
-  <section class="section answers" id="answers">
-    <div class="container answers-wrap">
-      <div class="answers-head">
-        <span class="label">Quick answers</span>
-        <h2>A few things schools often ask.</h2>
-        <p>The practical pieces are simple. Best Buddies is free for participating schools, fundraising is optional, and chapters are designed to fit around the school day.</p>
-        <div class="answer-links">
-          <a href="https://bestbuddies.ca/" target="_blank" rel="noopener">Explore BestBuddies.ca</a>
-          <a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">Helpful resources</a>
-          <a href="mailto:julianna@bestbuddies.ca?subject=Best%20Buddies%20school%20program">Email Julianna</a>
-        </div>
-      </div>
-      <div class="answers-grid">
-        <article class="answer-card"><h3>Is there a cost?</h3><p>No. Best Buddies school programs are free for participating schools.</p></article>
-        <article class="answer-card"><h3>Is fundraising required?</h3><p>No. Fundraising is optional. If your chapter chooses to participate, including in a Friendship Walk, Best Buddies provides resources and support.</p></article>
-        <article class="answer-card"><h3>How much time does it take?</h3><p>Chapters are designed to work around the school’s schedule, with regular meeting times that make sense for students and staff.</p></article>
-        <article class="answer-card"><h3>Will we have support?</h3><p>Yes. Best Buddies provides training, practical resources, activity ideas, planning guidance, and ongoing staff support throughout the year.</p></article>
-      </div>
-    </div>
-  </section>
-
   <section class="section support" id="support">
     <div class="container support-grid">
       <div class="support-card">
@@ -804,6 +788,7 @@ footer{background:#fff;color:var(--text);border-top:4px solid var(--yellow);padd
         <h2>You have support along the way.</h2>
         <p>We know school days are already full. Best Buddies provides practical tools, training, activity ideas, fundraising and Friendship Walk resources, and guidance throughout the year.</p>
         <p>We’re also here for the day-to-day questions that come with running a chapter — from planning activities and supporting student leaders to figuring out what works best in your school.</p>
+        <p class="support-links"><a href="https://bestbuddies.ca/helpful-resources/" target="_blank" rel="noopener">Browse helpful resources</a><span aria-hidden="true">·</span><a href="https://bestbuddies.ca/" target="_blank" rel="noopener">Visit BestBuddies.ca</a></p>
       </div>
       <div class="hub-card">
         <span class="coming">Coming this fall</span>
