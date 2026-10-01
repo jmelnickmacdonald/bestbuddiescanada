@@ -4,34 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Ottawa Expansion | Best Buddies Canada</title>
+  <title>Ottawa + Eastern Ontario | Best Buddies Canada</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --purple: #5c2d91;
-      --purple-dark: #3f1f68;
-      --purple-light: #f3eef8;
+      --purple: #5b2ca0;
+      --purple-dark: #2f2147;
+      --purple-soft: #f3edf9;
 
-      --blue: #2f65b0;
-      --blue-light: #eef5fb;
+      --blue: #4f6fc1;
+      --blue-soft: #edf3fb;
 
-      --pink: #e6a6c4;
-      --pink-light: #fcf3f7;
+      --pink: #e7a8c7;
+      --pink-soft: #fcf1f6;
+
+      --teal: #6fb6b2;
+      --teal-soft: #edf8f6;
+
+      --yellow: #efc86a;
+      --yellow-soft: #fff8e8;
 
       --ink: #202637;
       --muted: #667085;
-      --line: #e7e8ee;
 
+      --line: #e6e8ee;
       --white: #ffffff;
-      --background: #fafafa;
+      --bg: #f8f8fb;
     }
 
     * {
@@ -46,76 +48,93 @@
       margin: 0;
       font-family: "Poppins", sans-serif;
       color: var(--ink);
-      background: var(--background);
+      background: var(--bg);
       line-height: 1.6;
     }
 
     .wrap {
-      width: min(1000px, calc(100% - 36px));
+      width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    /* HEADER */
+    /* HERO */
 
     header {
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(
-          circle at 92% 15%,
-          rgba(230, 166, 196, 0.35),
-          transparent 26%
-        ),
-        linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #f6f2fb 55%,
-          #eff5fb 100%
-        );
-
+        radial-gradient(circle at 82% 22%, rgba(231,168,199,.42), transparent 24%),
+        radial-gradient(circle at 66% 68%, rgba(79,111,193,.16), transparent 26%),
+        linear-gradient(135deg, #ffffff 0%, #f7f3fb 55%, #f7f8fc 100%);
       border-bottom: 1px solid var(--line);
-      padding: 68px 0 58px;
+      padding: 72px 0 62px;
     }
 
-    header::after {
-      content: "";
+    .hero-shape-one,
+    .hero-shape-two {
       position: absolute;
-      width: 260px;
-      height: 72px;
-      background: linear-gradient(
-        90deg,
-        var(--purple),
-        var(--blue)
-      );
       border-radius: 999px;
-      right: -80px;
-      bottom: 42px;
-      transform: rotate(-12deg);
-      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-shape-one {
+      width: 330px;
+      height: 72px;
+      right: -72px;
+      top: 64px;
+      background: linear-gradient(90deg, var(--purple), var(--blue));
+      transform: rotate(-9deg);
+      opacity: .92;
+    }
+
+    .hero-shape-two {
+      width: 155px;
+      height: 155px;
+      right: 135px;
+      bottom: -78px;
+      background: var(--pink);
+      opacity: .28;
     }
 
     .eyebrow {
       color: var(--purple);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      font-size: .76rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      margin-bottom: 11px;
     }
 
     h1 {
       margin: 0;
-      max-width: 720px;
-      font-size: clamp(2.6rem, 6vw, 4.8rem);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
+      max-width: 800px;
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+      line-height: 1;
+      letter-spacing: -.055em;
     }
 
-    .intro {
-      max-width: 720px;
-      margin: 20px 0 0;
+    .hero-copy {
+      max-width: 760px;
+      margin: 21px 0 0;
       color: var(--muted);
       font-size: 1.02rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 26px;
+    }
+
+    .hero-meta span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(91,44,160,.13);
+      color: #5c5470;
+      font-size: .76rem;
+      font-weight: 500;
     }
 
     /* NAV */
@@ -124,28 +143,24 @@
       position: sticky;
       top: 0;
       z-index: 10;
-
-      background: rgba(255,255,255,0.94);
+      background: rgba(255,255,255,.94);
       backdrop-filter: blur(10px);
-
       border-bottom: 1px solid var(--line);
     }
 
     nav .inner {
-      min-height: 54px;
-
       display: flex;
       align-items: center;
-
-      gap: 20px;
+      gap: 24px;
+      min-height: 56px;
       overflow-x: auto;
     }
 
     nav a {
-      color: #596174;
-      font-size: 0.78rem;
-      font-weight: 600;
       text-decoration: none;
+      color: #586176;
+      font-size: .78rem;
+      font-weight: 600;
       white-space: nowrap;
     }
 
@@ -153,10 +168,10 @@
       color: var(--purple);
     }
 
-    /* SECTIONS */
+    /* GENERAL */
 
     section {
-      padding: 54px 0;
+      padding: 64px 0;
     }
 
     section + section {
@@ -164,184 +179,314 @@
     }
 
     h2 {
-      margin: 0 0 26px;
-      font-size: 1.7rem;
-      letter-spacing: -0.03em;
+      margin: 0 0 13px;
+      font-size: 2rem;
+      letter-spacing: -.035em;
+    }
+
+    .section-intro {
+      max-width: 790px;
+      margin: 0 0 32px;
+      color: var(--muted);
+      font-size: .96rem;
     }
 
     h3 {
       margin: 0 0 8px;
-      font-size: 1.05rem;
-      letter-spacing: -0.015em;
+      font-size: 1.08rem;
+      letter-spacing: -.015em;
     }
 
     p {
       margin: 0;
     }
 
-    /* PLAN ROWS */
-
-    .plan {
-      display: grid;
-      gap: 12px;
-    }
-
-    .plan-row {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 18px;
-
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-
-      padding: 20px 22px;
-    }
-
-    .number {
-      width: 38px;
-      height: 38px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background: var(--purple-light);
-      color: var(--purple);
-
-      font-weight: 700;
-      font-size: 0.88rem;
-    }
-
-    .plan-row p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .plan-row ul {
-      margin: 10px 0 0;
+    ul {
+      margin: 12px 0 0;
       padding-left: 18px;
-
-      color: #566074;
-      font-size: 0.86rem;
     }
 
-    .plan-row li + li {
-      margin-top: 4px;
+    li + li {
+      margin-top: 5px;
+    }
+
+    /* MAIN PLANNING GRID */
+
+    .planning-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--white);
+      padding: 26px;
+    }
+
+    .card p,
+    .card li {
+      color: #596378;
+      font-size: .89rem;
+    }
+
+    .card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .purple {
+      background: var(--purple-soft);
+      color: var(--purple);
+    }
+
+    .blue {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .pink {
+      background: var(--pink-soft);
+      color: #a0577b;
+    }
+
+    .teal {
+      background: var(--teal-soft);
+      color: #477c79;
+    }
+
+    .yellow {
+      background: var(--yellow-soft);
+      color: #866a29;
+    }
+
+    .feature-card {
+      min-height: 100%;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #faf8fd 100%);
+    }
+
+    .feature-card h3 {
+      font-size: 1.32rem;
+    }
+
+    .feature-card .lead {
+      font-size: .94rem;
+      color: #556073;
+      margin-bottom: 16px;
+    }
+
+    /* NETWORK STRIP */
+
+    .network-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .mini-card {
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .mini-card p,
+    .mini-card li {
+      color: #5d6678;
+      font-size: .85rem;
+    }
+
+    /* SURROUNDING AREAS */
+
+    .region-section {
+      background: #f2f1f8;
+    }
+
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .region-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      padding: 28px;
+      min-height: 250px;
+    }
+
+    .region-card h3 {
+      font-size: 1.42rem;
+    }
+
+    .region-card p,
+    .region-card li {
+      font-size: .88rem;
+    }
+
+    .cdsbeo {
+      background: var(--purple-dark);
+      color: white;
+    }
+
+    .cdsbeo p,
+    .cdsbeo li {
+      color: #ddd5ea;
+    }
+
+    .ucdsb {
+      background: var(--blue-soft);
+      color: var(--ink);
+      border: 1px solid #dce6f3;
+    }
+
+    .ucdsb p,
+    .ucdsb li {
+      color: #566479;
+    }
+
+    .region-tag {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .67rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .cdsbeo .region-tag {
+      background: rgba(255,255,255,.12);
+      color: white;
+    }
+
+    .ucdsb .region-tag {
+      background: white;
+      color: var(--blue);
     }
 
     /* OCTOBER */
 
-    .october {
-      background: var(--purple-dark);
-      color: var(--white);
+    .october-section {
+      background:
+        linear-gradient(135deg, #5b2ca0 0%, #443284 55%, #35578e 100%);
+      color: white;
+      border-top: 0;
     }
 
-    .october h2 {
-      color: var(--white);
+    .october-section h2 {
+      color: white;
     }
 
-    .october-intro {
-      color: #ded5e9;
-      max-width: 760px;
-      margin-bottom: 26px;
-      font-size: 0.94rem;
+    .october-section .section-intro {
+      color: #e4dff0;
     }
 
     .trip-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
     }
 
     .trip-item {
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.07);
-
-      border-radius: 14px;
-      padding: 17px 18px;
-
-      color: #f6f2f9;
-      font-size: 0.88rem;
+      min-height: 110px;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.08);
+      color: white;
+      font-size: .86rem;
+      font-weight: 500;
     }
 
     /* INPUT */
 
     .input-section {
-      background: var(--blue-light);
+      background:
+        radial-gradient(circle at 90% 15%, rgba(231,168,199,.34), transparent 22%),
+        #fff;
     }
 
-    .questions {
+    .question-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 14px;
     }
 
     .question {
+      padding: 22px;
+      border-radius: 17px;
+      border: 1px solid var(--line);
       background: var(--white);
+      color: #4f596d;
+      font-size: .9rem;
+    }
 
-      border: 1px solid #dfe9f2;
-      border-radius: 15px;
-
-      padding: 19px 20px;
-
-      font-size: 0.9rem;
-      color: #4f5c70;
+    .question strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 4px;
     }
 
     /* SMALL NOTE */
 
     .note {
-      margin-top: 25px;
-
-      padding: 17px 19px;
-
-      border-radius: 14px;
-
-      background: var(--pink-light);
-      border: 1px solid #f0dbe5;
-
-      color: #64525d;
-      font-size: 0.86rem;
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: var(--yellow-soft);
+      border: 1px solid #f2e4b9;
+      color: #6e6041;
+      font-size: .86rem;
     }
-
-    /* FOOTER */
 
     footer {
-      padding: 34px 0 50px;
-
-      color: #858b99;
-      font-size: 0.75rem;
+      padding: 38px 0 52px;
+      color: #818897;
+      font-size: .75rem;
     }
 
-    /* MOBILE */
-
-    @media (max-width: 720px) {
-
-      header {
-        padding: 52px 0 46px;
+    @media (max-width: 820px) {
+      .planning-grid,
+      .network-row,
+      .region-grid,
+      .trip-grid,
+      .question-grid {
+        grid-template-columns: 1fr;
       }
 
-      header::after {
+      header {
+        padding: 56px 0 48px;
+      }
+
+      .hero-shape-one,
+      .hero-shape-two {
         display: none;
       }
 
       section {
-        padding: 42px 0;
+        padding: 46px 0;
       }
-
-      .plan-row {
-        grid-template-columns: 38px 1fr;
-        gap: 14px;
-      }
-
-      .trip-grid,
-      .questions {
-        grid-template-columns: 1fr;
-      }
-
     }
 
   </style>
@@ -351,6 +496,9 @@
 
 <header>
 
+  <div class="hero-shape-one"></div>
+  <div class="hero-shape-two"></div>
+
   <div class="wrap">
 
     <div class="eyebrow">
@@ -358,15 +506,24 @@
     </div>
 
     <h1>
-      Ottawa expansion
+      Ottawa + Eastern Ontario
     </h1>
 
-    <p class="intro">
-      I’ve started mapping out a few different ways to grow Best Buddies
-      in Ottawa. Some of this is already underway, and some is still
-      exploratory. I’d really value your perspective on the local landscape
-      and where you think the best opportunities may be.
+    <p class="hero-copy">
+      I’ve started mapping out where I think there’s room to grow Best Buddies
+      in Ottawa and the surrounding area. Some outreach is already underway,
+      and I’d really value your perspective on the local landscape, useful
+      connections, and anything obvious I may be missing.
     </p>
+
+    <div class="hero-meta">
+      <span>Ottawa</span>
+      <span>OCDSB + OCSB</span>
+      <span>CDSBEO</span>
+      <span>UCDSB</span>
+      <span>Post-secondary</span>
+      <span>Week of Oct. 26</span>
+    </div>
 
   </div>
 
@@ -374,11 +531,18 @@
 
 
 <nav>
-
   <div class="wrap inner">
 
-    <a href="#plan">
-      Current thinking
+    <a href="#ottawa">
+      Ottawa
+    </a>
+
+    <a href="#networks">
+      Other routes
+    </a>
+
+    <a href="#region">
+      Eastern Ontario
     </a>
 
     <a href="#october">
@@ -390,225 +554,344 @@
     </a>
 
   </div>
-
 </nav>
 
 
-<section id="plan">
+<section id="ottawa">
 
   <div class="wrap">
 
     <h2>
-      Current thinking
+      Ottawa
     </h2>
 
+    <p class="section-intro">
+      My first focus is building better relationships around the schools
+      rather than jumping straight into a big cold outreach campaign.
+    </p>
 
-    <div class="plan">
+
+    <div class="planning-grid">
+
+      <div class="card feature-card">
+
+        <span class="card-label purple">
+          School boards + schools
+        </span>
+
+        <h3>
+          OCDSB + OCSB
+        </h3>
+
+        <p class="lead">
+          I’ve already started outreach with both boards. The main thing I’m
+          hoping to get from those conversations is a clearer sense of where
+          there may already be interest and who inside the boards could help
+          us open a few doors.
+        </p>
+
+        <ul>
+          <li>Central Learning Support / Special Education contacts</li>
+          <li>Student Success, equity, and inclusion teams</li>
+          <li>School referrals or warm introductions</li>
+          <li>Opportunities to speak with principals, staff, or student leaders</li>
+          <li>Virtual SEAC presentations for both boards</li>
+        </ul>
+
+      </div>
 
 
-      <div class="plan-row">
+      <div class="stack">
 
-        <div class="number">
-          1
-        </div>
+        <div class="card">
 
-        <div>
+          <span class="card-label pink">
+            Current chapters
+          </span>
 
           <h3>
-            School boards
+            Reconnect + strengthen
           </h3>
 
           <p>
-            I’ve started outreach with OCDSB and OCSB, with the goal of
-            building relationships at the central level before doing a lot
-            of school-by-school outreach.
+            I want a better picture of what’s active, what may have gone quiet,
+            and which chapters could be useful local examples when talking to
+            new schools.
           </p>
 
-          <ul>
-            <li>Identify schools that may already be a good fit</li>
-            <li>Get warm introductions where possible</li>
-            <li>Look for opportunities to speak to larger groups of staff or students</li>
-          </ul>
+        </div>
+
+
+        <div class="card">
+
+          <span class="card-label blue">
+            New schools
+          </span>
+
+          <h3>
+            Targeted outreach
+          </h3>
+
+          <p>
+            Rather than emailing every school, I’d like to build a smaller list
+            based on board referrals, student leadership, inclusive programming,
+            Unified Sports, parent interest, or existing staff champions.
+          </p>
 
         </div>
 
       </div>
 
+    </div>
 
-      <div class="plan-row">
-
-        <div class="number">
-          2
-        </div>
-
-        <div>
-
-          <h3>
-            Schools + current chapters
-          </h3>
-
-          <p>
-            I want a clearer picture of what is already working locally,
-            where chapters may have gone quiet, and which schools could
-            provide good examples for new conversations.
-          </p>
-
-          <ul>
-            <li>Reconnect with quieter chapters where it makes sense</li>
-            <li>Identify a few strong local chapters</li>
-            <li>Build a targeted list of possible new schools</li>
-          </ul>
-
-        </div>
-
-      </div>
+  </div>
+</section>
 
 
-      <div class="plan-row">
+<section id="networks">
 
-        <div class="number">
-          3
-        </div>
+  <div class="wrap">
 
-        <div>
+    <h2>
+      Other routes into the school community
+    </h2>
 
-          <h3>
-            Parents + community
-          </h3>
+    <p class="section-intro">
+      I’m also looking at groups that could help build awareness or connect us
+      with more than one school at a time.
+    </p>
 
-          <p>
-            I’d like to build more awareness outside the school boards
-            and better understand where families are already interested
-            in seeing something like Best Buddies.
-          </p>
 
-          <ul>
-            <li>OCDSB and OCSB SEAC</li>
-            <li>Parent involvement groups and school councils</li>
-            <li>Ottawa inclusion and disability organizations</li>
-          </ul>
+    <div class="network-row">
 
-        </div>
+      <div class="mini-card">
+
+        <span class="card-label teal">
+          Families
+        </span>
+
+        <h3>
+          Parents + SEAC
+        </h3>
+
+        <ul>
+          <li>OCDSB SEAC</li>
+          <li>OCSB SEAC</li>
+          <li>Parent involvement groups</li>
+          <li>School councils where there is interest</li>
+        </ul>
 
       </div>
 
 
-      <div class="plan-row">
+      <div class="mini-card">
 
-        <div class="number">
-          4
-        </div>
+        <span class="card-label yellow">
+          Students + staff
+        </span>
 
-        <div>
+        <h3>
+          Leadership networks
+        </h3>
 
-          <h3>
-            Student + educator networks
-          </h3>
-
-          <p>
-            I’m also interested in groups that can help us reach more than
-            one school at a time.
-          </p>
-
-          <ul>
-            <li>Student Senate / student leadership</li>
-            <li>Learning Support and Special Education teams</li>
-            <li>Student Success and guidance staff</li>
-            <li>Principal / vice-principal networks</li>
-          </ul>
-
-        </div>
+        <ul>
+          <li>Student Senate / student councils</li>
+          <li>Learning Support / Special Education</li>
+          <li>Student Success + guidance</li>
+          <li>Principal / vice-principal networks</li>
+        </ul>
 
       </div>
 
 
-      <div class="plan-row">
+      <div class="mini-card">
 
-        <div class="number">
-          5
-        </div>
+        <span class="card-label pink">
+          Community
+        </span>
 
-        <div>
+        <h3>
+          Ottawa organizations
+        </h3>
 
-          <h3>
-            Post-secondary
-          </h3>
-
-          <p>
-            I want the university and college side to grow alongside the
-            school program.
-          </p>
-
-          <ul>
-            <li>
-              <strong>uOttawa:</strong>
-              reconnect with the current chapter and make sure there is
-              strong leadership coming behind the current executive
-            </li>
-
-            <li>
-              <strong>Carleton:</strong>
-              explore starting a chapter
-            </li>
-
-            <li>
-              <strong>Algonquin:</strong>
-              explore starting a chapter
-            </li>
-          </ul>
-
-        </div>
+        <ul>
+          <li>Ottawa Network for Education</li>
+          <li>LiveWorkPlay</li>
+          <li>Down Syndrome Association – NCR</li>
+          <li>ABLE2</li>
+          <li>Ottawa-Carleton Lifeskills</li>
+        </ul>
 
       </div>
-
-
-      <div class="plan-row">
-
-        <div class="number">
-          6
-        </div>
-
-        <div>
-
-          <h3>
-            Eastern Ontario
-          </h3>
-
-          <p>
-            I also have some useful relationships in CDSBEO, where Best
-            Buddies already has a number of chapters.
-          </p>
-
-          <ul>
-            <li>Student Senate</li>
-            <li>Parent engagement</li>
-            <li>School leadership</li>
-            <li>Additional schools that may already be a natural fit</li>
-          </ul>
-
-        </div>
-
-      </div>
-
 
     </div>
 
 
     <div class="note">
+      I’m not necessarily looking for formal partnerships with all of these
+      organizations. Some may simply be good people to know, useful sources of
+      local context, or a way to connect with families who already care about
+      this work.
+    </div>
 
-      I’m deliberately not starting with a mass email to every school.
-      I’d rather use board relationships, local chapters, families, and
-      student leaders to make as many of those conversations warm as possible.
+  </div>
+</section>
+
+
+<section>
+
+  <div class="wrap">
+
+    <h2>
+      Post-secondary
+    </h2>
+
+    <p class="section-intro">
+      I want the university and college side to grow alongside the school
+      program rather than treating it as a separate piece.
+    </p>
+
+
+    <div class="network-row">
+
+      <div class="mini-card">
+
+        <span class="card-label purple">
+          Existing
+        </span>
+
+        <h3>
+          uOttawa
+        </h3>
+
+        <p>
+          Reconnect with the current chapter, understand where things stand,
+          and make sure there is strong leadership coming behind the current
+          executive.
+        </p>
+
+      </div>
+
+
+      <div class="mini-card">
+
+        <span class="card-label blue">
+          Explore
+        </span>
+
+        <h3>
+          Carleton
+        </h3>
+
+        <p>
+          Start conversations with student leaders and the university side to
+          see whether there is a realistic path to a new chapter.
+        </p>
+
+      </div>
+
+
+      <div class="mini-card">
+
+        <span class="card-label teal">
+          Explore
+        </span>
+
+        <h3>
+          Algonquin
+        </h3>
+
+        <p>
+          Explore student clubs, volunteering, and student engagement as
+          possible routes into a future Best Buddies chapter.
+        </p>
+
+      </div>
 
     </div>
 
   </div>
-
 </section>
 
 
 <section
-  class="october"
+  class="region-section"
+  id="region"
+>
+
+  <div class="wrap">
+
+    <h2>
+      Surrounding Eastern Ontario
+    </h2>
+
+    <p class="section-intro">
+      Ottawa is the main focus, but there are useful opportunities around it
+      too, especially where relationships already exist.
+    </p>
+
+
+    <div class="region-grid">
+
+      <div class="region-card cdsbeo">
+
+        <span class="region-tag">
+          CDSBEO
+        </span>
+
+        <h3>
+          Build from what is already there
+        </h3>
+
+        <p>
+          Best Buddies already has a stronger footprint in CDSBEO, so I don’t
+          need to treat this like a brand-new introduction.
+        </p>
+
+        <ul>
+          <li>Student Senate</li>
+          <li>Parent engagement</li>
+          <li>School leadership</li>
+          <li>Existing chapter connections</li>
+          <li>Identify additional schools that may be a natural fit</li>
+        </ul>
+
+      </div>
+
+
+      <div class="region-card ucdsb">
+
+        <span class="region-tag">
+          UCDSB
+        </span>
+
+        <h3>
+          Use existing connections where they make sense
+        </h3>
+
+        <p>
+          UCDSB is a little outside my main area, but I already have useful
+          relationships there. I’d rather not ignore those if there is a good
+          opportunity to make an introduction or identify interest.
+        </p>
+
+        <ul>
+          <li>Use warm relationships rather than broad outreach</li>
+          <li>Identify possible school or board champions</li>
+          <li>Coordinate internally before moving anything forward</li>
+          <li>Keep this opportunity-led rather than making it a major expansion push</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section
+  class="october-section"
   id="october"
 >
 
@@ -618,10 +901,10 @@
       Week of October 26
     </h2>
 
-    <p class="october-intro">
-      I’ll already be in Ottawa for the Best Buddies Youth Walk at
-      Glebe Collegiate, so I’d like to make good use of the week without
-      trying to cram everything into the trip.
+    <p class="section-intro">
+      I’ll already be in Ottawa for the Best Buddies Youth Walk at Glebe
+      Collegiate. I’d like to use the trip for a few useful face-to-face
+      conversations while I’m there.
     </p>
 
 
@@ -640,21 +923,20 @@
       </div>
 
       <div class="trip-item">
-        Carleton or Algonquin conversation
+        Carleton or Algonquin meeting
       </div>
 
       <div class="trip-item">
-        Student leadership or broader group presentation
+        Student leadership or educator group
       </div>
 
       <div class="trip-item">
-        Meet with an Ottawa inclusion or community organization
+        Ottawa community / inclusion organization
       </div>
 
     </div>
 
   </div>
-
 </section>
 
 
@@ -666,34 +948,40 @@
   <div class="wrap">
 
     <h2>
-      Where I’d value your input
+      What I’d love your read on
     </h2>
 
+    <p class="section-intro">
+      I've been out of the city for a handful of years now. You know Ottawa much better than I do, so this is the part where your
+      local perspective would be incredibly useful.
+    </p>
 
-    <div class="questions">
+
+    <div class="question-grid">
 
       <div class="question">
-        Who do you think I should know locally?
+        <strong>People</strong>
+        Who do you think I should know?
       </div>
 
       <div class="question">
-        Are there groups or networks I’m missing?
+        <strong>Schools</strong>
+        Are there particular schools or communities where you think this could land well?
       </div>
 
       <div class="question">
-        Are there particular schools or communities where you think
-        there may already be interest?
+        <strong>Networks</strong>
+        Are there parent, teacher, student, or inclusion groups I’m overlooking?
       </div>
 
       <div class="question">
-        Are there opportunities to speak to a broader group rather than
-        approaching schools one by one?
+        <strong>Access</strong>
+        Are there opportunities to get in front of a broader group rather than approaching everyone one at a time?
       </div>
 
     </div>
 
   </div>
-
 </section>
 
 
