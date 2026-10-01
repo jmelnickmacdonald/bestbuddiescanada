@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ottawa + Eastern Ontario Expansion</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#1d2638;
+  --muted:#667085;
+  --purple:#5b35b5;
+  --purple-soft:#f4f1fb;
+  --blue-soft:#f2f7fb;
+  --line:#e5e8ef;
+  --paper:#ffffff;
+  --bg:#f7f8fb;
+  --note:#fff9ef;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Poppins",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.58;
+}
+
+.wrap{
+  width:min(1080px,calc(100% - 36px));
+  margin:0 auto;
+}
+
+/* HEADER */
+
+header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  padding:50px 0 38px;
+}
+
+.kicker{
+  color:var(--purple);
+  font-size:.76rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  margin-bottom:8px;
+}
+
+h1{
+  font-size:clamp(2.25rem,5vw,4.15rem);
+  line-height:1.05;
+  letter-spacing:-.045em;
+  margin:0 0 12px;
+}
+
+.subtitle{
+  color:var(--muted);
+  max-width:760px;
+  font-size:1rem;
+  margin:0;
+}
+
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:22px;
+}
+
+.meta span{
+  background:var(--purple-soft);
+  border:1px solid #e5def5;
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:.76rem;
+  color:#554778;
+}
+
+/* NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+
+nav .inner{
+  min-height:55px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  overflow:auto;
+}
+
+nav a{
+  text-decoration:none;
+  color:#59647a;
+  font-size:.78rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+/* GENERAL */
+
+section{
+  padding:52px 0;
+}
+
+section + section{
+  border-top:1px solid var(--line);
+}
+
+h2{
+  margin:0 0 20px;
+  font-size:1.75rem;
+  letter-spacing:-.03em;
+}
+
+h3{
+  margin:0 0 8px;
+  font-size:1.05rem;
+  letter-spacing:-.015em;
+}
+
+p{
+  margin:0 0 14px;
+}
+
+.intro{
+  color:var(--muted);
+  max-width:840px;
+  margin-bottom:26px;
+}
+
+/* GRIDS */
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+/* CARDS */
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:22px;
+}
+
+.card p,
+.card li{
+  color:#586378;
+  font-size:.88rem;
+}
+
+.card ul{
+  margin:10px 0 0;
+  padding-left:18px;
+}
+
+.card li + li{
+  margin-top:5px;
+}
+
+.label{
+  display:inline-block;
+  color:var(--purple);
+  background:var(--purple-soft);
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:.67rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:11px;
+}
+
+/* STATUS */
+
+.status{
+  display:grid;
+  grid-template-columns:165px 1fr;
+  gap:18px;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.status:last-child{
+  border-bottom:0;
+}
+
+.status strong{
+  font-size:.88rem;
+}
+
+.status div:last-child{
+  font-size:.87rem;
+  color:#5c6678;
+}
+
+/* NOTES */
+
+.note{
+  background:var(--note);
+  border:1px solid #eee2c9;
+  border-radius:14px;
+  padding:18px 20px;
+  color:#655f55;
+  font-size:.88rem;
+  margin-top:20px;
+}
+
+/* TABLE */
+
+.table-wrap{
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:820px;
+}
+
+th,
+td{
+  text-align:left;
+  padding:14px 16px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+  font-size:.82rem;
+}
+
+th{
+  background:#fafbfc;
+  color:#4e596c;
+  font-weight:700;
+}
+
+td{
+  color:#5b6577;
+}
+
+tr:last-child td{
+  border-bottom:0;
+}
+
+/* CHECKLIST */
+
+.checklist{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px 26px;
+}
+
+.check{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  color:#556074;
+  font-size:.87rem;
+}
+
+.box{
+  width:15px;
+  height:15px;
+  border:1.5px solid #9aa3b2;
+  border-radius:3px;
+  margin-top:3px;
+  flex:0 0 auto;
+}
+
+/* FOOTER */
+
+footer{
+  padding:38px 0 55px;
+  color:#7a8392;
+  font-size:.76rem;
+}
+
+/* MOBILE */
+
+@media(max-width:760px){
+
+  .grid-2,
+  .grid-3,
+  .checklist{
+    grid-template-columns:1fr;
+  }
+
+  .status{
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+
+  section{
+    padding:40px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+
+    <div class="kicker">
+      October 2026
+    </div>
+
+    <h1>
+      Ottawa + Eastern Ontario expansion
+    </h1>
+
+    <p class="subtitle">
+      Current outreach, opportunities, and next steps across schools,
+      post-secondary, families, educators, and community organizations.
+    </p>
+
+    <div class="meta">
+      <span>Ottawa focus</span>
+      <span>Week of Oct. 26</span>
+      <span>Youth Walk at Glebe Collegiate</span>
+    </div>
+
+  </div>
+</header>
+
+<nav>
+  <div class="wrap inner">
+    <a href="#objectives">Objectives</a>
+    <a href="#current">Current status</a>
+    <a href="#boards">Boards</a>
+    <a href="#schools">Schools</a>
+    <a href="#chapters">Current chapters</a>
+    <a href="#families">Families + community</a>
+    <a href="#educators">Educators</a>
+    <a href="#postsecondary">Post-secondary</a>
+    <a href="#october">October trip</a>
+    <a href="#next">Next actions</a>
+  </div>
+</nav>
+
+<section id="objectives">
+  <div class="wrap">
+
+    <h2>Objectives</h2>
+
+    <div class="grid-2">
+
+      <div class="card">
+        <h3>Ottawa</h3>
+
+        <ul>
+          <li>Build stronger relationships with OCDSB and OCSB at the central level.</li>
+          <li>Use those relationships to identify schools where there is already interest or a likely fit.</li>
+          <li>Create more awareness with families, student leaders, and community organizations.</li>
+          <li>Reconnect with uOttawa and develop new post-secondary opportunities at Carleton and Algonquin.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Eastern Ontario</h3>
+
+        <ul>
+          <li>Use existing CDSBEO relationships and chapters rather than treating the board as a cold expansion market.</li>
+          <li>Look for access to Student Senate, parent engagement, school leadership, and direct school referrals.</li>
+          <li>Keep UCDSB as an adjacent opportunity only, since it is not formally within the current portfolio.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="current">
+  <div class="wrap">
+
+    <h2>Current status</h2>
+
+    <div class="card">
+
+      <div class="status">
+        <strong>OCDSB</strong>
+        <div>
+          Mary Jane Farrish contacted. Prince Duah contacted and redirected
+          the conversation to Andrea Rahim, who was copied on the thread.
+          Juliet Robinson contacted regarding equity/inclusion.
+        </div>
+      </div>
+
+      <div class="status">
+        <strong>OCSB</strong>
+        <div>
+          Nicola Benton contacted through Special Education / Student Services.
+          Sean Kelly contacted through Student Success / intermediate and secondary.
+        </div>
+      </div>
+
+      <div class="status">
+        <strong>CDSBEO</strong>
+        <div>
+          Existing Best Buddies presence is stronger here. A Perth teacher
+          presented Best Buddies to SEAC last year, so there is no need to
+          repeat an introductory SEAC presentation.
+        </div>
+      </div>
+
+      <div class="status">
+        <strong>October</strong>
+        <div>
+          Ottawa visit planned for the final week of October, anchored by
+          the Best Buddies Youth Walk at Glebe Collegiate. Goal is to build
+          useful meetings around the trip.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="boards">
+  <div class="wrap">
+
+    <h2>Board outreach</h2>
+
+    <p class="intro">
+      The point of board outreach is not simply approval. The useful
+      outcomes are introductions to schools, access to larger groups,
+      and a better sense of where interest already exists.
+    </p>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Board</th>
+            <th>Current route</th>
+            <th>What I want next</th>
+            <th>Other routes worth trying</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>OCDSB</strong></td>
+            <td>
+              Learning Support, equity/inclusion, Andrea Rahim via Prince Duah
+            </td>
+            <td>
+              Meeting before or during the October trip; names of 3–5 schools;
+              opportunity to speak to a broader staff or leadership group
+            </td>
+            <td>
+              Virtual SEAC presentation; Student Senate; PIC / family engagement;
+              principal or Learning Support networks
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>OCSB</strong></td>
+            <td>
+              Special Education / Student Services and Student Success
+            </td>
+            <td>
+              Meeting; school referrals; access to secondary / Student Success /
+              principal groups
+            </td>
+            <td>
+              Virtual SEAC presentation; CSPA-PIC; student trustee /
+              student leadership structures
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>CDSBEO</strong></td>
+            <td>
+              Existing chapters and existing awareness
+            </td>
+            <td>
+              Move beyond another introduction. Ask which schools are realistic
+              next opportunities and whether board leadership can help open doors.
+            </td>
+            <td>
+              Student Senate; Parent Involvement Committee; principal /
+              administrator groups; chapter visits
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="note">
+      <strong>SEAC:</strong>
+      OCDSB and OCSB are worth pursuing as virtual presentation opportunities this fall.
+      CDSBEO already had a Best Buddies presentation through SEAC last year, so I would
+      not use time repeating it unless they specifically ask for an update.
+    </div>
+
+  </div>
+</section>
+
+<section id="schools">
+  <div class="wrap">
+
+    <h2>School outreach</h2>
+
+    <p class="intro">
+      I do not want to start with a mass email to every Ottawa school.
+      Board referrals and existing relationships should have a chance
+      to produce warmer leads first.
+    </p>
+
+    <div class="grid-2">
+
+      <div class="card">
+
+        <span class="label">
+          Build the list
+        </span>
+
+        <h3>20–30 possible schools</h3>
+
+        <ul>
+          <li>Current inclusion / peer-support work</li>
+          <li>Unified Sports or inclusive athletics</li>
+          <li>Strong student leadership</li>
+          <li>Learning Support / Special Education staff who are active in school life</li>
+          <li>Lunch clubs, peer mentoring, leadership programs, or similar existing structures</li>
+          <li>Schools referred by board staff, families, or current chapters</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <span class="label">
+          Outreach order
+        </span>
+
+        <h3>Warm first, cold second</h3>
+
+        <ul>
+          <li>Board introduction or direct referral</li>
+          <li>Referral from an existing chapter / teacher advisor</li>
+          <li>Parent or student interest that suggests a school may be receptive</li>
+          <li>Direct outreach to selected schools after the first round of board conversations</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="chapters">
+  <div class="wrap">
+
+    <h2>Current and former chapters</h2>
+
+    <p class="intro">
+      This is mainly a housekeeping and relationship piece. I need
+      a clearer picture of what is active, what is quiet, and where
+      there is an easy opportunity to re-engage.
+    </p>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <h3>Current chapters</h3>
+        <p>
+          Identify which chapters are healthy and which ones need
+          more contact or support.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Dormant / quiet chapters</h3>
+        <p>
+          Look at why they stopped. Staff turnover or leadership loss
+          may be fixable; lack of interest may not be.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Reference chapters</h3>
+        <p>
+          Identify 2–3 local schools that are comfortable being
+          examples when a board or new school asks what Best Buddies
+          looks like in practice.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="note">
+      For the October trip, a visit to one or two current chapters
+      would be useful if schedules line up. This is more valuable if
+      it helps with relationship-building or gives us a stronger local
+      example, rather than visiting just to visit.
+    </div>
+
+  </div>
+</section>
+
+<section id="families">
+  <div class="wrap">
+
+    <h2>Parents, families, and community organizations</h2>
+
+    <p class="intro">
+      The goal here is awareness and local intelligence. Parents and
+      community groups can help identify where interest already exists
+      and connect Best Buddies with families, but they should not be put
+      in the position of pressuring schools to start a chapter.
+    </p>
+
+    <div class="grid-2">
+
+      <div class="card">
+
+        <h3>Parent / board groups</h3>
+
+        <ul>
+          <li>OCDSB Parent Involvement Committee</li>
+          <li>OCDSB SEAC</li>
+          <li>OCSB CSPA / Parent Involvement Committee</li>
+          <li>OCSB SEAC</li>
+          <li>CDSBEO Parent Involvement Committee</li>
+          <li>School councils where there is clear interest</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Community organizations to explore</h3>
+
+        <ul>
+          <li>Ottawa Network for Education</li>
+          <li>LiveWorkPlay</li>
+          <li>Down Syndrome Association – National Capital Region</li>
+          <li>ABLE2</li>
+          <li>Ottawa-Carleton Lifeskills</li>
+          <li>Inclusion Ottawa / Children’s Inclusion Support Services, likely as a longer-term connection</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="note">
+      Not all of these need to become formal partners. Some may simply
+      be useful conversations, referral sources, or people who understand
+      the local landscape better than we do.
+    </div>
+
+  </div>
+</section>
+
+<section id="educators">
+  <div class="wrap">
+
+    <h2>Teacher and educator groups</h2>
+
+    <p class="intro">
+      My first choice is still to reach educators through board-supported
+      groups, because those conversations are closer to actual school
+      programming. Professional associations and union locals may be useful
+      later for awareness, PD, or finding teacher champions.
+    </p>
+
+    <div class="grid-2">
+
+      <div class="card">
+
+        <span class="label">
+          First
+        </span>
+
+        <ul>
+          <li>Learning Support / Special Education teacher networks</li>
+          <li>Student Success teachers</li>
+          <li>Guidance / student-services staff</li>
+          <li>Department heads</li>
+          <li>Principal / vice-principal groups</li>
+          <li>Board equity, inclusion, belonging, and well-being teams</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <span class="label">
+          Later / if useful
+        </span>
+
+        <ul>
+          <li>Ottawa-Carleton ETFO</li>
+          <li>OSSTF District 25</li>
+          <li>Ottawa Catholic Teachers / OECTA</li>
+          <li>Ontario Council for Exceptional Children</li>
+          <li>Faculty of Education / Special Education AQ networks</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="postsecondary">
+  <div class="wrap">
+
+    <h2>Post-secondary</h2>
+
+    <div class="grid-3">
+
+      <div class="card">
+
+        <h3>uOttawa</h3>
+
+        <p>
+          There is already a Best Buddies chapter. I need to reconnect
+          with the current leaders, understand how the year is going,
+          and make sure there are strong students ready to take over as
+          the current executive gets closer to graduating or moving on.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Carleton</h3>
+
+        <p>
+          New expansion opportunity. Identify a student champion and also
+          connect with student engagement / community-engagement staff so
+          the chapter is not dependent on finding one person by chance.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Algonquin</h3>
+
+        <p>
+          Explore whether there is a fit through student clubs,
+          volunteering, or student engagement. Treat this as an initial
+          conversation rather than assuming a chapter is ready to launch.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="october">
+  <div class="wrap">
+
+    <h2>Week of October 26</h2>
+
+    <p class="intro">
+      The Youth Walk at Glebe Collegiate is the reason I will already be
+      in Ottawa. I would like to use the trip to move a few relationships
+      forward in person, but I do not need to force every possible meeting
+      into one week.
+    </p>
+
+    <div class="checklist">
+
+      <div class="check">
+        <span class="box"></span>
+        <span>2 board / central-team meetings if possible</span>
+      </div>
+
+      <div class="check">
+        <span class="box"></span>
+        <span>1 broader staff, leadership, or student presentation if timing works</span>
+      </div>
+
+      <div class="check">
+        <span class="box"></span>
+        <span>1–2 current chapter visits</span>
+      </div>
+
+      <div class="check">
+        <span class="box"></span>
+        <span>Reconnect with uOttawa in person if possible</span>
+      </div>
+
+      <div class="check">
+        <span class="box"></span>
+        <span>1 Carleton or Algonquin conversation</span>
+      </div>
+
+      <div class="check">
+        <span class="box"></span>
+        <span>1 community / inclusion organization meeting</span>
+      </div>
+
+      <div class="check">
+        <span class="box"></span>
+        <span>CDSBEO meeting or Student Senate opportunity if the timing lines up</span>
+      </div>
+
+      <div class="check">
+        <span class="box"></span>
+        <span>Use the Glebe Youth Walk as a local example and relationship-building opportunity</span>
+      </div>
+
+    </div>
+
+    <div class="note">
+      OCDSB and OCSB SEAC do not need to happen during the trip.
+      A virtual presentation later in the fall is probably easier
+      and gives those conversations their own space.
+    </div>
+
+  </div>
+</section>
+
+<section id="next">
+  <div class="wrap">
+
+    <h2>Next actions</h2>
+
+    <div class="grid-2">
+
+      <div class="card">
+
+        <h3>Before the October trip</h3>
+
+        <ul>
+          <li>Follow up on current OCDSB / OCSB outreach.</li>
+          <li>Send CDSBEO leadership outreach and ask about Student Senate timing.</li>
+          <li>Reconcile Ottawa + CDSBEO chapter status.</li>
+          <li>Build the first 20–30 school opportunity list.</li>
+          <li>Contact a small number of community organizations rather than everyone at once.</li>
+          <li>Reconnect with uOttawa and start Carleton / Algonquin conversations.</li>
+          <li>Ask OCDSB and OCSB about virtual SEAC presentation opportunities.</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>After the trip</h3>
+
+        <ul>
+          <li>Follow warm school referrals quickly.</li>
+          <li>Start direct outreach to selected schools where there was no board referral.</li>
+          <li>Re-engage dormant chapters that still have a realistic path back.</li>
+          <li>Keep parent / community outreach going where it produces useful leads.</li>
+          <li>Move at least one new post-secondary opportunity forward.</li>
+          <li>Keep notes on what is actually producing school interest and adjust from there.</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <h2>Useful help from local contacts</h2>
+
+    <p class="intro">
+      For people who want to help with Ottawa expansion, the most useful
+      role is local context and introductions rather than independent
+      Best Buddies outreach.
+    </p>
+
+    <div class="grid-2">
+
+      <div class="card">
+
+        <h3>Helpful</h3>
+
+        <ul>
+          <li>Introduce me to board, school, parent, post-secondary, or community contacts.</li>
+          <li>Flag schools or organizations that may already be interested.</li>
+          <li>Help me understand the local landscape and where previous efforts have worked or stalled.</li>
+          <li>Suggest events, meetings, or groups where Best Buddies should be present.</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Keep coordinated through Best Buddies Canada</h3>
+
+        <ul>
+          <li>Formal school / board outreach</li>
+          <li>Program commitments</li>
+          <li>Chapter startup and follow-up</li>
+          <li>External representation of Best Buddies Canada</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Julianna Melnick-MacDonald · Best Buddies Canada · October 2026
+  </div>
+</footer>
+
+</body>
+</html>
