@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ottawa Expansion | Best Buddies Canada</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --purple: #5c2d91;
+      --purple-dark: #3f1f68;
+      --purple-light: #f3eef8;
+
+      --blue: #2f65b0;
+      --blue-light: #eef5fb;
+
+      --pink: #e6a6c4;
+      --pink-light: #fcf3f7;
+
+      --ink: #202637;
+      --muted: #667085;
+      --line: #e7e8ee;
+
+      --white: #ffffff;
+      --background: #fafafa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+      background: var(--background);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(1000px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 92% 15%,
+          rgba(230, 166, 196, 0.35),
+          transparent 26%
+        ),
+        linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f6f2fb 55%,
+          #eff5fb 100%
+        );
+
+      border-bottom: 1px solid var(--line);
+      padding: 68px 0 58px;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 72px;
+      background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--blue)
+      );
+      border-radius: 999px;
+      right: -80px;
+      bottom: 42px;
+      transform: rotate(-12deg);
+      opacity: 0.9;
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* NAV */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav .inner {
+      min-height: 54px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+      overflow-x: auto;
+    }
+
+    nav a {
+      color: #596174;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: var(--purple);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 54px 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 26px;
+      font-size: 1.7rem;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    /* PLAN ROWS */
+
+    .plan {
+      display: grid;
+      gap: 12px;
+    }
+
+    .plan-row {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 18px;
+
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+
+      padding: 20px 22px;
+    }
+
+    .number {
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: var(--purple-light);
+      color: var(--purple);
+
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .plan-row p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .plan-row ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+
+      color: #566074;
+      font-size: 0.86rem;
+    }
+
+    .plan-row li + li {
+      margin-top: 4px;
+    }
+
+    /* OCTOBER */
+
+    .october {
+      background: var(--purple-dark);
+      color: var(--white);
+    }
+
+    .october h2 {
+      color: var(--white);
+    }
+
+    .october-intro {
+      color: #ded5e9;
+      max-width: 760px;
+      margin-bottom: 26px;
+      font-size: 0.94rem;
+    }
+
+    .trip-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .trip-item {
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07);
+
+      border-radius: 14px;
+      padding: 17px 18px;
+
+      color: #f6f2f9;
+      font-size: 0.88rem;
+    }
+
+    /* INPUT */
+
+    .input-section {
+      background: var(--blue-light);
+    }
+
+    .questions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .question {
+      background: var(--white);
+
+      border: 1px solid #dfe9f2;
+      border-radius: 15px;
+
+      padding: 19px 20px;
+
+      font-size: 0.9rem;
+      color: #4f5c70;
+    }
+
+    /* SMALL NOTE */
+
+    .note {
+      margin-top: 25px;
+
+      padding: 17px 19px;
+
+      border-radius: 14px;
+
+      background: var(--pink-light);
+      border: 1px solid #f0dbe5;
+
+      color: #64525d;
+      font-size: 0.86rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 34px 0 50px;
+
+      color: #858b99;
+      font-size: 0.75rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 720px) {
+
+      header {
+        padding: 52px 0 46px;
+      }
+
+      header::after {
+        display: none;
+      }
+
+      section {
+        padding: 42px 0;
+      }
+
+      .plan-row {
+        grid-template-columns: 38px 1fr;
+        gap: 14px;
+      }
+
+      .trip-grid,
+      .questions {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      Best Buddies Canada
+    </div>
+
+    <h1>
+      Ottawa expansion
+    </h1>
+
+    <p class="intro">
+      I’ve started mapping out a few different ways to grow Best Buddies
+      in Ottawa. Some of this is already underway, and some is still
+      exploratory. I’d really value your perspective on the local landscape
+      and where you think the best opportunities may be.
+    </p>
+
+  </div>
+
+</header>
+
+
+<nav>
+
+  <div class="wrap inner">
+
+    <a href="#plan">
+      Current thinking
+    </a>
+
+    <a href="#october">
+      October visit
+    </a>
+
+    <a href="#input">
+      Your input
+    </a>
+
+  </div>
+
+</nav>
+
+
+<section id="plan">
+
+  <div class="wrap">
+
+    <h2>
+      Current thinking
+    </h2>
+
+
+    <div class="plan">
+
+
+      <div class="plan-row">
+
+        <div class="number">
+          1
+        </div>
+
+        <div>
+
+          <h3>
+            School boards
+          </h3>
+
+          <p>
+            I’ve started outreach with OCDSB and OCSB, with the goal of
+            building relationships at the central level before doing a lot
+            of school-by-school outreach.
+          </p>
+
+          <ul>
+            <li>Identify schools that may already be a good fit</li>
+            <li>Get warm introductions where possible</li>
+            <li>Look for opportunities to speak to larger groups of staff or students</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="plan-row">
+
+        <div class="number">
+          2
+        </div>
+
+        <div>
+
+          <h3>
+            Schools + current chapters
+          </h3>
+
+          <p>
+            I want a clearer picture of what is already working locally,
+            where chapters may have gone quiet, and which schools could
+            provide good examples for new conversations.
+          </p>
+
+          <ul>
+            <li>Reconnect with quieter chapters where it makes sense</li>
+            <li>Identify a few strong local chapters</li>
+            <li>Build a targeted list of possible new schools</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="plan-row">
+
+        <div class="number">
+          3
+        </div>
+
+        <div>
+
+          <h3>
+            Parents + community
+          </h3>
+
+          <p>
+            I’d like to build more awareness outside the school boards
+            and better understand where families are already interested
+            in seeing something like Best Buddies.
+          </p>
+
+          <ul>
+            <li>OCDSB and OCSB SEAC</li>
+            <li>Parent involvement groups and school councils</li>
+            <li>Ottawa inclusion and disability organizations</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="plan-row">
+
+        <div class="number">
+          4
+        </div>
+
+        <div>
+
+          <h3>
+            Student + educator networks
+          </h3>
+
+          <p>
+            I’m also interested in groups that can help us reach more than
+            one school at a time.
+          </p>
+
+          <ul>
+            <li>Student Senate / student leadership</li>
+            <li>Learning Support and Special Education teams</li>
+            <li>Student Success and guidance staff</li>
+            <li>Principal / vice-principal networks</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="plan-row">
+
+        <div class="number">
+          5
+        </div>
+
+        <div>
+
+          <h3>
+            Post-secondary
+          </h3>
+
+          <p>
+            I want the university and college side to grow alongside the
+            school program.
+          </p>
+
+          <ul>
+            <li>
+              <strong>uOttawa:</strong>
+              reconnect with the current chapter and make sure there is
+              strong leadership coming behind the current executive
+            </li>
+
+            <li>
+              <strong>Carleton:</strong>
+              explore starting a chapter
+            </li>
+
+            <li>
+              <strong>Algonquin:</strong>
+              explore starting a chapter
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="plan-row">
+
+        <div class="number">
+          6
+        </div>
+
+        <div>
+
+          <h3>
+            Eastern Ontario
+          </h3>
+
+          <p>
+            I also have some useful relationships in CDSBEO, where Best
+            Buddies already has a number of chapters.
+          </p>
+
+          <ul>
+            <li>Student Senate</li>
+            <li>Parent engagement</li>
+            <li>School leadership</li>
+            <li>Additional schools that may already be a natural fit</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="note">
+
+      I’m deliberately not starting with a mass email to every school.
+      I’d rather use board relationships, local chapters, families, and
+      student leaders to make as many of those conversations warm as possible.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="october"
+  id="october"
+>
+
+  <div class="wrap">
+
+    <h2>
+      Week of October 26
+    </h2>
+
+    <p class="october-intro">
+      I’ll already be in Ottawa for the Best Buddies Youth Walk at
+      Glebe Collegiate, so I’d like to make good use of the week without
+      trying to cram everything into the trip.
+    </p>
+
+
+    <div class="trip-grid">
+
+      <div class="trip-item">
+        Board / central staff meetings
+      </div>
+
+      <div class="trip-item">
+        Visit one or two current chapters
+      </div>
+
+      <div class="trip-item">
+        Reconnect with uOttawa
+      </div>
+
+      <div class="trip-item">
+        Carleton or Algonquin conversation
+      </div>
+
+      <div class="trip-item">
+        Student leadership or broader group presentation
+      </div>
+
+      <div class="trip-item">
+        Meet with an Ottawa inclusion or community organization
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="input-section"
+  id="input"
+>
+
+  <div class="wrap">
+
+    <h2>
+      Where I’d value your input
+    </h2>
+
+
+    <div class="questions">
+
+      <div class="question">
+        Who do you think I should know locally?
+      </div>
+
+      <div class="question">
+        Are there groups or networks I’m missing?
+      </div>
+
+      <div class="question">
+        Are there particular schools or communities where you think
+        there may already be interest?
+      </div>
+
+      <div class="question">
+        Are there opportunities to speak to a broader group rather than
+        approaching schools one by one?
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="wrap">
+    Julianna Melnick-MacDonald · Best Buddies Canada · October 2026
+  </div>
+
+</footer>
+
+</body>
+</html>
