@@ -9,7 +9,7 @@
   content="Bring Best Buddies to your university or college. Build friendships, grow as a leader, and help create a more inclusive campus community with support from Best Buddies Canada."
 >
 
-<title>Best Buddies Canada | University & College</title>
+<title>Best Buddies Canada | University &amp; College</title>
 
 <link
   href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap"
@@ -22,6 +22,7 @@
   --purple:#5A3F98;
   --deep:#3F2B70;
   --yellow:#FFD420;
+  --yellow-soft:#FFF6C9;
   --teal:#8FD1C4;
   --orange:#F37735;
 
@@ -207,12 +208,6 @@ h2{
 
 .btn-primary:hover{
   background:var(--deep);
-}
-
-.btn-light{
-  background:#fff;
-  color:var(--purple);
-  border:2px solid rgba(255,255,255,.6);
 }
 
 
@@ -420,11 +415,10 @@ h2{
 
 .chapter-model-note{
   margin-top:22px;
-  padding:16px 20px;
-  background:var(--lav);
-  border-radius:14px;
+  padding:15px 0 0;
   color:var(--ink);
   font-weight:700;
+  border-top:1px solid var(--line);
 }
 
 
@@ -438,118 +432,88 @@ h2{
 
 .make-head{
   display:grid;
-  grid-template-columns:.76fr 1.24fr;
-  gap:62px;
+  grid-template-columns:.72fr 1.28fr;
+  gap:64px;
   align-items:start;
-  margin-bottom:34px;
+  margin-bottom:38px;
 }
 
 .make-head p{
-  margin:4px 0 0;
-  max-width:760px;
+  margin:3px 0 0;
+  max-width:800px;
+  font-size:1.04rem;
 }
 
 .role-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:14px;
+  border-top:1px solid rgba(90,63,152,.18);
+  border-bottom:1px solid rgba(90,63,152,.18);
 }
 
-.role-card{
-  position:relative;
-  min-height:156px;
-  padding:24px 24px 26px;
-  border-radius:18px;
-  background:#fff;
-  border:1px solid rgba(90,63,152,.12);
+.role{
+  padding:25px 28px 28px 0;
+  min-height:136px;
 }
 
-.role-card:before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width:100%;
-  height:5px;
-  border-radius:18px 18px 0 0;
-  background:var(--purple);
+.role:nth-child(3n+2),
+.role:nth-child(3n){
+  padding-left:28px;
+  border-left:1px solid rgba(90,63,152,.18);
 }
 
-.role-card:nth-child(2):before,
-.role-card:nth-child(5):before{
-  background:var(--yellow);
+.role:nth-child(n+4){
+  border-top:1px solid rgba(90,63,152,.18);
 }
 
-.role-card:nth-child(3):before{
-  background:var(--teal);
-}
-
-.role-card:nth-child(4):before{
-  background:var(--orange);
-}
-
-.role-card:nth-child(6):before{
-  background:var(--purple);
-}
-
-.role-card h3{
-  margin:0 0 8px;
+.role h3{
+  margin:0 0 7px;
   font-size:1.48rem;
   line-height:1;
 }
 
-.role-card p{
+.role p{
   margin:0;
   color:var(--muted);
   font-size:.9rem;
-  line-height:1.5;
+  max-width:380px;
 }
 
-.skill-line{
-  margin-top:26px;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:9px;
-}
-
-.skill-line strong{
-  font-family:var(--display);
-  color:var(--ink);
-  font-size:1.35rem;
-  margin-right:5px;
-}
-
-.skill-line span{
-  padding:7px 11px;
-  border-radius:999px;
-  background:#fff;
+.skills-line{
+  margin-top:27px;
   color:var(--purple);
-  font-size:.76rem;
-  font-weight:800;
+  font-weight:700;
+  line-height:1.7;
+}
+
+.skills-line strong{
+  color:var(--ink);
+  font-family:var(--display);
+  font-size:1.35rem;
+  margin-right:8px;
 }
 
 
 /* =====================================================
-   REAL VALUE
+   VALUE BAND
 ===================================================== */
 
-.value-section{
-  background:#fff;
+.value-band{
+  background:var(--yellow-soft);
+  border-top:1px solid rgba(255,212,32,.38);
 }
 
-.value-box{
+.value-band-inner{
   display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:58px;
+  grid-template-columns:.72fr 1.28fr;
+  gap:64px;
   align-items:center;
-  padding:34px 0;
-  border-top:5px solid var(--yellow);
-  border-bottom:1px solid var(--line);
+  padding:38px 0 40px;
 }
 
-.value-box h2{
-  margin-top:12px;
+.value-band h2{
+  margin:12px 0 0;
+  max-width:520px;
 }
 
 .value-copy{
@@ -557,45 +521,29 @@ h2{
 }
 
 .value-copy p{
-  margin:0 0 14px;
+  margin:0 0 13px;
+}
+
+.value-copy p:last-child{
+  margin-bottom:0;
 }
 
 .value-copy strong{
   color:var(--ink);
 }
 
-.career-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-top:17px;
-}
-
-.career-list span{
-  font-size:.76rem;
-  font-weight:750;
-  color:var(--purple);
-  background:var(--lav);
-  border-radius:999px;
-  padding:7px 11px;
-}
-
 
 /* =====================================================
-   START / SUPPORT
+   START + SUPPORT
 ===================================================== */
 
 .start-support{
   background:var(--deep);
   color:#fff;
+  padding:54px 0;
 }
 
 .start-support .label{
-  color:#fff;
-}
-
-.start-support h2,
-.start-support h3{
   color:#fff;
 }
 
@@ -603,18 +551,22 @@ h2{
   background:var(--yellow);
 }
 
+.start-support h2,
+.start-support h3{
+  color:#fff;
+}
+
 .start-top{
   display:grid;
   grid-template-columns:.72fr 1.28fr;
   gap:50px;
   align-items:start;
-  margin-bottom:38px;
 }
 
 .start-intro p{
-  color:rgba(255,255,255,.86);
+  color:rgba(255,255,255,.84);
   margin:15px 0 0;
-  max-width:480px;
+  max-width:470px;
 }
 
 .steps{
@@ -649,62 +601,88 @@ h2{
 
 .step p{
   margin:5px 0 0;
-  color:rgba(255,255,255,.82);
+  color:rgba(255,255,255,.8);
   font-size:.89rem;
 }
 
-.support-row{
+
+/* support inside purple */
+
+.support-block{
   display:grid;
-  grid-template-columns:.78fr 1.22fr;
-  gap:48px;
-  align-items:center;
+  grid-template-columns:.72fr 1.28fr;
+  gap:50px;
+  align-items:start;
   padding-top:31px;
-  margin-top:31px;
+  margin-top:33px;
   border-top:1px solid rgba(255,255,255,.22);
 }
 
-.support-row h3{
-  margin:0 0 9px;
+.support-copy h3{
+  margin:0 0 8px;
   font-size:2rem;
   line-height:1;
 }
 
-.support-row p{
+.support-copy p{
   margin:0;
-  color:rgba(255,255,255,.84);
+  color:rgba(255,255,255,.82);
+  max-width:480px;
 }
 
-.support-pills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
+.support-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 36px;
+  margin:0;
+  padding:0;
+  list-style:none;
 }
 
-.support-pills span{
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.18);
+.support-list li{
+  position:relative;
+  padding-left:19px;
   color:#fff;
-  font-weight:700;
-  font-size:.76rem;
-  border-radius:999px;
-  padding:8px 11px;
+  font-weight:650;
+  font-size:.9rem;
 }
+
+.support-list li:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.6em;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--yellow);
+}
+
+
+/* final CTA */
 
 .start-cta{
-  display:flex;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:30px;
   align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  margin-top:28px;
-  padding-top:26px;
+  margin-top:32px;
+  padding-top:28px;
   border-top:1px solid rgba(255,255,255,.22);
+}
+
+.start-cta strong{
+  display:block;
+  color:#fff;
+  font-family:var(--display);
+  font-size:1.5rem;
+  line-height:1;
+  margin-bottom:6px;
 }
 
 .start-cta p{
   margin:0;
-  color:#fff;
-  font-weight:700;
-  max-width:800px;
+  color:rgba(255,255,255,.82);
 }
 
 .start-cta .btn{
@@ -719,7 +697,7 @@ h2{
 ===================================================== */
 
 .contact{
-  padding:42px 0;
+  padding:38px 0;
   background:#fff;
 }
 
@@ -735,27 +713,27 @@ h2{
 }
 
 .contact-copy p{
-  margin:14px 0 0;
-  max-width:760px;
+  margin:13px 0 0;
+  max-width:740px;
 }
 
 .contact-card{
   display:grid;
-  grid-template-columns:74px 1fr;
-  gap:18px;
+  grid-template-columns:70px 1fr;
+  gap:17px;
   align-items:center;
-  padding-left:32px;
+  padding-left:30px;
   border-left:2px solid var(--line);
 }
 
 .contact-card img{
-  width:74px;
+  width:70px;
 }
 
 .contact-name{
   font-family:var(--display);
   color:var(--ink);
-  font-size:1.45rem;
+  font-size:1.42rem;
   line-height:1;
 }
 
@@ -766,7 +744,7 @@ h2{
 }
 
 .contact-email{
-  margin-top:11px;
+  margin-top:10px;
   font-weight:800;
 }
 
@@ -777,7 +755,7 @@ h2{
 .contact-meta{
   margin-top:5px;
   color:var(--muted);
-  font-size:.85rem;
+  font-size:.84rem;
 }
 
 
@@ -788,7 +766,7 @@ h2{
 footer{
   border-top:5px solid var(--yellow);
   background:#fff;
-  padding:17px 0;
+  padding:16px 0;
   font-size:.8rem;
 }
 
@@ -813,9 +791,9 @@ footer{
   .hero-info-grid,
   .connection-head,
   .make-head,
-  .value-box,
+  .value-band-inner,
   .start-top,
-  .support-row,
+  .support-block,
   .contact-grid{
     grid-template-columns:1fr;
     gap:25px;
@@ -825,24 +803,38 @@ footer{
     padding:18px 22px 21px;
   }
 
-  .connection-grid,
   .role-grid{
     grid-template-columns:repeat(2,1fr);
+  }
+
+  .role{
+    padding:23px 24px 25px 0;
+  }
+
+  .role:nth-child(3n+2),
+  .role:nth-child(3n){
+    padding-left:0;
+    border-left:0;
+  }
+
+  .role:nth-child(even){
+    padding-left:24px;
+    border-left:1px solid rgba(90,63,152,.18);
+  }
+
+  .role:nth-child(n+3){
+    border-top:1px solid rgba(90,63,152,.18);
   }
 
   .steps{
     grid-template-columns:1fr;
   }
 
-  .start-cta{
-    align-items:flex-start;
-  }
-
   .contact-card{
     padding-left:0;
     border-left:0;
     border-top:2px solid var(--line);
-    padding-top:24px;
+    padding-top:23px;
   }
 }
 
@@ -882,6 +874,9 @@ footer{
     font-size:.75rem;
     padding:7px 7px;
   }
+
+
+  /* hero */
 
   .hero-title{
     margin-top:-46px;
@@ -923,6 +918,9 @@ footer{
     width:100%;
   }
 
+
+  /* quick */
+
   .quick-grid{
     grid-template-columns:1fr;
   }
@@ -939,34 +937,61 @@ footer{
     border-bottom:0;
   }
 
+
+  /* shared */
+
   .section{
-    padding:46px 0;
+    padding:44px 0;
   }
 
   h2{
     font-size:clamp(2.3rem,11vw,3.05rem);
   }
 
-  .connection-grid,
+
+  /* connection */
+
+  .connection-grid{
+    grid-template-columns:1fr;
+  }
+
+  .connection-card{
+    padding:21px 22px;
+  }
+
+
+  /* leadership */
+
   .role-grid{
     grid-template-columns:1fr;
   }
 
-  .connection-card,
-  .role-card{
+  .role,
+  .role:nth-child(even),
+  .role:nth-child(3n+2),
+  .role:nth-child(3n){
+    padding:20px 0;
+    border-left:0;
+    border-top:1px solid rgba(90,63,152,.18);
     min-height:auto;
   }
 
-  .skill-line{
-    align-items:flex-start;
+  .role:first-child{
+    border-top:0;
   }
 
-  .value-box{
-    padding:26px 0;
+
+  /* value */
+
+  .value-band-inner{
+    padding:32px 0 34px;
   }
 
-  .career-list{
-    gap:6px;
+
+  /* start */
+
+  .start-support{
+    padding:46px 0;
   }
 
   .steps{
@@ -987,21 +1012,24 @@ footer{
     grid-column:2;
   }
 
-  .support-row h3{
-    font-size:1.75rem;
+  .support-list{
+    grid-template-columns:1fr;
   }
 
   .start-cta{
-    display:block;
+    grid-template-columns:1fr;
+    gap:18px;
   }
 
   .start-cta .btn{
-    margin-top:18px;
     width:100%;
   }
 
+
+  /* contact */
+
   .contact{
-    padding:37px 0;
+    padding:35px 0;
   }
 
   .contact-card{
@@ -1019,7 +1047,9 @@ footer{
 
 <body>
 
-<a class="skip" href="#main">Skip to main content</a>
+<a class="skip" href="#main">
+  Skip to main content
+</a>
 
 
 <header>
@@ -1027,15 +1057,37 @@ footer{
   <div class="container header-inner">
 
     <a class="brand" href="#top">
-      <img src="assets/bb-logo.png" alt="">
-      <span>Best Buddies Canada</span>
+
+      <img
+        src="assets/bb-logo.png"
+        alt=""
+      >
+
+      <span>
+        Best Buddies Canada
+      </span>
+
     </a>
 
+
     <nav class="nav" aria-label="Page navigation">
-      <a href="#connection">What it looks like</a>
-      <a href="#leadership">Make it yours</a>
-      <a href="#start">Start here</a>
-      <a href="#contact">Contact</a>
+
+      <a href="#connection">
+        What it looks like
+      </a>
+
+      <a href="#leadership">
+        Make it yours
+      </a>
+
+      <a href="#start">
+        Start here
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </nav>
 
   </div>
@@ -1113,8 +1165,8 @@ footer{
 
         <p>
           Best Buddies brings people with and without intellectual and
-          developmental disabilities together through friendship, shared
-          experiences, and student-led campus chapters.
+          developmental disabilities together through friendship,
+          shared experiences, and student-led campus chapters.
         </p>
 
         <p>
@@ -1159,18 +1211,43 @@ footer{
   <div class="container quick-grid">
 
     <div class="quick-item">
-      <strong>Friendship first</strong>
-      <span>Real relationships built around time together and shared interests.</span>
+
+      <strong>
+        Friendship first
+      </strong>
+
+      <span>
+        Real relationships built around time together and shared interests.
+      </span>
+
     </div>
 
-    <div class="quick-item">
-      <strong>Student-led</strong>
-      <span>Shape the chapter, build a team, and create something your campus can carry forward.</span>
-    </div>
 
     <div class="quick-item">
-      <strong>Supported throughout</strong>
-      <span>Best Buddies provides the framework, resources, training, and staff support.</span>
+
+      <strong>
+        Student-led
+      </strong>
+
+      <span>
+        Shape the chapter, build a team, and create something your campus
+        can carry forward.
+      </span>
+
+    </div>
+
+
+    <div class="quick-item">
+
+      <strong>
+        Supported throughout
+      </strong>
+
+      <span>
+        Best Buddies provides the framework, resources, training, and
+        staff support.
+      </span>
+
     </div>
 
   </div>
@@ -1202,8 +1279,9 @@ footer{
     <div>
 
       <p>
-        A Best Buddies chapter creates more ways to meet people, spend time
-        together, find common ground, and feel part of campus and community life.
+        A Best Buddies chapter creates more ways to meet people,
+        spend time together, find common ground, and feel part
+        of campus and community life.
       </p>
 
     </div>
@@ -1220,8 +1298,8 @@ footer{
       </h3>
 
       <p>
-        One-to-one connections built around shared interests, conversation,
-        outings, and time together.
+        One-to-one connections built around shared interests,
+        conversation, outings, and time together.
       </p>
 
     </article>
@@ -1234,8 +1312,8 @@ footer{
       </h3>
 
       <p>
-        Group activities, campus events, games, celebrations, coffee,
-        outings, and whatever the chapter enjoys doing together.
+        Group activities, campus events, games, celebrations,
+        coffee, outings, and whatever the chapter enjoys doing together.
       </p>
 
     </article>
@@ -1248,8 +1326,8 @@ footer{
       </h3>
 
       <p>
-        A chapter culture where people are known, included, and encouraged
-        to contribute in their own way.
+        A chapter culture where people are known, included,
+        and encouraged to contribute in their own way.
       </p>
 
     </article>
@@ -1260,8 +1338,8 @@ footer{
   <div class="container">
 
     <div class="chapter-model-note">
-      Chapters can use one-to-one friendships, group activities, or a mix of both.
-      The program can take shape around the people involved.
+      Chapters can use one-to-one friendships, group activities,
+      or a mix of both. The program can take shape around the people involved.
     </div>
 
   </div>
@@ -1293,9 +1371,10 @@ footer{
     <div>
 
       <p>
-        Best Buddies chapters are student-led. Some people want to steer the
-        whole chapter. Others would rather own one part of it. Build an executive
-        around the people and strengths you have.
+        You don’t have to be the person doing everything.
+        Strong chapters work because different people take on different pieces:
+        leading the team, planning activities, welcoming members,
+        communications, fundraising, and helping the chapter carry forward.
       </p>
 
     </div>
@@ -1305,108 +1384,94 @@ footer{
 
   <div class="container role-grid">
 
-    <article class="role-card">
+    <div class="role">
 
       <h3>
         Lead the chapter
       </h3>
 
       <p>
-        Set direction, keep the team moving, and help turn ideas into action.
+        Set direction and keep things moving.
       </p>
 
-    </article>
+    </div>
 
 
-    <article class="role-card">
+    <div class="role">
 
       <h3>
         Plan the fun
       </h3>
 
       <p>
-        Shape activities, gatherings, outings, and events people actually
-        want to attend.
+        Shape activities, outings, and events.
       </p>
 
-    </article>
+    </div>
 
 
-    <article class="role-card">
+    <div class="role">
 
       <h3>
         Bring people in
       </h3>
 
       <p>
-        Recruit new members, welcome people, and help everyone find a way
-        to take part.
+        Recruit, welcome, and help members find their place.
       </p>
 
-    </article>
+    </div>
 
 
-    <article class="role-card">
+    <div class="role">
 
       <h3>
         Tell the story
       </h3>
 
       <p>
-        Handle social media, communications, promotion, and chapter visibility
-        around campus.
+        Handle social media, promotion, and campus visibility.
       </p>
 
-    </article>
+    </div>
 
 
-    <article class="role-card">
+    <div class="role">
 
       <h3>
         Build support
       </h3>
 
       <p>
-        Help with fundraising, campus connections, partnerships, and the
-        practical pieces that keep things moving.
+        Help with fundraising and campus connections.
       </p>
 
-    </article>
+    </div>
 
 
-    <article class="role-card">
+    <div class="role">
 
       <h3>
         Keep it growing
       </h3>
 
       <p>
-        Build the next group of leaders so the chapter stays strong after
-        people graduate.
+        Help the next student leaders take over.
       </p>
 
-    </article>
+    </div>
 
   </div>
 
 
-  <div class="container">
+  <div class="container skills-line">
 
-    <div class="skill-line">
+    <strong>
+      Along the way:
+    </strong>
 
-      <strong>
-        Skills you’ll actually use:
-      </strong>
-
-      <span>Leadership</span>
-      <span>Communication</span>
-      <span>Project planning</span>
-      <span>Recruitment</span>
-      <span>Event coordination</span>
-      <span>Relationship building</span>
-      <span>Problem solving</span>
-
-    </div>
+    leadership · communication · project planning · recruitment ·
+    event coordination · relationship building · problem solving
 
   </div>
 
@@ -1414,21 +1479,21 @@ footer{
 
 
 <!-- =====================================================
-     REAL VALUE
+     VALUE BAND
 ===================================================== -->
 
-<section class="section value-section">
+<section class="value-band">
 
-  <div class="container value-box">
+  <div class="container value-band-inner">
 
     <div>
 
       <span class="label">
-        Useful well beyond campus
+        Useful beyond campus
       </span>
 
       <h2>
-        There’s real value here.
+        What you build here goes with you.
       </h2>
 
     </div>
@@ -1437,36 +1502,19 @@ footer{
     <div class="value-copy">
 
       <p>
-        Thinking about teaching, healthcare, social work, psychology,
-        recreation, business, communications, or something else entirely?
-      </p>
-
-      <p>
-        Best Buddies gives you the chance to build genuine relationships,
-        work with a team, take responsibility, and learn how to create
-        spaces where more people can take part.
+        Whether you’re heading into education, healthcare, social work,
+        psychology, recreation, business, communications, or something
+        completely different, Best Buddies gives you real experience
+        working with people, leading a team, solving problems, and creating
+        spaces where more people can participate.
       </p>
 
       <p>
         <strong>
-          Friendship comes first. The perspective and skills you gain
+          Friendship comes first. The perspective and skills you build
           come with you.
         </strong>
       </p>
-
-
-      <div class="career-list">
-
-        <span>Education</span>
-        <span>Healthcare</span>
-        <span>Social work</span>
-        <span>Psychology</span>
-        <span>Recreation</span>
-        <span>Business</span>
-        <span>Marketing</span>
-        <span>Communications</span>
-
-      </div>
 
     </div>
 
@@ -1479,7 +1527,7 @@ footer{
      START + SUPPORT
 ===================================================== -->
 
-<section class="section start-support" id="start">
+<section class="start-support" id="start">
 
   <div class="container">
 
@@ -1550,8 +1598,8 @@ footer{
           </strong>
 
           <p>
-            Recruit members, make connections, plan activities, and start
-            building your chapter.
+            Recruit members, make connections, plan activities,
+            and start building your chapter.
           </p>
 
         </article>
@@ -1561,50 +1609,75 @@ footer{
     </div>
 
 
-    <div class="support-row">
+    <div class="support-block">
 
-      <div>
+      <div class="support-copy">
 
         <h3>
           You’re not doing this alone.
         </h3>
 
         <p>
-          Student leaders have Best Buddies Canada behind them throughout
-          the process.
+          Best Buddies Canada stays involved as the chapter takes shape.
+          You’ll have practical resources, guidance, and someone to call
+          when questions come up.
         </p>
 
       </div>
 
 
-      <div class="support-pills">
+      <ul class="support-list">
 
-        <span>Leadership training</span>
-        <span>Recruitment help</span>
-        <span>Program guides</span>
-        <span>Activity ideas</span>
-        <span>Fundraising resources</span>
-        <span>Screening guidance</span>
-        <span>Matching support</span>
-        <span>Ongoing staff help</span>
+        <li>
+          Leadership training
+        </li>
 
-      </div>
+        <li>
+          Recruitment support
+        </li>
+
+        <li>
+          Program and activity resources
+        </li>
+
+        <li>
+          Guidance with screening and matching
+        </li>
+
+        <li>
+          Fundraising resources
+        </li>
+
+        <li>
+          Ongoing staff support
+        </li>
+
+      </ul>
 
     </div>
 
 
     <div class="start-cta">
 
-      <p>
-        Interested? You don’t need to commit to running a chapter just
-        because you reach out.
-      </p>
+      <div>
+
+        <strong>
+          Interested? Start with a conversation.
+        </strong>
+
+        <p>
+          You don’t need a full team, a finished plan, or a commitment
+          to run the chapter before you reach out.
+        </p>
+
+      </div>
+
 
       <a
         class="btn"
         href="mailto:julianna@bestbuddies.ca?subject=Interested%20in%20Best%20Buddies%20on%20campus"
       >
-        Start with a conversation
+        I’m interested
       </a>
 
     </div>
@@ -1659,9 +1732,11 @@ footer{
         </div>
 
         <div class="contact-email">
+
           <a href="mailto:julianna@bestbuddies.ca">
             julianna@bestbuddies.ca
           </a>
+
         </div>
 
         <div class="contact-meta">
