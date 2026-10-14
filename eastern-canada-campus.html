@@ -1,0 +1,1776 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta
+  name="description"
+  content="Bring Best Buddies to your university or college. Build friendships, grow as a leader, and help create a more inclusive campus community with support from Best Buddies Canada."
+>
+
+<title>Best Buddies Canada | University &amp; College</title>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+:root{
+  --purple:#5A3F98;
+  --deep:#3F2B70;
+  --yellow:#FFD420;
+  --yellow-soft:#FFF6C9;
+  --teal:#8FD1C4;
+  --orange:#F37735;
+
+  --ink:#1D1823;
+  --text:#433D49;
+  --muted:#6C6571;
+
+  --lav:#F3F0F9;
+  --line:#DDD8E5;
+
+  --display:"League Spartan","Arial Black",sans-serif;
+  --body:"Montserrat","Helvetica Neue",Arial,sans-serif;
+
+  --max:1380px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
+body{
+  margin:0;
+  font-family:var(--body);
+  color:var(--text);
+  font-size:17px;
+  line-height:1.58;
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+a{
+  color:var(--purple);
+}
+
+.container{
+  width:min(calc(100% - 64px),var(--max));
+  margin-inline:auto;
+}
+
+.skip{
+  position:absolute;
+  left:-9999px;
+}
+
+.skip:focus{
+  left:16px;
+  top:14px;
+  z-index:9999;
+  background:var(--yellow);
+  color:var(--ink);
+  padding:10px 14px;
+  border-radius:6px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.97);
+  border-top:6px solid var(--yellow);
+  border-bottom:1px solid #eeeaf3;
+  backdrop-filter:blur(10px);
+}
+
+.header-inner{
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  color:var(--ink);
+  font-family:var(--display);
+  font-weight:800;
+  font-size:1.22rem;
+  white-space:nowrap;
+}
+
+.brand img{
+  height:56px;
+  width:auto;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.nav a{
+  color:var(--purple);
+  text-decoration:none;
+  font-weight:800;
+  font-size:.86rem;
+  padding:9px 11px;
+  border-radius:8px;
+}
+
+.nav a:hover,
+.nav a:focus-visible{
+  background:var(--lav);
+}
+
+
+/* =====================================================
+   SHARED
+===================================================== */
+
+.section{
+  padding:58px 0;
+}
+
+.label{
+  display:block;
+  width:fit-content;
+  color:var(--purple);
+  font-size:.74rem;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+.label:after{
+  content:"";
+  display:block;
+  width:44px;
+  height:6px;
+  margin-top:8px;
+  border-radius:999px;
+  background:var(--yellow);
+}
+
+h1,
+h2,
+h3{
+  font-family:var(--display);
+  color:var(--ink);
+  letter-spacing:-.035em;
+}
+
+h2{
+  font-size:clamp(2.5rem,3.5vw,3.8rem);
+  line-height:.95;
+  margin:12px 0 0;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.btn-primary{
+  background:var(--purple);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:var(--deep);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+  background:#fff;
+}
+
+.hero-media picture,
+.hero-media img{
+  display:block;
+  width:100%;
+}
+
+.hero-media img{
+  height:auto;
+}
+
+.hero-title{
+  background:var(--yellow);
+  padding:
+    17px
+    max(28px,calc((100vw - var(--max))/2 + 28px))
+    20px;
+}
+
+.hero-eyebrow{
+  display:block;
+  color:var(--deep);
+  font-size:.74rem;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:clamp(3.15rem,4.4vw,5.1rem);
+  line-height:.89;
+  font-weight:900;
+  letter-spacing:-.045em;
+}
+
+.hero h1 .accent{
+  color:var(--purple);
+}
+
+.hero h1 .lock{
+  white-space:nowrap;
+}
+
+.hero-info{
+  padding:25px 0 28px;
+  border-bottom:1px solid var(--line);
+}
+
+.hero-info-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:52px;
+  align-items:center;
+}
+
+.hero-mandate{
+  display:block;
+  font-family:var(--display);
+  font-size:1.5rem;
+  color:var(--purple);
+  line-height:1;
+  margin-bottom:9px;
+}
+
+.hero-lede{
+  margin:0;
+  color:var(--ink);
+  font-size:1.12rem;
+  font-weight:750;
+  max-width:620px;
+}
+
+.hero-right p{
+  margin:0 0 14px;
+  max-width:760px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px;
+  margin-top:18px;
+}
+
+.hero-actions .btn:last-child{
+  border:2px solid var(--line);
+  color:var(--purple);
+  background:#fff;
+}
+
+
+/* =====================================================
+   QUICK STRIP
+===================================================== */
+
+.quick{
+  background:var(--lav);
+  padding:18px 0;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+
+.quick-item{
+  padding:4px 24px;
+  border-right:1px solid rgba(90,63,152,.15);
+}
+
+.quick-item:first-child{
+  padding-left:0;
+}
+
+.quick-item:last-child{
+  border-right:0;
+  padding-right:0;
+}
+
+.quick-item strong{
+  display:block;
+  font-family:var(--display);
+  color:var(--purple);
+  font-size:1.25rem;
+  line-height:1;
+}
+
+.quick-item span{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:.88rem;
+}
+
+
+/* =====================================================
+   CONNECTION
+===================================================== */
+
+.connection{
+  background:#fff;
+}
+
+.connection-head{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:64px;
+  align-items:start;
+  margin-bottom:34px;
+}
+
+.connection-head p{
+  margin:4px 0 0;
+  max-width:760px;
+  font-size:1.04rem;
+}
+
+.connection-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.connection-card{
+  padding:25px 26px 27px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+}
+
+.connection-card:nth-child(1){
+  border-top:5px solid var(--yellow);
+}
+
+.connection-card:nth-child(2){
+  border-top:5px solid var(--purple);
+}
+
+.connection-card:nth-child(3){
+  border-top:5px solid var(--teal);
+}
+
+.connection-card h3{
+  margin:0 0 8px;
+  font-size:1.65rem;
+  line-height:1;
+}
+
+.connection-card p{
+  margin:0;
+  font-size:.92rem;
+}
+
+.chapter-model-note{
+  margin-top:22px;
+  padding:15px 0 0;
+  color:var(--ink);
+  font-weight:700;
+  border-top:1px solid var(--line);
+}
+
+
+/* =====================================================
+   MAKE IT YOURS
+===================================================== */
+
+.make-it-yours{
+  background:var(--lav);
+}
+
+.make-head{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:64px;
+  align-items:start;
+  margin-bottom:38px;
+}
+
+.make-head p{
+  margin:3px 0 0;
+  max-width:800px;
+  font-size:1.04rem;
+}
+
+.role-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(90,63,152,.18);
+  border-bottom:1px solid rgba(90,63,152,.18);
+}
+
+.role{
+  padding:25px 28px 28px 0;
+  min-height:136px;
+}
+
+.role:nth-child(3n+2),
+.role:nth-child(3n){
+  padding-left:28px;
+  border-left:1px solid rgba(90,63,152,.18);
+}
+
+.role:nth-child(n+4){
+  border-top:1px solid rgba(90,63,152,.18);
+}
+
+.role h3{
+  margin:0 0 7px;
+  font-size:1.48rem;
+  line-height:1;
+}
+
+.role p{
+  margin:0;
+  color:var(--muted);
+  font-size:.9rem;
+  max-width:380px;
+}
+
+.skills-line{
+  margin-top:27px;
+  color:var(--purple);
+  font-weight:700;
+  line-height:1.7;
+}
+
+.skills-line strong{
+  color:var(--ink);
+  font-family:var(--display);
+  font-size:1.35rem;
+  margin-right:8px;
+}
+
+
+/* =====================================================
+   VALUE BAND
+===================================================== */
+
+.value-band{
+  background:var(--yellow-soft);
+  border-top:1px solid rgba(255,212,32,.38);
+}
+
+.value-band-inner{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:64px;
+  align-items:center;
+  padding:38px 0 40px;
+}
+
+.value-band h2{
+  margin:12px 0 0;
+  max-width:520px;
+}
+
+.value-copy{
+  max-width:820px;
+}
+
+.value-copy p{
+  margin:0 0 13px;
+}
+
+.value-copy p:last-child{
+  margin-bottom:0;
+}
+
+.value-copy strong{
+  color:var(--ink);
+}
+
+
+/* =====================================================
+   START + SUPPORT
+===================================================== */
+
+.start-support{
+  background:var(--deep);
+  color:#fff;
+  padding:54px 0;
+}
+
+.start-support .label{
+  color:#fff;
+}
+
+.start-support .label:after{
+  background:var(--yellow);
+}
+
+.start-support h2,
+.start-support h3{
+  color:#fff;
+}
+
+.start-top{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:50px;
+  align-items:start;
+}
+
+.start-intro p{
+  color:rgba(255,255,255,.84);
+  margin:15px 0 0;
+  max-width:470px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.step{
+  padding-top:17px;
+  border-top:1px solid rgba(255,255,255,.28);
+}
+
+.step-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:39px;
+  height:39px;
+  border-radius:50%;
+  background:var(--yellow);
+  color:var(--ink);
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.step strong{
+  display:block;
+  color:#fff;
+  line-height:1.2;
+}
+
+.step p{
+  margin:5px 0 0;
+  color:rgba(255,255,255,.8);
+  font-size:.89rem;
+}
+
+
+/* support inside purple */
+
+.support-block{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:50px;
+  align-items:start;
+  padding-top:31px;
+  margin-top:33px;
+  border-top:1px solid rgba(255,255,255,.22);
+}
+
+.support-copy h3{
+  margin:0 0 8px;
+  font-size:2rem;
+  line-height:1;
+}
+
+.support-copy p{
+  margin:0;
+  color:rgba(255,255,255,.82);
+  max-width:480px;
+}
+
+.support-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 36px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.support-list li{
+  position:relative;
+  padding-left:19px;
+  color:#fff;
+  font-weight:650;
+  font-size:.9rem;
+}
+
+.support-list li:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.6em;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--yellow);
+}
+
+
+/* final CTA */
+
+.start-cta{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:30px;
+  align-items:center;
+  margin-top:32px;
+  padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.22);
+}
+
+.start-cta strong{
+  display:block;
+  color:#fff;
+  font-family:var(--display);
+  font-size:1.5rem;
+  line-height:1;
+  margin-bottom:6px;
+}
+
+.start-cta p{
+  margin:0;
+  color:rgba(255,255,255,.82);
+}
+
+.start-cta .btn{
+  background:var(--yellow);
+  color:var(--ink);
+  white-space:nowrap;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+  padding:38px 0;
+  background:#fff;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
+}
+
+.contact h2{
+  margin-top:12px;
+}
+
+.contact-copy p{
+  margin:13px 0 0;
+  max-width:740px;
+}
+
+.contact-card{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:17px;
+  align-items:center;
+  padding-left:30px;
+  border-left:2px solid var(--line);
+}
+
+.contact-card img{
+  width:70px;
+}
+
+.contact-name{
+  font-family:var(--display);
+  color:var(--ink);
+  font-size:1.42rem;
+  line-height:1;
+}
+
+.contact-title{
+  color:var(--purple);
+  font-weight:800;
+  margin-top:4px;
+}
+
+.contact-email{
+  margin-top:10px;
+  font-weight:800;
+}
+
+.contact-email a{
+  text-decoration:none;
+}
+
+.contact-meta{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:.84rem;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  border-top:5px solid var(--yellow);
+  background:#fff;
+  padding:16px 0;
+  font-size:.8rem;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1000px){
+
+  .container{
+    width:min(calc(100% - 42px),var(--max));
+  }
+
+  .hero-info-grid,
+  .connection-head,
+  .make-head,
+  .value-band-inner,
+  .start-top,
+  .support-block,
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .hero-title{
+    padding:18px 22px 21px;
+  }
+
+  .role-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .role{
+    padding:23px 24px 25px 0;
+  }
+
+  .role:nth-child(3n+2),
+  .role:nth-child(3n){
+    padding-left:0;
+    border-left:0;
+  }
+
+  .role:nth-child(even){
+    padding-left:24px;
+    border-left:1px solid rgba(90,63,152,.18);
+  }
+
+  .role:nth-child(n+3){
+    border-top:1px solid rgba(90,63,152,.18);
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .contact-card{
+    padding-left:0;
+    border-left:0;
+    border-top:2px solid var(--line);
+    padding-top:23px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+  body{
+    font-size:16px;
+  }
+
+  .container{
+    width:min(calc(100% - 28px),var(--max));
+  }
+
+  .header-inner{
+    min-height:72px;
+  }
+
+  .brand img{
+    height:47px;
+  }
+
+  .brand span{
+    display:none;
+  }
+
+  .nav a:nth-child(2),
+  .nav a:nth-child(3){
+    display:none;
+  }
+
+  .nav a{
+    font-size:.75rem;
+    padding:7px 7px;
+  }
+
+
+  /* hero */
+
+  .hero-title{
+    margin-top:-46px;
+    position:relative;
+    z-index:2;
+    padding:14px 15px 18px;
+  }
+
+  .hero-eyebrow{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:clamp(2.4rem,11vw,3.15rem);
+    line-height:.88;
+  }
+
+  .hero h1 .lock{
+    white-space:normal;
+  }
+
+  .hero-info{
+    padding:20px 0 23px;
+  }
+
+  .hero-mandate{
+    font-size:1.25rem;
+  }
+
+  .hero-lede{
+    font-size:1rem;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+
+  /* quick */
+
+  .quick-grid{
+    grid-template-columns:1fr;
+  }
+
+  .quick-item,
+  .quick-item:first-child,
+  .quick-item:last-child{
+    padding:11px 0;
+    border-right:0;
+    border-bottom:1px solid rgba(90,63,152,.15);
+  }
+
+  .quick-item:last-child{
+    border-bottom:0;
+  }
+
+
+  /* shared */
+
+  .section{
+    padding:44px 0;
+  }
+
+  h2{
+    font-size:clamp(2.3rem,11vw,3.05rem);
+  }
+
+
+  /* connection */
+
+  .connection-grid{
+    grid-template-columns:1fr;
+  }
+
+  .connection-card{
+    padding:21px 22px;
+  }
+
+
+  /* leadership */
+
+  .role-grid{
+    grid-template-columns:1fr;
+  }
+
+  .role,
+  .role:nth-child(even),
+  .role:nth-child(3n+2),
+  .role:nth-child(3n){
+    padding:20px 0;
+    border-left:0;
+    border-top:1px solid rgba(90,63,152,.18);
+    min-height:auto;
+  }
+
+  .role:first-child{
+    border-top:0;
+  }
+
+
+  /* value */
+
+  .value-band-inner{
+    padding:32px 0 34px;
+  }
+
+
+  /* start */
+
+  .start-support{
+    padding:46px 0;
+  }
+
+  .steps{
+    gap:15px;
+  }
+
+  .step{
+    display:grid;
+    grid-template-columns:40px 1fr;
+    column-gap:11px;
+  }
+
+  .step-number{
+    grid-row:1/3;
+  }
+
+  .step p{
+    grid-column:2;
+  }
+
+  .support-list{
+    grid-template-columns:1fr;
+  }
+
+  .start-cta{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .start-cta .btn{
+    width:100%;
+  }
+
+
+  /* contact */
+
+  .contact{
+    padding:35px 0;
+  }
+
+  .contact-card{
+    grid-template-columns:62px 1fr;
+  }
+
+  .contact-card img{
+    width:62px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<a class="skip" href="#main">
+  Skip to main content
+</a>
+
+
+<header>
+
+  <div class="container header-inner">
+
+    <a class="brand" href="#top">
+
+      <img
+        src="assets/bb-logo.png"
+        alt=""
+      >
+
+      <span>
+        Best Buddies Canada
+      </span>
+
+    </a>
+
+
+    <nav class="nav" aria-label="Page navigation">
+
+      <a href="#connection">
+        What it looks like
+      </a>
+
+      <a href="#leadership">
+        Make it yours
+      </a>
+
+      <a href="#start">
+        Start here
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main id="main">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="top">
+
+  <div class="hero-media">
+
+    <picture>
+
+      <source
+        media="(max-width:700px)"
+        srcset="assets/campusheromobile.png"
+      >
+
+      <source
+        media="(max-width:1050px)"
+        srcset="assets/campusherotablet.png"
+      >
+
+      <img
+        src="assets/campusherodesktop.png"
+        alt="Best Buddies participants and volunteers together"
+      >
+
+    </picture>
+
+  </div>
+
+
+  <div class="hero-title">
+
+    <span class="hero-eyebrow">
+      Friendship, belonging, and leadership
+    </span>
+
+    <h1>
+      Bring
+      <span class="lock">Best Buddies</span>
+      to
+      <span class="accent">your campus.</span>
+    </h1>
+
+  </div>
+
+
+  <div class="hero-info">
+
+    <div class="container hero-info-grid">
+
+      <div>
+
+        <span class="hero-mandate">
+          Because everyone deserves a friend.
+        </span>
+
+        <p class="hero-lede">
+          Make friends. Build community. Lead something that matters.
+        </p>
+
+      </div>
+
+
+      <div class="hero-right">
+
+        <p>
+          Best Buddies brings people with and without intellectual and
+          developmental disabilities together through friendship,
+          shared experiences, and student-led campus chapters.
+        </p>
+
+        <p>
+          You don’t need a full team or a finished plan to start.
+          Interest is enough for a first conversation.
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            class="btn btn-primary"
+            href="mailto:julianna@bestbuddies.ca?subject=Interested%20in%20starting%20Best%20Buddies%20on%20campus"
+          >
+            I’m interested
+          </a>
+
+          <a
+            class="btn"
+            href="#connection"
+          >
+            See what it looks like
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK VALUE
+===================================================== -->
+
+<section class="quick">
+
+  <div class="container quick-grid">
+
+    <div class="quick-item">
+
+      <strong>
+        Friendship first
+      </strong>
+
+      <span>
+        Real relationships built around time together and shared interests.
+      </span>
+
+    </div>
+
+
+    <div class="quick-item">
+
+      <strong>
+        Student-led
+      </strong>
+
+      <span>
+        Shape the chapter, build a team, and create something your campus
+        can carry forward.
+      </span>
+
+    </div>
+
+
+    <div class="quick-item">
+
+      <strong>
+        Supported throughout
+      </strong>
+
+      <span>
+        Best Buddies provides the framework, resources, training, and
+        staff support.
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONNECTION
+===================================================== -->
+
+<section class="section connection" id="connection">
+
+  <div class="container connection-head">
+
+    <div>
+
+      <span class="label">
+        What Best Buddies looks like
+      </span>
+
+      <h2>
+        Connection looks different for everyone.
+      </h2>
+
+    </div>
+
+
+    <div>
+
+      <p>
+        A Best Buddies chapter creates more ways to meet people,
+        spend time together, find common ground, and feel part
+        of campus and community life.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="container connection-grid">
+
+    <article class="connection-card">
+
+      <h3>
+        Friendship
+      </h3>
+
+      <p>
+        One-to-one connections built around shared interests,
+        conversation, outings, and time together.
+      </p>
+
+    </article>
+
+
+    <article class="connection-card">
+
+      <h3>
+        Community
+      </h3>
+
+      <p>
+        Group activities, campus events, games, celebrations,
+        coffee, outings, and whatever the chapter enjoys doing together.
+      </p>
+
+    </article>
+
+
+    <article class="connection-card">
+
+      <h3>
+        Belonging
+      </h3>
+
+      <p>
+        A chapter culture where people are known, included,
+        and encouraged to contribute in their own way.
+      </p>
+
+    </article>
+
+  </div>
+
+
+  <div class="container">
+
+    <div class="chapter-model-note">
+      Chapters can use one-to-one friendships, group activities,
+      or a mix of both. The program can take shape around the people involved.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAKE IT YOURS
+===================================================== -->
+
+<section class="section make-it-yours" id="leadership">
+
+  <div class="container make-head">
+
+    <div>
+
+      <span class="label">
+        Make it yours
+      </span>
+
+      <h2>
+        There’s more than one way to lead.
+      </h2>
+
+    </div>
+
+
+    <div>
+
+      <p>
+        You don’t have to be the person doing everything.
+        Strong chapters work because different people take on different pieces:
+        leading the team, planning activities, welcoming members,
+        communications, fundraising, and helping the chapter carry forward.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="container role-grid">
+
+    <div class="role">
+
+      <h3>
+        Lead the chapter
+      </h3>
+
+      <p>
+        Set direction and keep things moving.
+      </p>
+
+    </div>
+
+
+    <div class="role">
+
+      <h3>
+        Plan the fun
+      </h3>
+
+      <p>
+        Shape activities, outings, and events.
+      </p>
+
+    </div>
+
+
+    <div class="role">
+
+      <h3>
+        Bring people in
+      </h3>
+
+      <p>
+        Recruit, welcome, and help members find their place.
+      </p>
+
+    </div>
+
+
+    <div class="role">
+
+      <h3>
+        Tell the story
+      </h3>
+
+      <p>
+        Handle social media, promotion, and campus visibility.
+      </p>
+
+    </div>
+
+
+    <div class="role">
+
+      <h3>
+        Build support
+      </h3>
+
+      <p>
+        Help with fundraising and campus connections.
+      </p>
+
+    </div>
+
+
+    <div class="role">
+
+      <h3>
+        Keep it growing
+      </h3>
+
+      <p>
+        Help the next student leaders take over.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="container skills-line">
+
+    <strong>
+      Along the way:
+    </strong>
+
+    leadership · communication · project planning · recruitment ·
+    event coordination · relationship building · problem solving
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VALUE BAND
+===================================================== -->
+
+<section class="value-band">
+
+  <div class="container value-band-inner">
+
+    <div>
+
+      <span class="label">
+        Useful beyond campus
+      </span>
+
+      <h2>
+        What you build here goes with you.
+      </h2>
+
+    </div>
+
+
+    <div class="value-copy">
+
+      <p>
+        Whether you’re heading into education, healthcare, social work,
+        psychology, recreation, business, communications, or something
+        completely different, Best Buddies gives you real experience
+        working with people, leading a team, solving problems, and creating
+        spaces where more people can participate.
+      </p>
+
+      <p>
+        <strong>
+          Friendship comes first. The perspective and skills you build
+          come with you.
+        </strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     START + SUPPORT
+===================================================== -->
+
+<section class="start-support" id="start">
+
+  <div class="container">
+
+    <div class="start-top">
+
+      <div class="start-intro">
+
+        <span class="label">
+          Start here
+        </span>
+
+        <h2>
+          You don’t need to have it all figured out.
+        </h2>
+
+        <p>
+          Put your hand up first. We’ll help with what comes next.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <article class="step">
+
+          <span class="step-number">
+            1
+          </span>
+
+          <strong>
+            Tell us you’re interested.
+          </strong>
+
+          <p>
+            Come with a friend, an idea, or simply a question.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <span class="step-number">
+            2
+          </span>
+
+          <strong>
+            Build your team.
+          </strong>
+
+          <p>
+            We’ll help with roles, recruitment, and getting established
+            on campus.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <span class="step-number">
+            3
+          </span>
+
+          <strong>
+            Bring it to life.
+          </strong>
+
+          <p>
+            Recruit members, make connections, plan activities,
+            and start building your chapter.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <div class="support-block">
+
+      <div class="support-copy">
+
+        <h3>
+          You’re not doing this alone.
+        </h3>
+
+        <p>
+          Best Buddies Canada stays involved as the chapter takes shape.
+          You’ll have practical resources, guidance, and someone to call
+          when questions come up.
+        </p>
+
+      </div>
+
+
+      <ul class="support-list">
+
+        <li>
+          Leadership training
+        </li>
+
+        <li>
+          Recruitment support
+        </li>
+
+        <li>
+          Program and activity resources
+        </li>
+
+        <li>
+          Guidance with screening and matching
+        </li>
+
+        <li>
+          Fundraising resources
+        </li>
+
+        <li>
+          Ongoing staff support
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="start-cta">
+
+      <div>
+
+        <strong>
+          Interested? Start with a conversation.
+        </strong>
+
+        <p>
+          You don’t need a full team, a finished plan, or a commitment
+          to run the chapter before you reach out.
+        </p>
+
+      </div>
+
+
+      <a
+        class="btn"
+        href="mailto:julianna@bestbuddies.ca?subject=Interested%20in%20Best%20Buddies%20on%20campus"
+      >
+        I’m interested
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+  <div class="container contact-grid">
+
+    <div class="contact-copy">
+
+      <span class="label">
+        Your Best Buddies contact
+      </span>
+
+      <h2>
+        Have a question? Reach out.
+      </h2>
+
+      <p>
+        I support Best Buddies chapters across Eastern Canada and work
+        directly with students who are starting, rebuilding, or growing
+        university and college chapters.
+      </p>
+
+    </div>
+
+
+    <aside class="contact-card">
+
+      <img
+        src="assets/bb-logo.png"
+        alt="Best Buddies Canada"
+      >
+
+      <div>
+
+        <div class="contact-name">
+          Julianna Melnick-MacDonald
+        </div>
+
+        <div class="contact-title">
+          Program Advisor | Eastern Canada
+        </div>
+
+        <div class="contact-email">
+
+          <a href="mailto:julianna@bestbuddies.ca">
+            julianna@bestbuddies.ca
+          </a>
+
+        </div>
+
+        <div class="contact-meta">
+          416-531-0003 ext. 5300
+        </div>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <span>
+      Best Buddies Canada
+    </span>
+
+    <span>
+      Because everyone deserves a friend.
+    </span>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
