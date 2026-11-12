@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#684399">
 <title>Best Buddies Canada | School Conversations</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +21,6 @@
   --peach:#F9DFD9;
   --cream:#FFFCF7;
   --ink:#352A3C;
-  --muted:#716778;
 }
 
 * { box-sizing:border-box; }
@@ -34,45 +32,42 @@ body {
   font-family:Poppins,Arial,sans-serif;
 }
 
-button,select { font:inherit;cursor:pointer; }
+button,select {font:inherit;cursor:pointer}
 
-button:focus-visible,select:focus-visible {
+button:focus-visible,
+select:focus-visible {
   outline:3px solid var(--coral);
   outline-offset:3px;
 }
 
-h1,h2,h3,p { margin:0; }
+h1,h2,h3,p {margin:0}
 
 h1,h2,h3 {
   font-family:"League Spartan",Arial,sans-serif;
-  letter-spacing:-.025em;
   line-height:1.07;
+  letter-spacing:-.025em;
 }
 
-h1 { font-size:clamp(35px,4.2vw,69px); }
-h2 { font-size:clamp(29px,3.45vw,57px); }
-h3 { font-size:clamp(19px,1.9vw,31px); }
+h1 {font-size:clamp(36px,4.1vw,68px)}
+h2 {font-size:clamp(30px,3.4vw,56px)}
+h3 {font-size:clamp(20px,1.85vw,30px)}
+p {line-height:1.52}
 
-p { line-height:1.5; }
-
-.purple { color:var(--purple); }
-.coral { color:var(--coral); }
-
-.lead { font-size:clamp(13px,1.2vw,19px); }
-.bodycopy { font-size:clamp(12px,1.02vw,16px); }
-.smallcopy { font-size:clamp(10px,.86vw,14px); }
+.purple {color:var(--purple)}
+.coral {color:var(--coral)}
+.lead {font-size:clamp(14px,1.2vw,19px)}
+.bodycopy {font-size:clamp(12px,1vw,16px)}
 
 .eyebrow {
   color:#765C95;
-  font-size:clamp(10px,.82vw,13px);
+  font-size:clamp(11px,.85vw,13px);
   font-weight:600;
-  letter-spacing:.01em;
 }
 
 .nudge {
   color:var(--purple);
+  font-size:clamp(12px,.98vw,16px);
   font-weight:700;
-  font-size:clamp(11px,.97vw,16px);
 }
 
 body[data-level="elem"] .high-only,
@@ -80,7 +75,7 @@ body[data-level="high"] .elem-only {
   display:none!important;
 }
 
-/* MAIN APP */
+/* APP */
 
 .app {
   width:min(100%,1640px);
@@ -90,8 +85,8 @@ body[data-level="high"] .elem-only {
 
 .toolbar {
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   flex-wrap:wrap;
   gap:14px;
   margin-bottom:12px;
@@ -104,44 +99,68 @@ body[data-level="high"] .elem-only {
 }
 
 .identity img {
-  width:66px;
+  width:63px;
   height:58px;
   object-fit:contain;
 }
 
 .brand {
-  font:800 21px "League Spartan",sans-serif;
   color:var(--purple);
+  font:800 21px "League Spartan",sans-serif;
 }
 
 .subtitle {
+  color:#756C79;
   font-size:11px;
-  color:var(--muted);
 }
 
 .controls {
   display:flex;
   align-items:center;
-  gap:9px;
   flex-wrap:wrap;
+  gap:9px;
 }
 
 .control {
   background:white;
   border:1px solid #E1D5E8;
   border-radius:30px;
-  padding:10px 15px;
+  padding:10px 16px;
   color:var(--deep);
   font-size:12px;
 }
 
-/* PRESENTATION STAGE */
+/* SCHOOL SELECTOR */
+
+.select-wrap {position:relative}
+
+.select-wrap select {
+  appearance:none;
+  -webkit-appearance:none;
+  min-width:240px;
+  padding:11px 39px 11px 18px;
+}
+
+.select-wrap::after {
+  content:"";
+  position:absolute;
+  right:17px;
+  top:44%;
+  width:8px;
+  height:8px;
+  border-right:2px solid var(--purple);
+  border-bottom:2px solid var(--purple);
+  transform:translateY(-50%) rotate(45deg);
+  pointer-events:none;
+}
+
+/* STAGE */
 
 .stage {
   position:relative;
   width:100%;
   aspect-ratio:16/9;
-  min-height:530px;
+  min-height:560px;
   background:white;
   overflow:hidden;
   border-radius:13px;
@@ -150,10 +169,7 @@ body[data-level="high"] .elem-only {
 
 .slide {
   position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:68px;
+  inset:0 0 70px;
   display:none;
   overflow:hidden;
 }
@@ -164,28 +180,8 @@ body[data-level="high"] .elem-only {
 }
 
 @keyframes fadeIn {
-  from {opacity:.3}
+  from {opacity:.35}
   to {opacity:1}
-}
-
-.topband {
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:10px;
-  background:var(--purple);
-  z-index:2;
-}
-
-.bottomband {
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  height:10px;
-  background:var(--mint);
-  z-index:2;
 }
 
 .section-copy {
@@ -195,40 +191,47 @@ body[data-level="high"] .elem-only {
 }
 
 .photo {
-  position:relative;
   overflow:hidden;
   background:var(--lavender);
 }
 
-.photo img,
-.photo video {
+.photo img,.photo video {
   display:block;
   width:100%;
   height:100%;
   object-fit:cover;
 }
 
-.highlight {
-  padding:18px 22px;
-  background:var(--yellow);
-  border-radius:12px;
+.bottomband {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:10px;
+  background:var(--mint);
 }
 
-/* DEDICATED PRESENTATION NAVIGATION */
+.highlight {
+  background:var(--yellow);
+  border-radius:12px;
+  padding:18px 22px;
+}
+
+/* NAVIGATION */
 
 .presentation-nav {
   position:absolute;
   bottom:0;
   left:0;
   right:0;
-  height:68px;
+  height:70px;
   z-index:60;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:16px;
+  align-items:center;
+  gap:12px;
   padding:10px 25px;
-  background:#FFFFFF;
+  background:white;
   border-top:1px solid #E8DDEB;
 }
 
@@ -236,47 +239,35 @@ body[data-level="high"] .elem-only {
   display:flex;
   align-items:center;
   gap:11px;
-  min-width:0;
 }
 
 .nav-brand img {
-  width:34px;
-  height:34px;
+  width:33px;
+  height:33px;
   object-fit:contain;
 }
 
 .nav-brand span {
+  color:var(--deep);
   font-size:12px;
   font-weight:700;
-  color:var(--deep);
 }
 
 .nav-actions {
   display:flex;
+  gap:9px;
   align-items:center;
-  gap:10px;
 }
 
 .nav-button {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  min-height:43px;
-  padding:10px 19px;
-  border-radius:25px;
   border:1px solid #DCD0E6;
+  border-radius:25px;
   background:#F8F4FA;
   color:var(--purple);
+  min-height:43px;
+  padding:10px 19px;
   font-size:13px;
   font-weight:700;
-  white-space:nowrap;
-  transition:background .15s,transform .15s;
-}
-
-.nav-button:hover:not(:disabled) {
-  background:var(--lavender);
-  transform:translateY(-1px);
 }
 
 .nav-button.primary {
@@ -285,26 +276,12 @@ body[data-level="high"] .elem-only {
   border-color:var(--purple);
 }
 
-.nav-button.primary:hover:not(:disabled) {
-  background:var(--deep);
-}
-
 .nav-button:disabled {
   opacity:.35;
   cursor:default;
 }
 
-.nav-button svg {
-  width:17px;
-  height:17px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2.3;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-/* SCREEN 1 — WELCOME */
+/* WELCOME */
 
 .welcome {background:var(--cream)}
 
@@ -315,7 +292,6 @@ body[data-level="high"] .elem-only {
   flex-direction:column;
   justify-content:center;
   gap:21px;
-  z-index:2;
 }
 
 .welcome h1 {color:var(--coral)}
@@ -323,8 +299,8 @@ body[data-level="high"] .elem-only {
 
 .welcome-tagline {
   font-size:clamp(13px,1.12vw,18px);
-  font-weight:600;
   line-height:1.6;
+  font-weight:600;
 }
 
 .mint-accent {
@@ -336,8 +312,21 @@ body[data-level="high"] .elem-only {
 
 .welcome-film {
   width:56%;
-  height:100%;
   background:var(--deep);
+}
+
+.video-control {
+  position:absolute;
+  top:22px;
+  right:22px;
+  z-index:10;
+  border:0;
+  border-radius:30px;
+  background:#FFFFFFED;
+  color:var(--purple);
+  padding:10px 15px;
+  font-size:12px;
+  font-weight:700;
 }
 
 .video-placeholder {
@@ -345,27 +334,13 @@ body[data-level="high"] .elem-only {
   height:100%;
   align-items:center;
   justify-content:center;
-  padding:35px;
-  text-align:center;
+  padding:30px;
   color:white;
+  text-align:center;
 }
 
 .welcome-film.failed video {display:none}
 .welcome-film.failed .video-placeholder {display:flex}
-
-.video-control {
-  position:absolute;
-  top:22px;
-  right:22px;
-  z-index:10;
-  background:#FFFFFFED;
-  color:var(--purple);
-  border:0;
-  border-radius:30px;
-  padding:10px 15px;
-  font-size:12px;
-  font-weight:700;
-}
 
 .welcome-wave {
   position:absolute;
@@ -373,11 +348,10 @@ body[data-level="high"] .elem-only {
   bottom:9px;
   width:56%;
   height:35px;
-  z-index:3;
   pointer-events:none;
 }
 
-/* SCREEN 2 — ABOUT */
+/* ABOUT */
 
 .what {background:#FFFEFA}
 
@@ -389,17 +363,17 @@ body[data-level="high"] .elem-only {
 .what .photo {width:40%}
 
 .history {
+  background:var(--lavender);
+  border-radius:12px;
+  padding:18px 22px;
   display:flex;
   align-items:center;
   gap:18px;
-  padding:17px 21px;
-  background:var(--lavender);
-  border-radius:12px;
 }
 
 .history strong {
-  font:800 clamp(31px,3.2vw,50px) "League Spartan";
   color:var(--purple);
+  font:800 clamp(31px,3.2vw,50px) "League Spartan";
 }
 
 .history p {font-size:clamp(11px,.95vw,15px)}
@@ -412,12 +386,12 @@ body[data-level="high"] .elem-only {
   font-weight:700;
 }
 
-/* SCREEN 3 — WHY BEST BUDDIES */
+/* WHY BEST BUDDIES */
 
 .why {
   background:var(--cream);
   flex-direction:column;
-  padding:4% 5.4% 4.5%;
+  padding:4% 5.4%;
   gap:3%;
 }
 
@@ -430,39 +404,31 @@ body[data-level="high"] .elem-only {
 }
 
 .why-panel {
-  padding:clamp(19px,2vw,33px);
+  padding:clamp(20px,2.1vw,35px);
   border-radius:17px;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  gap:14px;
+  gap:15px;
 }
 
 .why-panel:first-child {background:var(--lavender)}
 .why-panel:nth-child(2) {background:var(--mint)}
-
-.why-panel h3 {
-  font-size:clamp(25px,2.3vw,38px);
-  color:var(--purple);
-}
-
-.why-panel p {
-  font-size:clamp(12px,1.1vw,17px);
-}
+.why-panel h3 {color:var(--purple)}
+.why-panel p {font-size:clamp(12px,1.1vw,17px)}
 
 .why-bottom {
   border-radius:12px;
   background:var(--yellow);
-  padding:15px 22px;
-  color:var(--deep);
-  font-size:clamp(12px,1.04vw,17px);
+  padding:16px 22px;
+  font-size:clamp(12px,1vw,16px);
 }
 
-/* SCREEN 4 — CHAPTER MODELS */
+/* CHAPTER MODELS */
 
 .models {
   background:#FFFAF3;
-  padding:4% 5.2% 4.5%;
+  padding:4% 5.2%;
   flex-direction:column;
   gap:4%;
 }
@@ -472,7 +438,7 @@ body[data-level="high"] .elem-only {
   min-height:0;
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:16px;
+  gap:15px;
 }
 
 .model {
@@ -481,39 +447,33 @@ body[data-level="high"] .elem-only {
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  gap:16px;
+  gap:15px;
 }
 
 .model:nth-child(1) {background:var(--lavender)}
 .model:nth-child(2) {background:var(--mint)}
 .model:nth-child(3) {background:var(--yellow)}
 
-.model h3 {
-  color:var(--purple);
-  font-size:clamp(23px,2.15vw,36px);
-}
-
+.model h3 {color:var(--purple)}
 .model p {
   margin-top:15px;
   font-size:clamp(12px,1.06vw,17px);
 }
 
 .model small {
-  display:block;
-  border-top:1px solid #68439930;
-  padding-top:12px;
   color:var(--purple);
   font-weight:700;
-  font-size:clamp(11px,.9vw,14px);
+  padding-top:12px;
+  border-top:1px solid #68439930;
 }
 
-/* SCREEN 5 — GATHERING */
+/* GATHERING */
 
 .gathering {background:white}
 
 .gathering .section-copy {
   width:61%;
-  padding:4.5% 5.2%;
+  padding:4.6% 5.2%;
 }
 
 .gathering .photo {width:39%}
@@ -525,8 +485,8 @@ body[data-level="high"] .elem-only {
 }
 
 .agenda-item {
-  border-radius:12px;
   padding:clamp(11px,1.3vw,20px);
+  border-radius:12px;
 }
 
 .agenda-item:nth-child(1) {background:var(--mint)}
@@ -544,12 +504,12 @@ body[data-level="high"] .elem-only {
   font-size:clamp(10px,.86vw,14px);
 }
 
-/* SCREEN 6 — MAKING IT FIT */
+/* MAKING IT FIT */
 
 .fit {
   background:#F8F1FA;
+  padding:3.8% 5.2%;
   flex-direction:column;
-  padding:3.7% 5.2% 4%;
   gap:3%;
 }
 
@@ -557,25 +517,21 @@ body[data-level="high"] .elem-only {
   flex:1;
   min-height:0;
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  grid-template-rows:repeat(2,minmax(0,1fr));
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
   gap:11px;
 }
 
 .fit-card {
   padding:clamp(16px,1.6vw,26px);
   border-radius:14px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
 }
 
 .fit-card:nth-child(1) {background:var(--lavender)}
 .fit-card:nth-child(2) {background:var(--mint)}
 .fit-card:nth-child(3) {background:var(--yellow)}
 .fit-card:nth-child(4) {background:var(--peach)}
-
-.fit-card h3 {color:var(--purple)}
+.fit-card h3 {color:var(--purple);margin-bottom:10px}
 
 .fit-details {
   display:grid;
@@ -594,19 +550,18 @@ body[data-level="high"] .elem-only {
 }
 
 .fit-foot {
-  border-radius:11px;
   background:white;
+  border-radius:11px;
   padding:13px 18px;
   font-size:clamp(11px,.93vw,15px);
-  color:var(--deep);
 }
 
-/* SCREEN 7 — IDEAS */
+/* EXAMPLES */
 
 .ideas {
   background:var(--cream);
+  padding:3.6% 5.2% 4%;
   flex-direction:column;
-  padding:3.6% 5.2% 4.4%;
   gap:3%;
 }
 
@@ -632,18 +587,10 @@ body[data-level="high"] .elem-only {
   align-items:center;
   justify-content:center;
   text-align:center;
-  transition:transform .2s,box-shadow .2s;
+  transition:transform .2s;
 }
 
-.bubble:nth-child(even) {
-  border-radius:44% 48% 47% 44% /
-                48% 43% 48% 46%;
-}
-
-.bubble:hover {
-  transform:scale(1.045);
-  box-shadow:0 9px 20px #3F245326;
-}
+.bubble:hover {transform:scale(1.04)}
 
 .bubble-title {
   font:800 clamp(17px,1.65vw,27px) "League Spartan";
@@ -651,24 +598,23 @@ body[data-level="high"] .elem-only {
 }
 
 .bubble small {
-  margin-top:9px;
   color:#745E83;
+  margin-top:9px;
   font-size:11px;
-  font-weight:600;
 }
 
 .idea-footer {
-  font-size:clamp(12px,.96vw,15px);
-  text-align:center;
   color:var(--purple);
   font-weight:700;
+  font-size:clamp(12px,.96vw,15px);
+  text-align:center;
 }
 
-/* SCREEN 8 — COMMITMENT */
+/* COMMITMENT */
 
 .commitment {
   background:white;
-  padding:4% 5.2% 4.4%;
+  padding:4% 5.2%;
   flex-direction:column;
   gap:4%;
 }
@@ -682,56 +628,44 @@ body[data-level="high"] .elem-only {
 }
 
 .commitment-card {
-  border-radius:16px;
   padding:clamp(18px,1.9vw,30px);
-  display:flex;
-  flex-direction:column;
-  gap:15px;
+  border-radius:16px;
 }
 
 .commitment-card:nth-child(1) {background:var(--lavender)}
 .commitment-card:nth-child(2) {background:var(--mint)}
 .commitment-card:nth-child(3) {background:var(--yellow)}
 
-.commitment-card h3 {color:var(--purple)}
+.commitment-card h3 {
+  color:var(--purple);
+  margin-bottom:16px;
+}
 
 .commitment-card p {
   font-size:clamp(12px,1.04vw,17px);
+  margin-bottom:14px;
 }
 
 .commitment-note {
-  padding:14px 19px;
-  border-radius:12px;
+  padding:15px 20px;
   background:var(--peach);
-  color:var(--deep);
+  border-radius:12px;
   font-size:clamp(12px,.98vw,16px);
 }
 
-/* SCREEN 9 — BEYOND THE CHAPTER */
+/* BEYOND CHAPTER */
 
-/* More editorial and specific than the previous version */
-
-.beyond {
-  background:#FFFEFA;
-}
+.beyond {background:#FFFEFA}
 
 .beyond .section-copy {
   width:62%;
-  padding:3.8% 4.7% 4%;
+  padding:3.8% 4.7%;
   gap:11px;
 }
 
-.beyond .photo {
-  width:38%;
-}
+.beyond .photo {width:38%}
 
-.beyond h2 {
-  font-size:clamp(29px,3.25vw,53px);
-}
-
-.beyond-intro {
-  font-size:clamp(12px,1.02vw,16px);
-}
+.beyond h2 {font-size:clamp(29px,3.2vw,53px)}
 
 .school-initiatives {
   display:grid;
@@ -740,11 +674,8 @@ body[data-level="high"] .elem-only {
 }
 
 .school-initiative {
-  padding:14px 17px;
   border-radius:12px;
-  display:flex;
-  flex-direction:column;
-  gap:7px;
+  padding:14px 17px;
 }
 
 .school-initiative:nth-child(1) {background:var(--lavender)}
@@ -753,37 +684,33 @@ body[data-level="high"] .elem-only {
 .school-initiative:nth-child(4) {background:var(--peach)}
 
 .school-initiative h3 {
-  font-size:clamp(18px,1.5vw,25px);
   color:var(--purple);
+  font-size:clamp(18px,1.5vw,25px);
+  margin-bottom:7px;
 }
 
 .school-initiative p {
   font-size:clamp(11px,.89vw,14px);
-  line-height:1.45;
 }
 
 .school-impact {
-  border-radius:12px;
-  border-left:5px solid var(--purple);
   background:#F5EEF9;
+  border-left:5px solid var(--purple);
+  border-radius:12px;
   padding:15px 19px;
 }
 
-.school-impact strong {
-  color:var(--purple);
-  font-size:clamp(12px,1.03vw,16px);
-}
-
+.school-impact strong {color:var(--purple)}
 .school-impact p {
-  margin-top:6px;
   font-size:clamp(11px,.95vw,15px);
+  margin-top:6px;
 }
 
-/* SCREEN 10 — RESOURCES */
+/* RESOURCES */
 
 .resources {
   background:#E5F4ED;
-  padding:3.6% 5% 4%;
+  padding:3.6% 5%;
   flex-direction:column;
   gap:3%;
 }
@@ -804,15 +731,12 @@ body[data-level="high"] .elem-only {
 }
 
 .resource-message h2 {color:var(--coral)}
-
-.resource-message p {
-  font-size:clamp(12px,1vw,16px);
-}
+.resource-message p {font-size:clamp(12px,1vw,16px)}
 
 .resource-support {
   background:#FFFFFFDE;
-  padding:14px 18px;
   border-radius:12px;
+  padding:14px 18px;
 }
 
 .resource-support h3 {
@@ -826,32 +750,26 @@ body[data-level="high"] .elem-only {
 }
 
 .resource-gallery {
-  min-width:0;
   min-height:0;
+  min-width:0;
   display:grid;
   grid-template-columns:repeat(6,minmax(0,1fr));
   grid-template-rows:56% 44%;
   gap:12px;
-  padding-bottom:13px;
 }
 
 .resource-tile {
-  border:1px solid white;
+  border:0;
   border-radius:11px;
-  overflow:hidden;
-  padding:10px;
   background:white;
+  padding:10px;
+  min-width:0;
+  min-height:0;
   display:flex;
   flex-direction:column;
   gap:7px;
-  min-width:0;
-  min-height:0;
+  overflow:hidden;
   box-shadow:0 3px 12px #49306D12;
-  transition:transform .2s;
-}
-
-.resource-tile:hover {
-  transform:translateY(-4px);
 }
 
 .resource-tile img {
@@ -859,8 +777,6 @@ body[data-level="high"] .elem-only {
   flex:1;
   min-height:0;
   object-fit:contain;
-  border-radius:6px;
-  background:#F7F4F8;
 }
 
 .resource-tile span {
@@ -873,13 +789,13 @@ body[data-level="high"] .elem-only {
 .resource-tile.guide {grid-column:span 3}
 .resource-tile.poster {grid-column:span 2}
 
-/* SCREEN 11 — GETTING STARTED */
+/* GETTING STARTED */
 
 .start {background:#FFFDF7}
 
 .start .section-copy {
   width:62%;
-  padding:4.1% 5.2% 4.5%;
+  padding:4.1% 5.2%;
 }
 
 .start .aside {
@@ -900,12 +816,11 @@ body[data-level="high"] .elem-only {
 .step {
   display:flex;
   gap:14px;
-  align-items:flex-start;
 }
 
 .step-num {
-  min-width:34px;
   color:var(--purple);
+  min-width:34px;
   font:800 31px "League Spartan";
 }
 
@@ -920,63 +835,65 @@ body[data-level="high"] .elem-only {
 }
 
 .checklist-preview {
-  width:100%;
-  height:82%;
-  max-width:420px;
+  background:white;
   border:0;
   border-radius:12px;
-  background:white;
   padding:16px;
+  width:100%;
+  max-width:420px;
+  height:82%;
   display:flex;
   flex-direction:column;
   box-shadow:12px 16px 0 #6843991D;
   transform:rotate(-3deg);
-  transition:transform .2s;
-}
-
-.checklist-preview:hover {
-  transform:rotate(0deg) scale(1.02);
 }
 
 .checklist-preview img {
   width:100%;
-  flex:1;
   min-height:0;
+  flex:1;
   object-fit:contain;
 }
 
 .checklist-preview span {
+  padding-top:8px;
   color:var(--purple);
   font-size:12px;
   font-weight:700;
-  padding-top:8px;
 }
 
-/* SCREEN 12 — DISCUSSION */
+/* CLOSING */
 
 .closing {background:#F7F0FA}
 
 .closing .section-copy {
-  width:58%;
-  padding:5.3% 5.8%;
+  width:57%;
+  padding:6%;
 }
 
-.closing .photo {width:42%}
+.closing .photo {width:43%}
 
-.questions {
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.questions div {
+.closing-invitation {
   background:white;
-  border-left:5px solid var(--mint);
-  border-radius:9px;
-  padding:15px 20px;
-  font-size:clamp(13px,1.08vw,17px);
-  font-weight:600;
+  border-left:6px solid var(--mint);
+  border-radius:11px;
+  padding:24px 27px;
+  font-size:clamp(15px,1.32vw,21px);
+  line-height:1.6;
 }
+
+.closing-next {
+  background:var(--yellow);
+  border-radius:12px;
+  padding:18px 22px;
+}
+
+.closing-next h3 {
+  color:var(--purple);
+  margin-bottom:8px;
+}
+
+.closing-next p {font-size:clamp(12px,1vw,16px)}
 
 /* OVERLAYS */
 
@@ -984,10 +901,10 @@ body[data-level="high"] .elem-only {
   position:absolute;
   inset:0;
   z-index:100;
+  background:#23152FD1;
   display:none;
   align-items:center;
   justify-content:center;
-  background:#23152FD1;
   padding:25px;
 }
 
@@ -995,13 +912,12 @@ body[data-level="high"] .elem-only {
 
 .dialog {
   position:relative;
+  background:white;
+  border-radius:18px;
+  padding:30px;
   width:min(700px,93%);
   max-height:90%;
   overflow:auto;
-  padding:30px;
-  border-radius:18px;
-  background:white;
-  box-shadow:0 22px 60px #1F122840;
 }
 
 .dialog-close {
@@ -1010,44 +926,31 @@ body[data-level="high"] .elem-only {
   right:15px;
   border:0;
   border-radius:30px;
-  padding:8px 13px;
   background:var(--lavender);
   color:var(--purple);
-  font-weight:700;
+  padding:8px 13px;
 }
 
 .dialog h2 {
   color:var(--purple);
-  font-size:clamp(28px,3vw,44px);
   margin:15px 0 18px;
-}
-
-.dialog p {
-  font-size:clamp(13px,1.1vw,17px);
 }
 
 .idea-why {
   background:var(--mint);
-  border-radius:11px;
   padding:18px;
+  border-radius:11px;
   margin-top:23px;
 }
 
 .idea-why strong {color:var(--purple)}
-.idea-why p {margin-top:8px;font-size:14px}
+.idea-why p {margin-top:8px}
 
 .resource-dialog {
   width:min(850px,94%);
-  max-height:94%;
   display:flex;
   flex-direction:column;
   align-items:center;
-}
-
-.resource-dialog h3 {
-  color:var(--purple);
-  text-align:center;
-  margin:0 45px 14px;
 }
 
 .resource-dialog img {
@@ -1065,27 +968,11 @@ body[data-level="high"] .elem-only {
 
 .menu-list button {
   border:1px solid #E5D9EB;
-  border-radius:9px;
   background:#FCF9FD;
+  border-radius:9px;
+  padding:12px;
   color:var(--deep);
   text-align:left;
-  padding:12px;
-  font-size:13px;
-  font-weight:600;
-}
-
-.menu-list button:hover {background:var(--lavender)}
-
-/* FOOTER */
-
-.footer {
-  margin-top:13px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  color:var(--muted);
-  font-size:11px;
 }
 
 /* FULL SCREEN */
@@ -1093,62 +980,133 @@ body[data-level="high"] .elem-only {
 .stage:fullscreen {
   width:100vw;
   height:100vh;
+  min-height:0;
   aspect-ratio:auto;
   border-radius:0;
 }
 
 .stage:fullscreen .slide {
-  top:0;
-  left:0;
-  right:0;
   bottom:76px;
 }
 
 .stage:fullscreen .presentation-nav {
   height:76px;
-  padding:13px 32px;
 }
 
-.stage:fullscreen .nav-button {
-  min-height:48px;
-  padding:12px 23px;
-  font-size:14px;
+/* NARROW WINDOWS */
+
+@media(max-width:1120px) {
+  .app {padding:10px}
+
+  .stage {
+    aspect-ratio:auto;
+    height:calc(100dvh - 155px);
+    min-height:540px;
+  }
+
+  .slide {
+    overflow-y:auto;
+    align-content:start;
+  }
+
+  .section-copy {
+    justify-content:flex-start;
+    gap:22px;
+  }
+
+  .why,.models,.fit,.ideas,.commitment,.resources {
+    overflow-y:auto;
+    gap:22px;
+  }
+
+  .why-grid,.model-grid,.fit-grid,
+  .commitment-grid,.bubble-grid {
+    flex:none;
+    min-height:auto;
+  }
+
+  .model,.commitment-card,.fit-card {
+    padding:20px;
+  }
+
+  .fit-grid,.bubble-grid {
+    grid-template-rows:auto;
+  }
+
+  .fit-details p,.school-initiative p {
+    font-size:13px;
+  }
+
+  .model p,.commitment-card p {
+    font-size:14px;
+  }
+
+  .resource-main {
+    min-height:590px;
+  }
+
+  .resource-gallery {
+    grid-template-rows:300px 200px;
+  }
+
+  .beyond .section-copy {
+    gap:20px;
+  }
 }
 
-.stage:fullscreen .nav-brand img {
-  width:39px;
-  height:39px;
-}
-
-.stage:fullscreen .nav-brand span {
-  font-size:14px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px) {
-  .app {padding:9px}
-  .stage {min-height:520px}
-  .model,.fit-card,.commitment-card,.why-panel {padding:14px}
-  .agenda-item {padding:10px}
-  .bubble-grid {gap:8px;padding:0}
-  .bubble {padding:8px}
-  .bubble-title {font-size:16px}
-  .resource-gallery {gap:5px}
-  .school-initiative {padding:10px}
-  .school-initiative h3 {font-size:17px}
-  .school-initiative p {font-size:10px}
-}
-
-@media(max-width:600px) {
+@media(max-width:750px) {
   .toolbar {justify-content:center}
-  .stage {min-height:530px}
-  .menu-list {grid-template-columns:1fr}
-  .presentation-nav {padding:8px 12px}
+
+  .stage {
+    min-height:550px;
+    height:calc(100dvh - 185px);
+  }
+
+  .slide {
+    flex-direction:column;
+    overflow-y:auto;
+  }
+
+  .welcome-copy,.what .section-copy,
+  .gathering .section-copy,.beyond .section-copy,
+  .start .section-copy,.closing .section-copy {
+    width:100%;
+    padding:30px;
+  }
+
+  .welcome-film,.what .photo,.gathering .photo,
+  .beyond .photo,.closing .photo {
+    width:100%;
+    min-height:230px;
+  }
+
+  .why-grid,.model-grid,.fit-grid,
+  .commitment-grid,.bubble-grid {
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+  }
+
+  .agenda {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .resource-main {
+    grid-template-columns:1fr;
+  }
+
+  .resource-gallery {
+    grid-template-rows:250px 180px;
+  }
+
+  .start .aside {
+    width:100%;
+    min-height:320px;
+  }
+
   .nav-brand span {display:none}
-  .nav-button {padding:9px 12px;font-size:11px;min-height:38px}
-  .nav-actions {gap:6px}
-  .footer span:last-child {display:none}
+  .presentation-nav {padding:8px 12px}
+  .nav-button {padding:9px 13px;font-size:12px}
+  .menu-list {grid-template-columns:1fr}
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -1164,11 +1122,8 @@ body[data-level="high"] .elem-only {
 <div class="app">
 
 <header class="toolbar">
-
   <div class="identity">
-    <img src="assets/bb-logo.png"
-         alt="Best Buddies Canada logo">
-
+    <img src="assets/bb-logo.png" alt="Best Buddies Canada logo">
     <div>
       <div class="brand">BEST BUDDIES CANADA</div>
       <div class="subtitle">School Conversations</div>
@@ -1176,29 +1131,22 @@ body[data-level="high"] .elem-only {
   </div>
 
   <div class="controls">
-    <select id="schoolLevel" class="control"
-            aria-label="School level">
-      <option value="elem">Elementary / Middle School</option>
-      <option value="high">High School</option>
-    </select>
-
-    <button class="control" onclick="openTopics()">
-      Jump to topic
-    </button>
-
-    <button class="control" onclick="toggleFullscreen()">
-      Full screen
-    </button>
+    <div class="select-wrap">
+      <select id="schoolLevel" class="control" aria-label="School level">
+        <option value="elem">Elementary / Middle School</option>
+        <option value="high">High School</option>
+      </select>
+    </div>
+    <button class="control" onclick="openTopics()">Jump to topic</button>
+    <button class="control" onclick="toggleFullscreen()">Full screen</button>
   </div>
-
 </header>
 
 <main class="stage" id="stage">
 
-<!-- SCREEN 1 — WELCOME -->
+<!-- WELCOME -->
 
 <section class="slide welcome active" data-title="Welcome">
-
   <div class="welcome-copy">
     <div class="eyebrow">Welcome to Best Buddies Canada</div>
     <div class="mint-accent"></div>
@@ -1213,837 +1161,525 @@ body[data-level="high"] .elem-only {
       Creating a stronger sense of belonging.
     </p>
 
-    <p class="smallcopy purple">
-      <strong>Because everyone deserves a friend.</strong>
-    </p>
+    <p class="purple"><strong>Because everyone deserves a friend.</strong></p>
   </div>
 
   <div class="welcome-film photo" id="welcomeFilm">
-    <video id="danceVideo"
-      src="assets/danceparty.mp4"
+    <video id="danceVideo" src="assets/danceparty.mp4"
       autoplay muted playsinline preload="auto"></video>
-
-    <div class="video-placeholder">
-      Friendship Walk dance-party video
-    </div>
+    <div class="video-placeholder">Friendship Walk dance-party video</div>
   </div>
 
-  <svg class="welcome-wave"
-    viewBox="0 0 800 35"
+  <svg class="welcome-wave" viewBox="0 0 800 35"
     preserveAspectRatio="none" aria-hidden="true">
-    <path
-      d="M0 13 Q50 0 100 13 T200 13 T300 13 T400 13 T500 13 T600 13 T700 13 T800 13 L800 35 L0 35 Z"
-      fill="#684399">
-    </path>
+    <path d="M0 13 Q50 0 100 13 T200 13 T300 13 T400 13 T500 13 T600 13 T700 13 T800 13 L800 35 L0 35 Z"
+      fill="#684399"/>
   </svg>
 
   <button class="video-control" id="videoControl"
     onclick="toggleVideo()">Pause video</button>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 2 — WHAT IS BEST BUDDIES -->
+<!-- WHAT IS BEST BUDDIES -->
 
 <section class="slide what" data-title="What Is Best Buddies?">
-
-  <div class="topband"></div>
-
   <div class="section-copy">
     <div>
       <div class="eyebrow">About Best Buddies</div>
-      <h2 class="coral" style="margin-top:17px">
-        Friendship is where it starts.
-      </h2>
+      <h2 class="coral" style="margin-top:17px">Friendship is where it starts.</h2>
     </div>
 
     <p class="lead">
-      Best Buddies brings students
-      <strong>with and without intellectual and developmental
-      disabilities (IDD)</strong> together to build genuine
-      friendships, discover shared interests and contribute
-      to their school community.
+      Best Buddies brings students <strong>with and without
+      intellectual and developmental disabilities (IDD)</strong>
+      together to build genuine friendships, discover shared
+      interests and contribute to their school community.
     </p>
 
     <div class="history">
       <strong>1989</strong>
       <p>
         Best Buddies began through Anthony Kennedy Shriver.
-        Best Buddies Canada launched in 1993.
-        Today, chapters bring students together in schools
-        and communities across Canada.
+        Best Buddies Canada launched in 1993. Today, chapters
+        bring students together in schools across Canada.
       </p>
     </div>
 
-    <div class="friendship-note bodycopy">
-      Friendships grow through shared interests,
-      mutual choice and time together.
-      Every student has something to contribute.
+    <div class="friendship-note">
+      Friendships grow through shared interests, mutual choice
+      and time together. Every student has something to contribute.
     </div>
 
-    <p class="nudge">
-      Free for schools. Flexible by design.
-      Supported every step of the way.
-    </p>
+    <p class="nudge">Free for schools. Flexible by design. Supported every step of the way.</p>
   </div>
 
   <div class="photo">
-    <img src="assets/friends.jpeg"
-      alt="Best Buddies students enjoying time together">
+    <img src="assets/friends.jpeg" alt="Best Buddies friendship">
   </div>
 
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 3 — WHY BEST BUDDIES -->
+<!-- WHY BEST BUDDIES -->
 
 <section class="slide why" data-title="Why Best Buddies?">
-
   <div>
     <div class="eyebrow">Building on what's already working</div>
-
     <h2 class="coral" style="margin-top:14px">
       Already doing something wonderful?
       <span class="purple">Let's build on it.</span>
     </h2>
-
     <p class="lead" style="margin-top:14px">
       Many schools already have excellent inclusion,
       friendship and leadership initiatives.
-      Best Buddies can complement that work
-      rather than replace it.
+      Best Buddies can complement that work rather than replace it.
     </p>
   </div>
 
   <div class="why-grid">
-
     <div class="why-panel">
       <h3>Keep what works.</h3>
-
-      <p>
-        Your existing students, meeting times,
-        favourite activities and relationships
-        can be a wonderful foundation.
-      </p>
-
-      <p>
-        If an existing initiative aligns with Best Buddies,
-        we can explore incorporating it into a chapter
-        rather than creating something separate.
-      </p>
+      <p>Your existing students, meeting times, favourite activities and relationships can be a wonderful foundation.</p>
+      <p>If an existing initiative aligns with Best Buddies, we can explore incorporating it into a chapter rather than creating something separate.</p>
     </div>
 
     <div class="why-panel">
       <h3>Gain something more.</h3>
-
-      <p>
-        Your school gains practical resources,
-        training, a dedicated Program Advisor
-        and student leadership opportunities.
-      </p>
-
-      <p>
-        You'll also be connected to Best Buddies
-        chapters across Canada, with opportunities
-        to exchange ideas, celebrate and collaborate.
-      </p>
+      <p>Your school gains practical resources, training, a dedicated Program Advisor and student leadership opportunities.</p>
+      <p>You'll also be connected to Best Buddies chapters across Canada, with opportunities to exchange ideas, celebrate and collaborate.</p>
     </div>
-
   </div>
 
   <div class="why-bottom">
     <strong>What Best Buddies brings:</strong>
     An intentional focus on ongoing friendships,
-    with the support and wider community
-    to help those connections grow.
+    with the support and wider community to help those connections grow.
   </div>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 4 — CHAPTER MODELS -->
+<!-- CHAPTER MODELS -->
 
-<section class="slide models" data-title="Make Best Buddies Your Own">
-
+<section class="slide models" data-title="Chapter Models">
   <div>
     <div class="eyebrow">Your chapter, your way</div>
-
     <h2 class="coral" style="margin:13px 0">
       Make Best Buddies <span class="purple">your own.</span>
     </h2>
-
     <p class="lead">
-      Chapters can take different forms depending
-      on student interests and what works
-      within the school community.
+      Chapters can take different forms depending on student interests
+      and how the school would like to organize its chapter.
     </p>
   </div>
 
   <div class="model-grid">
-
     <div class="model">
       <div>
         <h3>Group Gatherings</h3>
-
         <p>
-          Students spend time together through games,
-          music, art, lunch or shared projects.
-          Regular gatherings help students get to
-          know one another and discover common interests.
+          Students spend time together through shared activities
+          and group experiences. Members get to know one another,
+          discover common interests and build connections over time.
         </p>
       </div>
-
-      <small>A welcoming place to begin</small>
+      <small>A welcoming, group-based chapter model</small>
     </div>
 
     <div class="model">
       <div>
         <h3>One-to-One Friendships</h3>
-
         <p class="high-only">
-          Students can be paired based on shared
-          interests and mutual preferences.
-          Buddy pairs build relationships through
-          regular contact, with Staff Advisor guidance
-          and Best Buddies support.
+          Students can be paired based on shared interests and mutual preferences.
+          Buddy pairs build relationships through regular contact,
+          with guidance and support from their Staff Advisor.
         </p>
-
         <p class="elem-only">
-          Students build friendships through
-          shared activities, small groups and
-          familiar opportunities to connect.
-          Structured buddy relationships may
-          also be explored where appropriate.
+          Students can develop friendships through smaller groups and
+          shared experiences. Schools may also explore structured
+          buddy relationships where appropriate.
         </p>
       </div>
-
       <small>Friendships shaped by student choice</small>
     </div>
 
     <div class="model">
       <div>
         <h3>Student-Led & Hybrid</h3>
-
         <p class="high-only">
-          Student leaders can welcome members,
-          coordinate activities, support recruitment
-          and plan events. Chapters may combine
-          group gatherings, buddy pairs and a
-          Chapter President or executive team.
+          A Chapter President or executive team can help shape the
+          chapter, coordinate planning and share leadership responsibilities.
+          Schools may combine group gatherings and buddy friendships.
         </p>
-
         <p class="elem-only">
-          Students can help choose activities,
-          welcome new members and organize projects.
-          Middle school students can take on
-          more responsibility through student
-          leadership roles and shared planning.
+          Students help shape the chapter through shared decisions
+          and age-appropriate leadership. Middle school chapters
+          may also develop more formal student leadership teams.
         </p>
       </div>
-
-      <small>Students help shape their experience</small>
+      <small>Students have a meaningful voice</small>
     </div>
   </div>
 
-  <p class="nudge" style="text-align:center">
-    A small chapter can be just as meaningful.
-  </p>
-
+  <p class="nudge" style="text-align:center">Chapters don't have to be large to be meaningful.</p>
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 5 — A CHAPTER GATHERING -->
+<!-- A GATHERING -->
 
-<section class="slide gathering"
-  data-title="What Does a Gathering Look Like?">
-
+<section class="slide gathering" data-title="A Chapter Gathering">
   <div class="section-copy">
-
     <div>
       <div class="eyebrow">A gathering in action</div>
-
       <h2 class="coral" style="margin-top:15px">
         It can be this <span class="purple">simple.</span>
       </h2>
-
       <p class="lead" style="margin-top:14px">
         Here's an example of a relaxed 30-minute gathering.
-        Students connect, enjoy an activity and help
-        decide what happens next.
+        Students have time to settle in, connect and enjoy something together.
       </p>
     </div>
 
     <div class="agenda">
-
       <div class="agenda-item">
         <strong>5 min</strong>
         <p><b>Welcome</b><br>Settle in and share the plan.</p>
       </div>
-
       <div class="agenda-item">
         <strong>5 min</strong>
         <p><b>Connect</b><br>Favourite music, games or interests.</p>
       </div>
-
       <div class="agenda-item">
         <strong>15 min</strong>
-        <p><b>Do something</b><br>Board games, art, trivia or a shared project.</p>
+        <p><b>Do something</b><br>Board games, art, trivia or a project.</p>
       </div>
-
       <div class="agenda-item">
         <strong>5 min</strong>
-        <p><b>Look ahead</b><br>What did students enjoy? What's next?</p>
+        <p><b>Look ahead</b><br>Choose something to try next time.</p>
       </div>
-
     </div>
 
     <div class="highlight">
-      <h3 class="purple">Sometimes it's just lunch.</h3>
-
+      <h3 class="purple">Keep the gathering relaxed.</h3>
       <p class="bodycopy" style="margin-top:9px">
-        One school simply opens a classroom during lunch,
-        puts out board games and colouring supplies,
-        and creates a welcoming place for students
-        to enjoy time together.
+        Offer a few activity choices, allow different ways to participate
+        and give friendships time to develop naturally.
       </p>
     </div>
 
-    <p class="nudge">
-      Students don't need an elaborate event.
-      They need opportunities to connect.
-    </p>
-
+    <p class="nudge">The activity brings students together. The connections are what matter.</p>
   </div>
 
   <div class="photo">
-    <img src="assets/activities.jpeg"
-      alt="Students enjoying a Best Buddies activity">
+    <img src="assets/activities.jpeg" alt="Chapter activity">
   </div>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 6 — MAKING BEST BUDDIES FIT -->
+<!-- MAKING IT FIT -->
 
 <section class="slide fit" data-title="Making Best Buddies Fit">
-
   <div>
     <div class="eyebrow">Making it work at your school</div>
-
     <h2 class="coral" style="margin-top:13px">
-      You may already have the
-      <span class="purple">perfect place to start.</span>
+      You may already have the <span class="purple">perfect place to start.</span>
     </h2>
-
     <p class="lead" style="margin-top:12px">
-      Best Buddies brings students with and without IDD
-      together through everyday routines,
-      shared responsibilities and school activities.
+      Best Buddies can grow from familiar routines and
+      activities already happening throughout your school.
     </p>
   </div>
 
   <div class="fit-grid">
-
     <div class="fit-card">
       <h3>Lunch & social time</h3>
-
       <div class="fit-details">
         <div>
           <strong>How it fits</strong>
-          <p>
-            Use a classroom, existing lunch club,
-            cafeteria or recess program.
-          </p>
+          <p>Open classrooms, lunchtime groups, cafeterias or recess programs.</p>
         </div>
-
         <div>
           <strong>What it adds</strong>
-          <p>
-            Familiar friends, regular connections
-            and more opportunities to enjoy
-            school life together.
-          </p>
+          <p>Familiar friends, regular connections and opportunities for social belonging.</p>
         </div>
       </div>
     </div>
 
     <div class="fit-card">
-      <h3>School jobs & shared projects</h3>
-
+      <h3>School jobs & projects</h3>
       <div class="fit-details">
         <div>
           <strong>How it fits</strong>
-          <p>
-            Students share shifts on coffee carts,
-            snack deliveries, school stores
-            or other routines.
-          </p>
+          <p>Students share shifts on coffee carts, snack deliveries, school stores or other routines.</p>
         </div>
-
         <div>
           <strong>What it adds</strong>
-          <p>
-            Friendship through teamwork,
-            shared responsibilities and
-            contributions to school life.
-          </p>
+          <p>Friendship through teamwork, shared responsibilities and meaningful contributions.</p>
         </div>
       </div>
     </div>
 
     <div class="fit-card">
       <h3>Student council & leadership</h3>
-
       <div class="fit-details">
         <div>
           <strong>How it fits</strong>
-          <p>
-            Students work together on dances,
-            fundraisers, seasonal displays,
-            assemblies and events.
-          </p>
+          <p>Students collaborate on dances, fundraisers, displays and school events.</p>
         </div>
-
         <div>
           <strong>What it adds</strong>
-          <p>
-            Shared decisions, leadership skills,
-            friendships and meaningful
-            opportunities to contribute.
-          </p>
+          <p>Shared decisions, leadership opportunities and new friendships.</p>
         </div>
       </div>
     </div>
 
     <div class="fit-card">
-      <h3>Clubs, classes & existing programs</h3>
-
+      <h3>Existing clubs & programs</h3>
       <div class="fit-details">
         <div>
           <strong>How it fits</strong>
-          <p>
-            Build on art clubs, classroom partnerships,
-            peer programs, leadership classes
-            or Unified Sports.
-          </p>
+          <p>Art clubs, classroom partnerships, peer programs, leadership classes or Unified Sports.</p>
         </div>
-
         <div>
           <strong>What it adds</strong>
-          <p>
-            Opportunities to get to know one another
-            and build friendships beyond
-            the original activity.
-          </p>
+          <p>More opportunities for relationships to develop beyond the original activity.</p>
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="fit-foot">
     <strong>The Best Buddies connection:</strong>
-    Regular opportunities for students to participate
-    as peers, build friendships and contribute together,
-    supported by school staff and Best Buddies Canada.
+    Students with and without IDD have regular opportunities to connect,
+    contribute and develop friendships, with school staff and Best Buddies Canada supporting the chapter.
   </div>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 7 — REAL SCHOOL EXAMPLES -->
+<!-- REAL SCHOOL IDEAS -->
 
-<section class="slide ideas" data-title="Ideas from Real Schools">
-
+<section class="slide ideas" data-title="Real School Examples">
   <div>
     <div class="eyebrow">Inspired by Best Buddies chapters</div>
-
     <h2 class="coral" style="margin-top:12px">
-      So many ways to make
-      <span class="purple">friendship happen.</span>
+      So many ways to make <span class="purple">friendship happen.</span>
     </h2>
-
     <p class="lead" style="margin-top:11px">
-      Here are some ways chapters have worked
-      friendship into everyday school life.
-      Click an idea to explore.
+      Explore a few approaches schools are using.
+      Choose whichever examples feel most relevant to your school.
     </p>
   </div>
 
   <div class="bubble-grid">
-
-    <button class="bubble" style="--bubble:#EADCF3"
-      onclick="openIdea('lunch')">
+    <button class="bubble" style="--bubble:#EADCF3" onclick="openIdea('lunch')">
       <span class="bubble-title">An open classroom at lunch</span>
       <small>Explore idea +</small>
     </button>
-
-    <button class="bubble" style="--bubble:#C8ECDF"
-      onclick="openIdea('daily')">
+    <button class="bubble" style="--bubble:#C8ECDF" onclick="openIdea('daily')">
       <span class="bubble-title">Everyday lunch friendships</span>
       <small>Explore idea +</small>
     </button>
-
-    <button class="bubble" style="--bubble:#FFE9B5"
-      onclick="openIdea('coffee')">
+    <button class="bubble" style="--bubble:#FFE9B5" onclick="openIdea('coffee')">
       <span class="bubble-title">Coffee carts & school jobs</span>
       <small>Explore idea +</small>
     </button>
-
-    <button class="bubble" style="--bubble:#F9DBD8"
-      onclick="openIdea('leadership')">
-      <span class="bubble-title elem-only">
-        Student leaders & school projects
-      </span>
-      <span class="bubble-title high-only">
-        Student council & leadership
-      </span>
+    <button class="bubble" style="--bubble:#F9DBD8" onclick="openIdea('leadership')">
+      <span class="bubble-title elem-only">Student leaders & school projects</span>
+      <span class="bubble-title high-only">Student council & leadership</span>
       <small>Explore idea +</small>
     </button>
-
-    <button class="bubble" style="--bubble:#D9E9F5"
-      onclick="openIdea('outings')">
+    <button class="bubble" style="--bubble:#D9E9F5" onclick="openIdea('outings')">
       <span class="bubble-title">Outings together</span>
       <small>Explore idea +</small>
     </button>
-
-    <button class="bubble" style="--bubble:#F2E4C7"
-      onclick="openIdea('school')">
+    <button class="bubble" style="--bubble:#F2E4C7" onclick="openIdea('school')">
       <span class="bubble-title">School-wide belonging</span>
       <small>Explore idea +</small>
     </button>
-
   </div>
 
-  <p class="idea-footer">
-    These are possibilities, not a checklist.
-    Choose what makes sense for your students.
-  </p>
-
+  <p class="idea-footer">Different approaches, one shared focus: friendship.</p>
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 8 — THE STAFF COMMITMENT -->
+<!-- COMMITMENT -->
 
-<section class="slide commitment"
-  data-title="The Commitment & Support">
-
+<section class="slide commitment" data-title="Commitment & Responsibilities">
   <div>
     <div class="eyebrow">The practical side</div>
-
     <h2 class="coral" style="margin-top:14px">
-      A manageable commitment.
-      <span class="purple">Shared responsibility.</span>
+      A manageable commitment. <span class="purple">Shared responsibility.</span>
     </h2>
-
     <p class="lead" style="margin-top:13px">
-      You provide guidance and supervision.
-      Students help bring the chapter to life,
-      and our team supports you along the way.
+      The chapter needs staff guidance and supervision,
+      but students can increasingly take ownership of what happens.
     </p>
   </div>
 
   <div class="commitment-grid">
-
     <div class="commitment-card">
       <h3>Finding a rhythm</h3>
-
-      <p>
-        Start with a monthly or twice-monthly gathering,
-        or build on activities that already take place
-        throughout the school week.
-      </p>
-
-      <p>
-        Choose a schedule and accessible space
-        that work for your school. Consistency
-        matters more than elaborate plans.
-      </p>
+      <p>Some chapters meet once or twice a month. Others build friendship into activities already taking place during the week.</p>
+      <p>Choose a realistic schedule, accessible space and level of involvement your school can sustain.</p>
     </div>
 
     <div class="commitment-card">
       <h3>The Staff Advisor</h3>
-
-      <p>
-        Provides guidance and supervision, supports
-        recruitment and registration, helps activities
-        run smoothly and supports buddy friendships
-        where applicable.
-      </p>
-
-      <p>
-        You're the adult supporting the chapter,
-        not necessarily the person planning
-        every single activity.
-      </p>
+      <p>Guides and supervises the chapter, supports recruitment and registration, and helps students plan inclusive activities.</p>
+      <p>For one-to-one models, the advisor also supports matching and ongoing buddy friendships with help from Best Buddies Canada.</p>
     </div>
 
     <div class="commitment-card">
-      <h3>Students sharing the work</h3>
-
-      <p>
-        Students can help choose activities,
-        welcome members, prepare materials
-        and organize gatherings.
-      </p>
-
-      <p class="elem-only">
-        Younger students can take on manageable roles,
-        while middle school students may develop
-        a more formal leadership team.
-      </p>
-
-      <p class="high-only">
-        A Chapter President or executive team
-        can coordinate planning, recruitment
-        and events with Staff Advisor support.
-      </p>
+      <h3>Students taking the lead</h3>
+      <p>Students can welcome members, choose activities, prepare materials and contribute ideas.</p>
+      <p class="elem-only">Elementary students take on age-appropriate roles; middle school students may develop a leadership team.</p>
+      <p class="high-only">High school executives can coordinate events, recruitment and chapter planning, supported by their Staff Advisor.</p>
     </div>
-
   </div>
 
   <div class="commitment-note">
-    <strong>Best Buddies Canada helps with the rest:</strong>
-    Ready-to-use activities, training, recruitment resources,
-    accessibility ideas, chapter guidance and a Program Advisor
-    available throughout the school year.
+    <strong>Best Buddies Canada supports your chapter</strong> with training,
+    activity ideas, recruitment materials, planning guidance and a Program Advisor throughout the year.
   </div>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 9 — BEYOND THE CHAPTER, REVISED -->
+<!-- BEYOND THE CHAPTER -->
 
 <section class="slide beyond" data-title="Beyond the Chapter">
-
   <div class="section-copy">
-
     <div>
       <div class="eyebrow">Building a culture of belonging</div>
-
       <h2 class="coral" style="margin-top:10px">
-        Friendship can reach
-        <span class="purple">beyond the chapter.</span>
+        Friendship can reach <span class="purple">beyond the chapter.</span>
       </h2>
-
-      <p class="beyond-intro" style="margin-top:10px">
-        Best Buddies can help students take an active role
-        in shaping a welcoming school community.
-        A chapter can work with student council, classes
-        or other groups to bring people together through
-        projects and events the whole school can enjoy.
+      <p class="bodycopy" style="margin-top:10px">
+        Students can work together to create experiences and initiatives
+        that help the whole school feel more welcoming and connected.
       </p>
     </div>
 
     <div class="school-initiatives">
-
       <div class="school-initiative">
         <h3>Mix-It-Up Lunch</h3>
-        <p>
-          Students help organize an optional lunch
-          with games, activities or shared-interest
-          tables where classmates can meet people
-          outside their usual circles.
-        </p>
+        <p>Plan an optional lunch with activities or shared-interest tables that help classmates connect outside their usual circles.</p>
       </div>
-
       <div class="school-initiative">
         <h3>Friendship & Belonging Campaigns</h3>
-        <p>
-          Create a school-wide friendship challenge,
-          a belonging wall, morning announcements
-          or a themed week celebrating connection
-          and inclusion.
-        </p>
+        <p>Create friendship challenges, a belonging wall, school announcements or a themed inclusion week.</p>
       </div>
-
       <div class="school-initiative">
-        <h3>School Events & Celebrations</h3>
-        <p>
-          Partner with student council on dances,
-          decorations, fundraising, spirit days
-          or assemblies, with students contributing
-          ideas and sharing responsibilities.
-        </p>
+        <h3>School Events</h3>
+        <p>Work with student council on dances, decorations, fundraisers, spirit days or assemblies, sharing decisions and responsibilities.</p>
       </div>
-
       <div class="school-initiative">
-        <h3>Projects That Bring People Together</h3>
-        <p>
-          Work on a school mural, welcoming space,
-          community service project or Youth
-          Friendship Walk. Start with one project
-          students are excited about.
-        </p>
+        <h3>Community Projects</h3>
+        <p>Organize a mural, welcoming initiative, service project or Youth Friendship Walk inspired by students' interests.</p>
       </div>
-
     </div>
 
     <div class="school-impact">
       <strong>Students help lead the way.</strong>
-
       <p class="elem-only">
-        Younger students can contribute ideas, make decorations,
-        welcome classmates and help plan activities.
-        Middle school students can take on larger planning
-        and leadership responsibilities.
+        Younger students can contribute ideas, create materials, welcome classmates and help plan activities. Middle school students can take on larger leadership roles.
       </p>
-
       <p class="high-only">
-        Chapter members and student leaders can collaborate
-        with student council or leadership classes to plan,
-        organize and promote initiatives, with students
-        with and without IDD helping make decisions together.
+        Chapter members can partner with student council or leadership classes to plan, organize and promote initiatives, with students with and without IDD making decisions together.
       </p>
     </div>
-
   </div>
 
   <div class="photo">
-    <img src="assets/community.jpeg"
-      alt="Best Buddies students celebrating together">
+    <img src="assets/community.jpeg" alt="Best Buddies community">
   </div>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 10 — RESOURCES & COMMUNITY -->
+<!-- RESOURCES -->
 
-<section class="slide resources"
-  data-title="Resources, Training & Community">
-
+<section class="slide resources" data-title="Resources & Support">
   <div class="eyebrow">The support behind your chapter</div>
 
   <div class="resource-main">
-
     <div class="resource-message">
-
       <div>
-        <h2>
-          A whole community
-          <span class="purple">behind you.</span>
-        </h2>
-
+        <h2>A whole community <span class="purple">behind you.</span></h2>
         <p style="margin-top:17px">
-          Joining Best Buddies connects your school
-          with practical tools, ongoing guidance
-          and a wider community of chapters
-          building friendship across Canada.
+          Joining Best Buddies connects your school to practical tools,
+          ongoing guidance and a wider network of chapters across Canada.
         </p>
       </div>
 
       <div class="resource-support">
-        <h3>Resources ready to use</h3>
-
-        <p>
-          Quick Start Guides, activity ideas,
-          program manuals, recruitment posters,
-          family letters and planning tools
-          help make things manageable.
-        </p>
+        <h3>Materials ready to use</h3>
+        <p>Quick Start Guides, activity ideas, program manuals, recruitment posters, family letters and planning tools.</p>
       </div>
 
       <div class="resource-support">
         <h3>Training & ongoing guidance</h3>
-
-        <p>
-          Required Sensitivity Training and
-          Chapter Leadership Training where
-          applicable, plus a Program Advisor
-          who can help with questions, planning,
-          accessibility and friendship support.
-        </p>
+        <p>Required Sensitivity Training and Chapter Leadership Training where applicable, plus direct support from your Program Advisor.</p>
       </div>
 
       <div class="resource-support" style="background:#FFF3CF">
         <h3>Connections across Canada</h3>
-
-        <p>
-          Share ideas with other chapters,
-          celebrate student achievements and
-          explore opportunities for collaboration,
-          school initiatives and Friendship Walks.
-        </p>
+        <p>Share ideas, celebrate chapter achievements and explore opportunities for collaboration and Friendship Walks.</p>
       </div>
 
-      <p class="nudge">
-        Click a resource for a closer look.
-      </p>
-
+      <p class="nudge">Click a resource to see it up close.</p>
     </div>
 
     <div class="resource-gallery">
-
-      <button class="resource-tile guide"
-        data-guide="elem"
-        onclick="openResource('quickstart-elementary.png','Elementary & Middle School Quick Start Guide')">
-        <img src="assets/quickstart-elementary.png"
-          alt="Elementary and Middle School Quick Start Guide">
+      <button class="resource-tile guide" data-guide="elem"
+        onclick="openResource('bb-guide-elementary-web.jpg','Elementary & Middle School Quick Start Guide')">
+        <img src="assets/bb-guide-elementary-web.jpg" alt="Elementary and Middle School Quick Start Guide">
         <span>Elementary / Middle Quick Start</span>
       </button>
 
-      <button class="resource-tile guide"
-        data-guide="high"
-        onclick="openResource('quickstart-highschool.png','High School Quick Start Guide')">
-        <img src="assets/quickstart-highschool.png"
-          alt="High School Quick Start Guide">
+      <button class="resource-tile guide" data-guide="high"
+        onclick="openResource('bb-guide-highschool-web.jpg','High School Quick Start Guide')">
+        <img src="assets/bb-guide-highschool-web.jpg" alt="High School Quick Start Guide">
         <span>High School Quick Start</span>
       </button>
 
       <button class="resource-tile poster"
         onclick="openResource('recruitment.png','Student Recruitment Poster')">
-        <img src="assets/recruitment.png"
-          alt="Best Buddies recruitment poster">
+        <img src="assets/recruitment.png" alt="Student recruitment poster">
         <span>Recruitment Poster</span>
       </button>
 
       <button class="resource-tile poster"
-        onclick="openResource('bb-overview.png','Best Buddies Program Overview')">
-        <img src="assets/bb-overview.png"
-          alt="Best Buddies program overview">
+        onclick="openResource('bb-overview.png','Best Buddies Overview')">
+        <img src="assets/bb-overview.png" alt="Best Buddies overview">
         <span>Program Overview</span>
       </button>
 
       <button class="resource-tile poster"
         onclick="openResource('inclusionposter.png','Inclusion Grows Through Connection')">
-        <img src="assets/inclusionposter.png"
-          alt="Best Buddies inclusion flyer">
+        <img src="assets/inclusionposter.png" alt="Inclusion flyer">
         <span>Inclusion Flyer</span>
       </button>
-
     </div>
   </div>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 11 — BECOMING A CHAPTER -->
+<!-- GETTING STARTED -->
 
-<section class="slide start"
-  data-title="Becoming a Best Buddies Chapter">
-
+<section class="slide start" data-title="Getting Started">
   <div class="section-copy">
-
     <div>
       <div class="eyebrow">Your first steps</div>
-
       <h2 class="coral" style="margin-top:13px">
-        Getting started,
-        <span class="purple">together.</span>
+        Getting started, <span class="purple">together.</span>
       </h2>
     </div>
 
     <div class="steps">
-
       <div class="step">
         <div class="step-num">1</div>
         <div>
           <strong>Connect your school</strong>
-          <p>
-            Confirm principal approval, identify a
-            Staff Advisor and complete the school's
-            Program Application Form.
-          </p>
+          <p>Confirm principal approval, identify a Staff Advisor and complete the Program Application Form.</p>
         </div>
       </div>
 
@@ -2051,11 +1687,7 @@ body[data-level="high"] .elem-only {
         <div class="step-num">2</div>
         <div>
           <strong>Choose your chapter approach</strong>
-          <p>
-            Decide on a meeting time, accessible location
-            and the type of chapter that fits your students.
-            Existing programs may be a natural starting point.
-          </p>
+          <p>Decide on a meeting time, accessible location and chapter model that fit your school.</p>
         </div>
       </div>
 
@@ -2063,11 +1695,7 @@ body[data-level="high"] .elem-only {
         <div class="step-num">3</div>
         <div>
           <strong>Invite and register students</strong>
-          <p>
-            Share your school's unique registration link
-            with families. Parents or guardians register
-            participating Buddies and Peer Buddies.
-          </p>
+          <p>Share your unique school registration link with families. Parents or guardians register participating Buddies and Peer Buddies.</p>
         </div>
       </div>
 
@@ -2075,11 +1703,7 @@ body[data-level="high"] .elem-only {
         <div class="step-num">4</div>
         <div>
           <strong>Complete chapter requirements</strong>
-          <p>
-            We'll guide you through registration review,
-            the chapter roster, consent, required
-            safeguarding procedures and training.
-          </p>
+          <p>We'll help with registration review, the chapter roster, consent, applicable safeguarding requirements and training.</p>
         </div>
       </div>
 
@@ -2087,138 +1711,86 @@ body[data-level="high"] .elem-only {
         <div class="step-num">5</div>
         <div>
           <strong>Bring your chapter together</strong>
-          <p>
-            Hold a Meet & Greet, enjoy your first
-            activity and start building friendships.
-            We'll stay connected throughout the year.
-          </p>
+          <p>Host a Meet & Greet, enjoy your first activity and begin building friendships.</p>
         </div>
       </div>
-
     </div>
 
     <p class="nudge">
-      A few practical steps help establish the chapter
-      and support safe, meaningful participation.
-      You won't have to navigate them alone.
+      We'll walk through the process together and stay connected throughout the school year.
     </p>
-
   </div>
 
   <div class="aside">
     <button class="checklist-preview"
       onclick="openResource('checklist.png','Best Buddies Chapter Checklist')">
-      <img src="assets/checklist.png"
-        alt="Best Buddies chapter checklist">
+      <img src="assets/checklist.png" alt="Best Buddies Chapter Checklist">
       <span>View the chapter checklist</span>
     </button>
   </div>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- SCREEN 12 — CONVERSATION -->
+<!-- CLOSING -->
 
-<section class="slide closing"
-  data-title="Your School, Your Chapter">
-
+<section class="slide closing" data-title="Your School, Your Chapter">
   <div class="section-copy">
-
     <div>
       <div class="eyebrow">Where we go from here</div>
-
       <h2 class="coral" style="margin-top:17px">
-        What could this look like
-        <span class="purple">at your school?</span>
+        What might work <span class="purple">at your school?</span>
       </h2>
-
-      <p class="lead" style="margin-top:19px">
-        Whether you're starting something new or
-        building on an existing program, we'd love
-        to help you find an approach that works
-        for your students and school community.
+      <p class="lead" style="margin-top:18px">
+        We've looked at quite a few ways Best Buddies can take shape.
+        I'd love to hear what stood out to you.
       </p>
     </div>
 
-    <div class="questions">
-      <div>What are you already doing that we could build on?</div>
-      <div>Who might be interested in helping get things started?</div>
-      <div>What would be a realistic next step?</div>
+    <div class="closing-invitation">
+      Is there something you're already doing that you could see
+      Best Buddies becoming part of? Or an approach that feels
+      like a natural fit for your students?
     </div>
 
-    <p class="nudge">
-      Your chapter. Your students.
-      Your way of making it work.
-    </p>
+    <div class="closing-next">
+      <h3>Where do we go from here?</h3>
+      <p>
+        We can talk through any questions, identify who might be involved
+        and agree on a manageable next step. There's no need to have
+        everything figured out today.
+      </p>
+    </div>
 
+    <p class="nudge">Your chapter. Your students. Your way of making it work.</p>
   </div>
 
   <div class="photo">
-    <img src="assets/community.jpeg"
-      alt="Best Buddies chapter group">
+    <img src="assets/community.jpeg" alt="Best Buddies chapter group">
   </div>
-
   <div class="bottomband"></div>
 </section>
 
-<!-- NEW NAVIGATION STRIP -->
+<!-- NAVIGATION -->
 
 <nav class="presentation-nav" aria-label="Presentation navigation">
-
   <div class="nav-brand">
     <img src="assets/bb-logo.png" alt="">
     <span>Best Buddies Canada</span>
   </div>
 
   <div class="nav-actions">
-
-    <button class="nav-button" onclick="openTopics()"
-            aria-label="Choose presentation topic">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-      Topics
-    </button>
-
-    <button class="nav-button" id="slideBack"
-            onclick="move(-1)">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="m15 18-6-6 6-6"></path>
-      </svg>
-      Back
-    </button>
-
-    <button class="nav-button primary" id="slideNext"
-            onclick="move(1)">
-      <span id="nextLabel">Next</span>
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="m9 18 6-6-6-6"></path>
-      </svg>
-    </button>
-
-    <button class="nav-button" id="fullscreenNav"
-            onclick="toggleFullscreen()"
-            title="Toggle full screen"
-            aria-label="Toggle full screen">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"></path>
-      </svg>
-    </button>
-
+    <button class="nav-button" onclick="openTopics()">☰ Topics</button>
+    <button class="nav-button" id="slideBack" onclick="move(-1)">← Back</button>
+    <button class="nav-button primary" id="slideNext" onclick="move(1)">Next →</button>
+    <button class="nav-button" onclick="toggleFullscreen()" aria-label="Toggle full screen">⛶</button>
   </div>
-
 </nav>
 
 <!-- TOPIC MENU -->
 
-<div class="overlay" id="topicsOverlay"
-  role="dialog" aria-modal="true"
-  aria-label="Jump to a topic">
-
+<div class="overlay" id="topicsOverlay" role="dialog" aria-modal="true">
   <div class="dialog">
-    <button class="dialog-close"
-      onclick="closeTopics()" aria-label="Close topics">✕</button>
-
+    <button class="dialog-close" onclick="closeTopics()">✕</button>
     <h2>Jump to a topic</h2>
     <div class="menu-list" id="menuList"></div>
   </div>
@@ -2226,17 +1798,11 @@ body[data-level="high"] .elem-only {
 
 <!-- IDEA POPUP -->
 
-<div class="overlay" id="ideaOverlay"
-  role="dialog" aria-modal="true"
-  aria-labelledby="ideaTitle">
-
+<div class="overlay" id="ideaOverlay" role="dialog" aria-modal="true">
   <div class="dialog">
-    <button class="dialog-close"
-      onclick="closeIdea()" aria-label="Close idea">✕</button>
-
+    <button class="dialog-close" onclick="closeIdea()">✕</button>
     <h2 id="ideaTitle"></h2>
     <p id="ideaDescription"></p>
-
     <div class="idea-why">
       <strong>What makes it worthwhile</strong>
       <p id="ideaWhy"></p>
@@ -2246,422 +1812,259 @@ body[data-level="high"] .elem-only {
 
 <!-- RESOURCE POPUP -->
 
-<div class="overlay" id="resourceOverlay"
-  role="dialog" aria-modal="true"
-  aria-labelledby="resourceTitle">
-
+<div class="overlay" id="resourceOverlay" role="dialog" aria-modal="true">
   <div class="dialog resource-dialog">
-    <button class="dialog-close"
-      onclick="closeResource()" aria-label="Close resource">✕</button>
-
+    <button class="dialog-close" onclick="closeResource()">✕</button>
     <h3 id="resourceTitle"></h3>
     <img id="resourceLarge" alt="Resource preview">
   </div>
 </div>
 
 </main>
-
-<footer class="footer">
-  <span>Best Buddies Canada | Because everyone deserves a friend.</span>
-  <span>Arrow keys to navigate · M opens topics</span>
-</footer>
-
 </div>
 
 <script>
 const slides = [...document.querySelectorAll(".slide")];
-
 const stage = document.getElementById("stage");
 const schoolLevel = document.getElementById("schoolLevel");
-
-const danceVideo = document.getElementById("danceVideo");
-const welcomeFilm = document.getElementById("welcomeFilm");
+const video = document.getElementById("danceVideo");
 const videoControl = document.getElementById("videoControl");
 
 const topicsOverlay = document.getElementById("topicsOverlay");
 const ideaOverlay = document.getElementById("ideaOverlay");
 const resourceOverlay = document.getElementById("resourceOverlay");
 
-const overlays = [
-  topicsOverlay,
-  ideaOverlay,
-  resourceOverlay
-];
+const overlays = [topicsOverlay,ideaOverlay,resourceOverlay];
 
 let current = 0;
+let videoStarted = false;
+let videoFinished = false;
 let lastFocus = null;
-let openingVisited = false;
-
-/* REAL SCHOOL IDEAS */
 
 const ideaData = {
-
   lunch:{
     title:"An open classroom at lunch",
     description:
-      "Some chapters simply open a classroom " +
-      "during lunch, put out board games, colouring " +
-      "supplies or familiar activities, and welcome " +
-      "Buddies and Peer Buddies to spend time together. " +
-      "Students help choose what they'd enjoy doing.",
+      "Some chapters open a classroom at lunch, put out board games, " +
+      "colouring or other simple activities and welcome students to spend time together.",
     why:
-      "It's a familiar, supervised space that " +
-      "can become a wonderful little social community. " +
-      "Regular time together helps students build " +
-      "friendships without requiring elaborate planning."
+      "A familiar, supervised space becomes a regular place for students " +
+      "to relax, find common interests and build friendships."
   },
-
   daily:{
     title:"Everyday lunch friendships",
     description:
-      "One chapter uses a larger group of Peer Buddies, " +
-      "with two students joining a Buddy for lunch " +
-      "each day on a rotating basis. In some schools, " +
-      "familiar friendships have also helped students " +
-      "feel more comfortable choosing to eat in the " +
-      "larger cafeteria community.",
+      "One chapter has a larger group of Peer Buddies, with two peers " +
+      "joining a Buddy for lunch each day on a rotating basis. " +
+      "In some cases, familiar friendships have helped students feel comfortable " +
+      "choosing to eat in the cafeteria.",
     why:
-      "It creates consistent, natural opportunities " +
-      "for connection within the school day. " +
-      "Whether students enjoy lunch in a familiar " +
-      "classroom or the cafeteria, the focus is " +
-      "friendship, comfort and student choice."
+      "Friendship becomes part of everyday school life. " +
+      "Students can enjoy the social community that works best for them."
   },
-
   coffee:{
     title:"Coffee carts and school jobs",
     description:
-      "Buddies and Peer Buddies can take shifts together " +
-      "on an existing school coffee or snack cart. " +
-      "Others might deliver lunch bins, distribute " +
-      "classroom supplies, help with a school store " +
-      "or share another weekly school responsibility. " +
-      "Students choose meaningful roles and work as a team.",
+      "Buddies and Peer Buddies share shifts on a coffee or snack cart, " +
+      "deliver lunch bins or supplies, or help run other school routines. " +
+      "Students choose and share meaningful responsibilities.",
     why:
-      "Shared responsibilities give students a natural " +
-      "reason to spend time together, contribute to " +
-      "their school and develop friendships. " +
-      "These approaches can work well in middle " +
-      "and high schools, with appropriate supervision."
+      "Students spend time together through teamwork and shared purpose, " +
+      "while contributing to their school community."
   },
-
   leadership:{
     elem:{
       title:"Student leaders and school projects",
       description:
-        "Elementary and middle school chapters can " +
-        "work together to create seasonal decorations, " +
-        "prepare school displays, welcome new students " +
-        "or help plan a school celebration. " +
-        "Older students may form a small leadership " +
-        "group to help organize activities.",
+        "Students help plan projects, make seasonal decorations, welcome classmates " +
+        "and contribute to school events. Middle school students may develop " +
+        "more formal student leadership roles.",
       why:
-        "Students develop confidence and leadership " +
-        "through shared decisions and contributions. " +
-        "It's a natural way to build Best Buddies " +
-        "into existing school projects."
+        "Students build friendships while contributing ideas, making decisions " +
+        "and helping shape their school community."
     },
-
     high:{
       title:"Student council and leadership classes",
       description:
-        "One school has student council meet with " +
-        "the Best Buddies group twice a month. " +
-        "Together, students make seasonal decorations, " +
-        "plan dances and support fundraising activities. " +
-        "Other chapters may partner with an existing " +
-        "student leadership class.",
+        "One school brings student council together with Best Buddies twice a month. " +
+        "Students collaborate on dances, decorations and fundraisers. " +
+        "Other chapters partner with leadership classes.",
       why:
-        "Students with and without IDD make decisions, " +
-        "share responsibilities and contribute as peers. " +
-        "Best Buddies becomes part of established " +
-        "school leadership instead of competing with it."
+        "Best Buddies becomes part of existing school leadership, " +
+        "with students working together as peers."
     }
   },
-
   outings:{
     title:"Outings together",
     description:
-      "Some chapters visit local museums, enjoy " +
-      "picnics at the park or join shared school " +
-      "outings. These might be occasional special " +
-      "activities planned around students' interests " +
-      "and the school's existing schedule.",
+      "Some chapters enjoy museum visits, picnics or shared school outings, " +
+      "with appropriate approval, consent and supervision.",
     why:
-      "Shared experiences can help friendships grow " +
-      "beyond regular chapter gatherings. " +
-      "Outings follow the school's approval, consent, " +
-      "supervision and safeguarding procedures."
+      "Shared experiences can help friendships develop beyond regular gatherings."
   },
-
   school:{
     title:"School-wide belonging",
     description:
-      "Chapters can partner with student council, " +
-      "leadership classes or existing clubs on " +
-      "Mix-It-Up Lunches, friendship challenges, " +
-      "belonging walls, school spirit events " +
-      "and inclusion projects.",
+      "Chapters can organize Mix-It-Up Lunches, friendship challenges, " +
+      "belonging walls, school events and inclusion projects alongside other groups.",
     why:
-      "Students have meaningful opportunities to " +
-      "shape school life, while friendship and " +
-      "belonging become part of the wider " +
-      "school community."
+      "Students contribute to the wider school community, " +
+      "helping make inclusion and belonging part of everyday school life."
   }
 };
 
-/* NAVIGATION */
+function closeAll(){
+  overlays.forEach(o=>o.classList.remove("open"));
+}
 
-function goTo(index) {
-  if (index < 0 || index >= slides.length) return;
+function goTo(index){
+  if(index<0 || index>=slides.length) return;
+  if(current===0 && index!==0 && !video.paused) video.pause();
 
-  if (current === 0 && index !== 0) {
-    if (!danceVideo.paused) danceVideo.pause();
-  }
+  current=index;
 
-  current = index;
-
-  slides.forEach((slide,i) => {
-    slide.classList.toggle("active", i === current);
-    slide.setAttribute("aria-hidden", i !== current);
+  slides.forEach((slide,i)=>{
+    slide.classList.toggle("active",i===index);
+    slide.setAttribute("aria-hidden",i!==index);
+    slide.scrollTop=0;
   });
 
-  document.getElementById("slideBack").disabled =
-    current === 0;
-
-  document.getElementById("nextLabel").textContent =
-    current === slides.length-1
-      ? "Start over"
-      : "Next";
+  document.getElementById("slideBack").disabled=index===0;
+  document.getElementById("slideNext").textContent=
+    index===slides.length-1?"Start over ↺":"Next →";
 
   closeAll();
 
-  if (current === 0 && !openingVisited) {
-    openingVisited = true;
-    danceVideo.play().catch(() => {});
+  if(index===0 && !videoStarted && !videoFinished){
+    videoStarted=true;
+    video.play().catch(()=>{});
   }
 }
 
-function move(direction) {
-  if (direction === 1 && current === slides.length-1) {
-    goTo(0);
-  } else {
-    goTo(current + direction);
-  }
+function move(direction){
+  if(direction===1 && current===slides.length-1) goTo(0);
+  else goTo(current+direction);
 }
 
-/* SCHOOL LEVEL */
-
-schoolLevel.addEventListener("change", e => {
-  document.body.dataset.level = e.target.value;
-
-  document.querySelectorAll("[data-guide]").forEach(tile => {
-    tile.style.outline =
-      tile.dataset.guide === e.target.value
-        ? "2px solid #684399"
-        : "none";
+schoolLevel.addEventListener("change",e=>{
+  document.body.dataset.level=e.target.value;
+  document.querySelectorAll("[data-guide]").forEach(tile=>{
+    tile.style.outline=
+      tile.dataset.guide===e.target.value
+      ?"2px solid #684399":"none";
   });
-
   closeAll();
 });
 
-/* FULL SCREEN */
-
-function toggleFullscreen() {
-  if (!document.fullscreenElement) {
-    stage.requestFullscreen?.();
-  } else {
-    document.exitFullscreen?.();
-  }
+function toggleFullscreen(){
+  if(!document.fullscreenElement) stage.requestFullscreen?.();
+  else document.exitFullscreen?.();
 }
 
-/* TOPICS */
-
-document.getElementById("menuList").innerHTML =
-  slides.map((slide,i) =>
+document.getElementById("menuList").innerHTML=
+  slides.map((slide,i)=>
     `<button onclick="goTo(${i})">${slide.dataset.title}</button>`
   ).join("");
 
-function openTopics() {
-  lastFocus = document.activeElement;
+function openTopics(){
+  lastFocus=document.activeElement;
   topicsOverlay.classList.add("open");
-  topicsOverlay.querySelector(".dialog-close").focus();
 }
 
-function closeTopics() {
-  const wasOpen = topicsOverlay.classList.contains("open");
+function closeTopics(){
   topicsOverlay.classList.remove("open");
-  restoreFocus(wasOpen);
 }
 
-/* IDEA BUBBLES */
+function openIdea(id){
+  lastFocus=document.activeElement;
+  let item=ideaData[id];
+  if(item.elem||item.high) item=item[schoolLevel.value];
 
-function openIdea(id) {
-  lastFocus = document.activeElement;
-
-  let idea = ideaData[id];
-
-  if (idea.elem || idea.high) {
-    idea = idea[schoolLevel.value];
-  }
-
-  document.getElementById("ideaTitle").textContent =
-    idea.title;
-
-  document.getElementById("ideaDescription").textContent =
-    idea.description;
-
-  document.getElementById("ideaWhy").textContent =
-    idea.why;
-
+  document.getElementById("ideaTitle").textContent=item.title;
+  document.getElementById("ideaDescription").textContent=item.description;
+  document.getElementById("ideaWhy").textContent=item.why;
   ideaOverlay.classList.add("open");
-  ideaOverlay.querySelector(".dialog-close").focus();
 }
 
-function closeIdea() {
-  const wasOpen = ideaOverlay.classList.contains("open");
+function closeIdea(){
   ideaOverlay.classList.remove("open");
-  restoreFocus(wasOpen);
 }
 
-/* RESOURCE PREVIEWS */
-
-function openResource(filename,title) {
-  lastFocus = document.activeElement;
-
-  document.getElementById("resourceTitle").textContent =
-    title;
-
-  const img = document.getElementById("resourceLarge");
-  img.src = "assets/" + filename;
-  img.alt = title;
-
+function openResource(filename,title){
+  lastFocus=document.activeElement;
+  document.getElementById("resourceTitle").textContent=title;
+  const img=document.getElementById("resourceLarge");
+  img.src="assets/"+filename;
+  img.alt=title;
   resourceOverlay.classList.add("open");
-  resourceOverlay.querySelector(".dialog-close").focus();
 }
 
-function closeResource() {
-  const wasOpen = resourceOverlay.classList.contains("open");
+function closeResource(){
   resourceOverlay.classList.remove("open");
-  restoreFocus(wasOpen);
 }
 
-function restoreFocus(wasOpen) {
-  if (wasOpen && lastFocus?.isConnected) {
-    lastFocus.focus();
-  }
-}
-
-function closeAll() {
-  overlays.forEach(o => o.classList.remove("open"));
-}
-
-overlays.forEach(overlay => {
-  overlay.addEventListener("click",e => {
-    if (e.target === overlay) {
-      if (overlay === topicsOverlay) closeTopics();
-      if (overlay === ideaOverlay) closeIdea();
-      if (overlay === resourceOverlay) closeResource();
-    }
+overlays.forEach(overlay=>{
+  overlay.addEventListener("click",e=>{
+    if(e.target===overlay)closeAll();
   });
 });
 
-/* KEYBOARD NAVIGATION */
+document.addEventListener("keydown",e=>{
+  if(["INPUT","SELECT","TEXTAREA"].includes(e.target.tagName))return;
 
-document.addEventListener("keydown",e => {
-  if (["INPUT","SELECT","TEXTAREA"].includes(e.target.tagName)) {
+  if(overlays.some(o=>o.classList.contains("open"))){
+    if(e.key==="Escape")closeAll();
     return;
   }
 
-  const openOverlay = overlays.find(o =>
-    o.classList.contains("open")
-  );
-
-  if (openOverlay) {
-    if (e.key === "Escape") {
-      if (openOverlay === topicsOverlay) closeTopics();
-      if (openOverlay === ideaOverlay) closeIdea();
-      if (openOverlay === resourceOverlay) closeResource();
-    }
-    return;
+  if(e.key==="ArrowRight"||e.key==="PageDown"){
+    e.preventDefault();move(1);
   }
-
-  if (e.key === "ArrowRight" || e.key === "PageDown") {
-    e.preventDefault();
-    move(1);
+  if(e.key==="ArrowLeft"||e.key==="PageUp"){
+    e.preventDefault();move(-1);
   }
-
-  if (e.key === "ArrowLeft" || e.key === "PageUp") {
-    e.preventDefault();
-    move(-1);
-  }
-
-  if (
-    e.key.toLowerCase() === "m" &&
-    !e.ctrlKey && !e.metaKey && !e.altKey
-  ) {
+  if(e.key.toLowerCase()==="m"&&!e.ctrlKey&&!e.metaKey){
     openTopics();
   }
 });
 
-/* VIDEO — PLAYS ONCE */
+video.loop=false;
 
-danceVideo.loop = false;
-
-danceVideo.addEventListener("error",() => {
-  welcomeFilm.classList.add("failed");
-  videoControl.style.display = "none";
+video.addEventListener("error",()=>{
+  document.getElementById("welcomeFilm").classList.add("failed");
+  videoControl.style.display="none";
 });
 
-danceVideo.addEventListener("loadeddata",() => {
-  welcomeFilm.classList.remove("failed");
-  videoControl.style.display = "block";
-});
-
-danceVideo.addEventListener("ended",() => {
-  if (Number.isFinite(danceVideo.duration)) {
-    danceVideo.currentTime =
-      Math.max(0,danceVideo.duration - 0.06);
+video.addEventListener("ended",()=>{
+  videoFinished=true;
+  videoStarted=true;
+  if(Number.isFinite(video.duration)){
+    video.currentTime=Math.max(0,video.duration-.06);
   }
-  videoControl.textContent = "Replay video";
+  videoControl.textContent="Replay video";
 });
 
-danceVideo.addEventListener("play",() => {
-  videoControl.textContent = "Pause video";
+video.addEventListener("play",()=>{
+  videoControl.textContent="Pause video";
 });
 
-danceVideo.addEventListener("pause",() => {
-  if (danceVideo.duration &&
-      danceVideo.currentTime >= danceVideo.duration - 0.15) {
-    videoControl.textContent = "Replay video";
-  } else {
-    videoControl.textContent = "Play video";
-  }
+video.addEventListener("pause",()=>{
+  videoControl.textContent=videoFinished?"Replay video":"Play video";
 });
 
-function toggleVideo() {
-  const nearEnd =
-    Number.isFinite(danceVideo.duration) &&
-    danceVideo.currentTime >= danceVideo.duration - 0.15;
-
-  if (nearEnd || danceVideo.ended) {
-    danceVideo.currentTime = 0;
-    danceVideo.play().catch(() => {});
+function toggleVideo(){
+  if(videoFinished || video.ended){
+    videoFinished=false;
+    video.currentTime=0;
+    video.play().catch(()=>{});
     return;
   }
-
-  if (danceVideo.paused) {
-    danceVideo.play().catch(() => {});
-  } else {
-    danceVideo.pause();
-  }
+  if(video.paused)video.play().catch(()=>{});
+  else video.pause();
 }
-
-/* INITIALIZE */
 
 schoolLevel.dispatchEvent(new Event("change"));
 goTo(0);
-
 </script>
 </body>
 </html>
